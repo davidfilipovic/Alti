@@ -1,0 +1,44 @@
+body,html{
+margin:0px;
+padding:0px;
+}
+
+#main{
+width: 100%;
+}
+
+.wrapper{
+width:1200px;
+margin:0 auto;
+position:relative;
+}
+
+.header{
+width: 100%;
+position: relative;
+height: 83px;
+}
+
+.home-content{
+position:relative;
+overflow:hidden;
+top:90px;
+min-height:1050px;
+}
+.logo{
+width: 300px;
+float: left;
+}
+
+.logo img{
+margin-top:-50px;
+width: 270px;
+height: 95px;
+}
+
+.logo_text b{
+font-size:19px;
+margin-left:60px;
+font-family:Arial;
+color:#fff;
+}
