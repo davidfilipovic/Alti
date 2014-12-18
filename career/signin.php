@@ -29,6 +29,7 @@
                         <input type="email" class="form-control" name="loginEmail" id="loginEmail" placeholder="Email adresa" required autofocus>
                         <input type="password" class="form-control" name="loginPass" id="loginPass" placeholder="Šifra" required>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Uloguj se</button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Registruj se</button>
                     </form>
                     
                     

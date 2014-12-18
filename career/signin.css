@@ -160,9 +160,10 @@ and open the template in the editor.
 
 #recover:before {
   /* The "Click here" tooltip */
-  width:100px;
+  width:130px;
   height:26px;
-  content:'Sign in ->';
+  font-family: Comic Sans MS, cursive, sans-serif;
+  content:'Logovanje ->'   ;
   position:absolute;
   right:270px;
   top:15px;
@@ -172,7 +173,8 @@ and open the template in the editor.
   /* The "Click here" tooltip */
   width:150px;
   height:26px;
-  content:'';
+  font-family: Comic Sans MS, cursive, sans-serif;
+  content:'<- Zaboravljena šifra';
   position:absolute;
   right:-170px;
   top:15px;
