@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
         <style>
 			body{
-				background:#333 url(bg.jpg) repeat top left;
+				background:url(bg.jpg) repeat top left;
 				font-family:Arial;
 			}
 			span.reference{
@@ -31,7 +31,7 @@
 				color:#ddd;
 			}
 			ul.sdt_menu{
-				margin-top:90px;
+				/*margin-top:90px;*/
 			}
 			h1.title{
 				text-indent:-9000px;
@@ -39,13 +39,15 @@
 				width:633px;
 				height:69px;
 			}
+			.menu li{background-color:#333;}
 		</style>
 </head>
 <body>
+<?php include "menuJs.php";?>
 <div class='main'>
 	<div class='wrapper'>
 		
-		<?php include "menuJs.php";?>
+		
 		
 		<div class='home-content'>
 		</div>

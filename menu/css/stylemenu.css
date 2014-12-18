@@ -18,16 +18,17 @@ ul.sdt_menu a{
 ul.sdt_menu li{
 	float:left;
 	width:170px;
-	height:85px;
+	height:45px;
 	position:relative;
 	cursor:pointer;
+	margin-top:115px;
 }
 ul.sdt_menu li > a{
 	position:absolute;
 	top:0px;
 	left:0px;
 	width:170px;
-	height:85px;
+	height:65px;
 	z-index:12;
 	background:transparent url(../images/overlay.png) no-repeat bottom right;
 	-moz-box-shadow:0px 0px 2px #000 inset;
@@ -48,7 +49,7 @@ ul.sdt_menu li a img{
 }
 ul.sdt_menu li span.sdt_wrap{
 	position:absolute;
-	top:25px;
+	top:8px;
 	left:0px;
 	width:170px;
 	height:60px;
@@ -57,7 +58,7 @@ ul.sdt_menu li span.sdt_wrap{
 ul.sdt_menu li span.sdt_active{
 	position:absolute;
 	background:#111;
-	top:85px;
+	top:65px;
 	width:170px;
 	height:0px;
 	left:0px;
@@ -110,5 +111,7 @@ ul.sdt_menu li div.sdt_box a:first-child{
 ul.sdt_menu li div.sdt_box a:hover{
 	color:#fff;
 }
+ul a img{height:130px !important;}
+ 
 
 

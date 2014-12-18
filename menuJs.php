@@ -10,7 +10,7 @@
 				<li>
 					<a href="#">
 						<img src="images/2.jpg" alt=""/>
-						<span class="sdt_active"></span>
+						<span class="sdt_active" style='height:100px; display:block;'></span>
 						<span class="sdt_wrap">
 							<span class="sdt_link">About us</span>
 							<span class="sdt_descr">Get to know us</span>
