@@ -4,7 +4,7 @@ padding:0px;
 }
 
 #main{
-width: 100%;
+width:100%;
 }
 
 .wrapper{
@@ -12,13 +12,19 @@ width:1200px;
 margin:0 auto;
 position:relative;
 }
+.header_wrapper{
+width:100%;
+margin:0 auto;
+position:relative;
+background-color:#333;
+}
 
 .header{
-width: 100%;
+width: 1200px;
 position:relative;
-height: 180px;
-background-color:#333;
+height: 135px;
 margin-top:0px;
+margin:0 auto;
 }
 
 
@@ -34,7 +40,7 @@ float: left;
 }
 
 .logo img{
-margin-top:50px;
+margin-top:0px;
 width: 270px;
 height: 95px;
 }
