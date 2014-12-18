@@ -43,7 +43,9 @@
 		</style>
 </head>
 <body>
-<?php include "menuJs.php";?>
+     <div class='header_wrapper'>		
+         <?php include "menuJs.php";?>
+     </div>
 <div class='main'>
 	<div class='wrapper'>
 		
