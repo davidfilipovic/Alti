@@ -15,24 +15,30 @@
     </head>
     <body>
         
+        	<?php
+			include('connect.inc');
+			db_connect();
+			?>
+        
+        
         <div class="container">
             <div class="row">
                 <div class="container" id="formContainer">
 
                     
                     <!-- sign in forma -->
-                    <form class="form-signin" id="login" role="form">
+                    <form action="user.php" method="post" class="form-signin" id="login" role="form" >
                         <h3 class="form-signin-heading">Logovanje</h3>
                         <a href="#" id="flipToRecover" class="flipLink">
                             <div id="triangle-topright"></div>
                         </a>
                         <input type="email" class="form-control" name="loginEmail" id="loginEmail" placeholder="Email adresa" required autofocus>
                         <input type="password" class="form-control" name="loginPass" id="loginPass" placeholder="Šifra" required>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Uloguj se</button>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Registruj se</button>
+                        <input class='forme1'  type="submit" name="submit" value="Registruj se!" onclick=""/>
+                       <!-- <button class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Registruj se</button>-->
                     </form>
                     
-                    
+                
                     
                     <!-- recover email -->
                     <form class="form-signin" id="recover" role="form">
