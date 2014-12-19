@@ -103,7 +103,7 @@
                         <form method="post" action="forgot.php">
                             <ul>
                                 <li>
-                                    <input id="emailforget" name="emailforget" type="text" placeholder="Email" />
+                                    <input id="emailforgot" name="emailforgot" type="text" placeholder="Email" />
                                 </li>
                                 <li>
                                     <input type="submit" value="Send" class="button" />
