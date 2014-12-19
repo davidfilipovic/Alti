@@ -54,8 +54,14 @@ color:#fff;
 .social{
 margin:-75px 0 15px 1230px;
 }
+div.leng{
+width:100px;
+height:85px;
+min-height:80px;
+margin:-60px 30px 150px 76px;}
 .leng a{
 color:#006666;
 }
-.srb a{
-border-bottom:1px solid #006666;}
+.srb{
+border-bottom:1px solid #006666;
+}

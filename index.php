@@ -47,14 +47,14 @@
      <div class='header_wrapper'>		
          <?php include "menuJs.php";?>
 		     <div class='social'>
-			 <a><img src='icon/facebook.png' width='33px' height='33px'></a>
-			 <a><img src='icon/twitter.png' width='33px' height='33px'></a><br>
-			 <a><img src='icon/google.png' width='33px' height='33px'></a>
-			 <a><img src='icon/linkedin.png' width='33px' height='33px'></a>
-			     <div class='leng'>
+			      <a><img src='icon/facebook.png' width='33px' height='33px'></a>
+			      <a><img src='icon/twitter.png' width='33px' height='33px'></a><br>
+			      <a><img src='icon/google.png' width='33px' height='33px'></a>
+			      <a><img src='icon/linkedin.png' width='33px' height='33px'></a>
+			 </div>
+			 <div class='leng'>
 			          <a class='srb'>SRB</a><br>
 			          <a class='eng' action=''>ENG</a>
-			     </div>
 			 </div>
      </div>
 <div class='main'>
