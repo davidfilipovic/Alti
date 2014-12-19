@@ -52,5 +52,10 @@ font-family:Arial;
 color:#fff;
 }
 .social{
-margin:-75px 0 15px 1250px;
+margin:-75px 0 15px 1230px;
 }
+.leng a{
+color:#006666;
+}
+.srb a{
+border-bottom:1px solid #006666;}
