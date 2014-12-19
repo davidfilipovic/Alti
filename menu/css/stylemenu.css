@@ -21,7 +21,7 @@ ul.sdt_menu li{
 	height:65px;
 	position:relative;
 	cursor:pointer;
-	margin-top:60px;
+	margin-top:40px;
 }
 ul.sdt_menu li > a{
 	position:absolute;

@@ -22,7 +22,7 @@ background-color:#333;
 .header{
 width: 1200px;
 position:relative;
-height: 135px;
+height: 115px;
 margin-top:0px;
 margin:0 auto;
 }
@@ -40,14 +40,17 @@ float: left;
 }
 
 .logo img{
-margin-top:0px;
-width: 270px;
-height: 95px;
+margin-top:5px;
+width: 260px;
+height: 85px;
 }
 
 .logo_text b{
-font-size:19px;
+font-size:16px;
 margin-left:60px;
 font-family:Arial;
 color:#fff;
+}
+.social{
+margin:-75px 0 15px 1250px;
 }
