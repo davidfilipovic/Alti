@@ -7,7 +7,7 @@
 
   <title>Register/Login</title>
 
-    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="css/sstyle.css" media="screen" type="text/css" />
 
 </head>
 
@@ -55,31 +55,29 @@
                 </li>
             </ul>
             <div id="login" class="form-action show">
-                <h1>Login on webapp</h1>
+                <h1>Prijavite se</h1>
                 <p>
-                    Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                    Maecenas sed diam eget risus varius bladit sit amet non
+                    Da bi bili u mogućnosti da se prijavite, prvo se morate registrovati. 
                 </p>
-                <form >
+                <form method="post" action="login.php">
                     <ul>
                         <li>
-                            <input type="text" placeholder="Username" />
+                            <input id="emaillog" name="emaillog" type="text" placeholder="Email" />
                         </li>
                         <li>
-                            <input type="password" placeholder="Password" />
+                            <input id="passlog" name="passlog" type="password" placeholder="Šifra" />
                         </li>
                         <li>
-                            <input type="submit" value="Login" class="button" />
+                            <input name="submit" type="submit" value="Uloguj se" class="button" />
                         </li>
                     </ul>
                 </form>
             </div>
             <!--/#login.form-action-->
             <div id="register" class="form-action hide">
-                <h1>Register</h1>
+                <h1>Registruj se</h1>
                 <p>
-                    You should totally sign up for our super awesome service.
-                    It's what all the cool kids are doing nowadays.
+                    Registracija traje samo nekoliko sekundi ali vam zauzvrat daje mnogo više mogućnosti.
                 </p>
                 <form method="post" action="register.php">
                     <ul>
@@ -87,31 +85,29 @@
                             <input id="emailreg" name="emailreg" type="text" placeholder="Email" />
                         </li>
                         <li>
-                            <input id="passreg" name="passreg" type="password" placeholder="Password" />
+                            <input id="passreg" name="passreg" type="password" placeholder="Šifra" />
                         </li>
                         <li>
-                            <input name="submit" type="submit" value="Sign Up" class="button" />
+                            <input name="submit" type="submit" value="Registruj se" class="button" />
                         </li>
                     </ul>
                 </form>
             </div>
             <!--/#register.form-action-->
             <div id="reset" class="form-action hide">
-                <h1>Reset Password</h1>
+                <h1>Zaboravljena šifra</h1>
                 <p>
-                    To reset your password enter your email and your birthday
-                    and we'll send you a link to reset your password.
+                    Da bi ste resetovali šifru unesite Vaš email i poslaćemo vam link za resetovanje šifre.
+                    
                 </p>
                 <form>
                     <ul>
                         <li>
                             <input type="text" placeholder="Email" />
                         </li>
+                       
                         <li>
-                            <input type="text" placeholder="Birthday" />
-                        </li>
-                        <li>
-                            <input type="submit" value="Send" class="button" />
+                            <input type="submit" value="Potvrdi" class="button" />
                         </li>
                     </ul>
                 </form>
