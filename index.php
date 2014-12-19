@@ -9,6 +9,7 @@
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="menu/css/stylemenu.css" type="text/css" media="screen"/>
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+
         <style>
 			body{
 				background:url(bg.jpg) repeat top left;
@@ -55,7 +56,7 @@
 <div class='main'>
 	<div class='wrapper'>
 		
-		
+          
 		
 		<div class='home-content'>
 		</div>
