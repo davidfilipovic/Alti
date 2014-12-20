@@ -1,56 +1,70 @@
 body,html{
-margin:0px;
-padding:0px;
+    margin:0px;
+    padding:0px;
 }
 
 #main{
-width:100%;
+    width:100%;
 }
 
 .wrapper{
-width:1200px;
-margin:0 auto;
-position:relative;
+    width:1200px;
+    margin:0 auto;
+    position:relative;
 }
+
 .header_wrapper{
-width:100%;
-margin:0 auto;
-position:relative;
-background-color:#333;
+    width:100%;
+    margin:0 auto;
+    position:relative;
+    background-color:#333;
 }
 
 .header{
-width: 1200px;
-position:relative;
-height: 115px;
-margin-top:0px;
-margin:0 auto;
+    width: 1200px;
+    position:relative;
+    height: 115px;
+    margin-top:0px;
+    margin:0 auto;
 }
-
 
 .home-content{
-position:relative;
-overflow:hidden;
-top:90px;
-min-height:1050px;
+    position:relative;
+    overflow:hidden;
+    top:90px;
+    min-height:1050px;
 }
 .logo{
-width: 300px;
-float: left;
+    width: 300px;
+    float: left;
 }
 
 .logo img{
-margin-top:5px;
-width: 260px;
-height: 85px;
+    margin-top:5px;
+    width: 260px;
+    height: 85px;
 }
 
 .logo_text b{
-font-size:16px;
-margin-left:60px;
-font-family:Arial;
-color:#fff;
+    font-size:16px;
+    margin-left:60px;
+    font-family:Arial;
+    color:#fff;
 }
 .social{
-margin:-75px 0 15px 1250px;
+    margin:-75px 0 15px 1250px;
 }
+
+a {
+    color: #09f;
+}
+a:hover {
+    text-decoration: none;
+}
+
+.fluid_container {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+}
+

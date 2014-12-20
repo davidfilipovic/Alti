@@ -18,10 +18,7 @@
 	vertical-align: baseline;
 	list-style: none
 }
-p {
-    
-    color: red;
-}
+
 .camera_wrap {
 	display: none;
 	float: left;
@@ -150,10 +147,12 @@ p {
 	z-index: 4;
 }
 .camera_caption {
-	bottom: 0;
+	margin-bottom: 40px;
+        margin-left: 70px;
 	display: block;
 	position: absolute;
-	width: 100%;
+        font-size: 120%;
+	width: 20%;
 }
 .camera_caption > div {
 	padding: 10px 20px;
