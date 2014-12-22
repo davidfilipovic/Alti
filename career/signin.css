@@ -137,21 +137,21 @@ and open the template in the editor.
 
   
   /* Enabling 3d space for the transforms */
-  -moz-transform-style: preserve-3d;
+/*  -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  transform-style: preserve-3d;*/
   
   /* When the forms are flipped, they will be hidden */
-  -moz-backface-visibility: hidden;
+ /* -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  backface-visibility: hidden;*/
   
   /* Enabling a smooth animated transition */
-  -moz-transition:0.8s;
+  /*-moz-transition:0.8s;
   -webkit-transition:0.8s;
   transition:0.8s;
 
-}
+}*/
 
 #login{
   background: #f3f3f3;
