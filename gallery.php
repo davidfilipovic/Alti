@@ -1,4 +1,4 @@
-<div class="fluid_container">
+<div class="fluid_container" style="z-index: -1">
     <div class="camera_wrap" id="camera_wrap_1">
         <div data-thumb="camera/images/slides/thumbs/bridge.jpg" data-src="camera/images/slides/bridge.jpg">
             <div class="camera_caption fadeFromBottom">
