@@ -1,6 +1,9 @@
 /**
  * Rules
  */
+
+
+
 module.exports = {
 
   required: /.+/,
@@ -9,13 +12,17 @@ module.exports = {
   username: /^[a-z](?=[\w.]{3,31}$)\w*\.?\w*$/i,
   pass: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/,
   strongpass: /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
-  phone: /^[0-9]\d{2}-\d{3}-\d{4}$/,
+  phone: /^\d{8,12}$/,
   zip: /^\d{5}$|^\d{5}-\d{4}$/,
   url: /^(?:(ftp|http|https):\/\/)?(?:[\w\-]+\.)+[a-z]{2,6}([\:\/?#].*)?$/i,
+  telefon: /^\d{3}-\d{3}-\d{4}$/,
 
   number: function(input, value) {
     return !isNaN(value);
   },
+
+
+
 
   range: function(input, value, min, max) {
     return Number(value) >= min && Number(value) <= max;
