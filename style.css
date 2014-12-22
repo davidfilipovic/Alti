@@ -35,7 +35,6 @@ body,html{
     min-height:1050px;
 }
 .logo{
-<<<<<<< HEAD
     width: 300px;
     float: left;
 }
@@ -44,7 +43,6 @@ body,html{
     margin-top:5px;
     width: 260px;
     height: 85px;
-=======
 width: 250px;
 float: left;
 }
@@ -53,7 +51,6 @@ float: left;
 margin-top:5px;
 width: 250px;
 height: 85px;
->>>>>>> origin/master
 }
 
 .logo_text b{
@@ -63,7 +60,6 @@ height: 85px;
     color:#fff;
 }
 .social{
-<<<<<<< HEAD
     margin:-75px 0 15px 1250px;
 }
 
@@ -80,7 +76,6 @@ a:hover {
     width: 100%;
 }
 
-=======
 position:float;
 width:78px;
 height:73px;
@@ -106,4 +101,3 @@ color:#006666;
 .srb{
 border-bottom:1px solid #006666;
 }
->>>>>>> origin/master
