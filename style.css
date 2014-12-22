@@ -76,14 +76,14 @@ a:hover {
     width: 100%;
 }
 
-position:float;
+/*position:float;
 width:78px;
 height:73px;
 margin:0px;
 padding-left:1120px;
 margin-top:-57px;
+}*/
 
-}
 div.social a{cursor:pointer;}
 
 .social li img{
