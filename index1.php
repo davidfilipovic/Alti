@@ -79,20 +79,47 @@
 
     </head>
     <body>
+<<<<<<< HEAD
         <div class='main'>
             
             <div id="header-2">
                 <div class="header_wrappera">
+=======
+        <div id="header-2">
+<<<<<<< HEAD
+            
+=======
+            <div class="header_wrappera">
+>>>>>>> origin/master
 
                 </div>
                 <div class="header_wrapper">	
                     <?php include "menuJs.php"; ?>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
+            <div class="header_wrapper">	
+                <?php include "menuJs.php"; ?>
+            </div>
+        </div>
+>>>>>>> origin/master
 
             <?php include "gallery.php"; ?>
 
             <div class='wrapper'>
+<<<<<<< HEAD
+
+			    <div>
+				 <?php include "aboutus.php"; ?>
+				</div>
+                <div class='banner'>
+                  <?php include "sliding-boxes-css3/index.html"; ?>
+                </div>
+            
+        </div>
+=======
                 <div class='home-content'>
                     <div>
                         <?php include "aboutus.php"; ?>
@@ -102,10 +129,15 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             
            <?php include "footer.php"; ?>
             
         </div>
+=======
+>>>>>>> origin/master
+
+>>>>>>> origin/master
     </body>
 </html>
 

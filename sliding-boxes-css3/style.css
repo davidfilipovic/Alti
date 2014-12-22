@@ -22,7 +22,7 @@ body {font: .81em/150%  Arial, Helvetica, sans-serif;color: #ccc;}
 
 /* Imposto box */
 
-.box {position: relative;width: 260px;height:330px;overflow:hidden;margin: 15px;float: left;background: #111;color: #222;box-shadow: 0 1px 3px #111; -moz-box-shadow: 0 1px 2px  #111; -webkit-box-shadow: 0 1px 3px  #111;}
+.box {position: relative;width: 260px;height:300px;overflow:hidden;margin: 15px;float: left;background: #111;color: #222;box-shadow: 0 1px 3px #111; -moz-box-shadow: 0 1px 2px  #111; -webkit-box-shadow: 0 1px 3px  #111;}
 .icon{position:absolute;z-index:12; left:10px; font-size:20px; top:7px;  width:10px; height:10px;display:block; color:#00fffe  }
 .panel h1{font-size:13px;}
 .panel p{font-weight: normal;margin-top:4px;}
