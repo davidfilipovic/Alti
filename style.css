@@ -85,7 +85,7 @@ margin:-55px 0 15px 1100px;
 }
 =======
 
-/*position:floaasdt;
+/*position:float;
 width:78px;
 height:73px;
 margin:0px;
@@ -113,3 +113,8 @@ color:#006666;
 .srb{
 border-bottom:1px solid #006666;
 }
+.banner{margin-left:18px;height:100%;}
+div.aboutus p{
+font-size:13px;
+color:#338585;
+text-align:justify;}
