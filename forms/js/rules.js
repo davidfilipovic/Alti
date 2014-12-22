@@ -1,6 +1,9 @@
 /**
  * Rules
  */
+
+
+
 module.exports = {
 
   required: /.+/,
@@ -16,6 +19,9 @@ module.exports = {
   number: function(input, value) {
     return !isNaN(value);
   },
+
+
+
 
   range: function(input, value, min, max) {
     return Number(value) >= min && Number(value) <= max;
