@@ -55,43 +55,16 @@
                         <!-- Step 1 -->
 
                         <section class="idealsteps-step">
+                            <h2>Osnovni podaci</h2> 
+                            
                             <div class="field">
-                                <label class="main">Korisničko ime:</label>
-                                <input name="username" type="text" data-idealforms-ajax="ajax.php">
+                                <label class="main">Ime:</label>
+                                <input name="name" type="text" >
                                 <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">E-Mail:</label>
-                                <input name="email" type="email">
+                                <div class="field">
+                                <label class="main">Prezime:</label>
+                                <input name="lastname" type="text" >
                                 <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Šifra:</label>
-                                <input name="password" type="password">
-                                <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Ponovi šifru:</label>
-                                <input name="confirmpass" type="password">
-                                <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Datum:</label>
-                                <input name="date" type="text" placeholder="mm/dd/yyyy" class="datepicker">
-                                <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Slika:</label>
-                                <input id="picture" name="picture" type="file" multiple>
-                                <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Vebsajt:</label>
-                                <input name="website" type="text">
-                                <span class="error"></span> </div>
-                            <div class="field buttons">
-                                <label class="main">&nbsp;</label>
-                                <button type="button" class="next">Dalje &raquo;</button>
-                            </div>
-                        </section>
-
-                        <!-- Step 2 -->
-
-                        <section class="idealsteps-step">
                             <div class="field">
                                 <label class="main">Pol:</label>
                                 <p class="group">
@@ -102,7 +75,33 @@
                                         <input name="sex" type="radio" value="female">
                                         Ženski</label>
                                 </p>
+                                <span class="error"></span> </div>  
+                            <div class="field">
+                                <label class="main">Datum rodjenja:</label>
+                                <input name="date" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                 <span class="error"></span> </div>
+                            <div class="field">
+                                <label class="main">E-Mail:</label>
+                                <input name="email" type="email">
+                                <span class="error"></span> </div>
+                            <div class="field">
+                                <label class="main">Telefon:</label>
+                                <input name="phone" type="text" placeholder="">
+                                <span class="error"></span> </div>
+                            <div class="field">
+                                <label class="main">Slika:</label>
+                                <input id="picture" name="picture" type="file" multiple>
+                                <span class="error"></span> </div>
+                            <div class="field buttons">
+                                <label class="main">&nbsp;</label>
+                                <button type="button" class="next">Dalje &raquo;</button>
+                            </div>
+                        </section>
+
+                        <!-- Step 2 -->
+
+                        <section class="idealsteps-step">
+                            
                             <div class="field">
                                 <label class="main">Hobiji:</label>
                                 <p class="group">
@@ -209,12 +208,14 @@
             $('form.idealforms').idealforms({
                 silentLoad: false,
                 rules: {
+                    'name': 'required ajax',
+                    'lastname': 'required ajax',
                     'username': 'required username ajax',
                     'email': 'required email',
                     'password': 'required pass',
                     'confirmpass': 'required equalto:password',
                     'date': 'required date',
-                    'picture': 'required extension:jpg:png',
+                    'picture': 'extension:jpg:png',
                     'website': 'url',
                     'hobbies[]': 'minoption:2 maxoption:3',
                     'phone': 'required phone',
@@ -244,6 +245,10 @@
 
             $('form.idealforms').idealforms('addRules', {
                 'comments': 'required minmax:50:200'
+            });
+            
+            $('form.idealforms').idealforms('addRules', {
+                'phone': 'required minmax:8:12'
             });
 
             $('.prev').click(function () {
