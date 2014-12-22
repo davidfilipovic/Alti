@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div class="header">
     <div class='logo'>
         <img src='alti2.png'>
@@ -10,7 +10,7 @@
         <ul id="sdt_menu" class="sdt_menu">
             <li>
                 <a href="#">
-                    <img src="images/2.jpg" alt=""/>
+                    
                     <span class="sdt_active"></span>
                     <span class="sdt_wrap">
                         <span class="sdt_link">About us</span>
@@ -20,7 +20,7 @@
             </li>
             <li>
                 <a href="#">
-                    <img src="images/1.jpg" alt=""/>
+                    
                     <span class="sdt_active"></span>
                     <span class="sdt_wrap">
                         <span class="sdt_link">Portfolio</span>
@@ -35,7 +35,7 @@
             </li>
             <li>
                 <a href="#">
-                    <img src="images/4.jpg" alt=""/>
+                    
                     <span class="sdt_active"></span>
                     <span class="sdt_wrap">
                         <span class="sdt_link">Photos</span>
@@ -45,7 +45,7 @@
             </li>
             <li>
                 <a href="#">
-                    <img src="menu/images/5.jpg" alt=""/>
+                    
                     <span class="sdt_active"></span>
                     <span class="sdt_wrap">
                         <span class="sdt_link">Blog</span>
@@ -55,7 +55,7 @@
             </li>
             <li>
                 <a href="#">
-                    <img src="images/6.jpg" alt=""/>
+                    
                     <span class="sdt_active"></span>
                     <span class="sdt_wrap">
                         <span class="sdt_link">Projects</span>
@@ -118,7 +118,7 @@
                             .animate({
                                 'width': '0px',
                                 'height': '0px',
-                                'left': '85px'}, 400)
+                                'left': '170px'}, 400)
                             .andSelf()
                             .find('.sdt_wrap')
                             .stop(true)
@@ -127,4 +127,10 @@
             });
         </script>
     </div>
+	<div class='social'>
+                <a><img src='icon/facebook.png' width='33px' height='33px'></a>
+                <a><img src='icon/twitter.png' width='33px' height='33px'></a><br>
+                <a><img src='icon/google.png' width='33px' height='33px'></a>
+                <a><img src='icon/linkedin.png' width='33px' height='33px'></a>
+            </div>
 </div>
