@@ -80,16 +80,44 @@
 
     </head>
     <body>
+<<<<<<< HEAD
 	<div class='main'>
         <div id="header-2">       
+=======
+<<<<<<< HEAD
+        <div class='main'>
+            
+            <div id="header-2">
+                <div class="header_wrappera">
+=======
+        <div id="header-2">
+<<<<<<< HEAD
+            
+=======
+            <div class="header_wrappera">
+>>>>>>> origin/master
+
+                </div>
+                <div class="header_wrapper">	
+                    <?php include "menuJs.php"; ?>
+                </div>
+            </div>
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
             <div class="header_wrapper">	
                 <?php include "menuJs.php"; ?>
             </div>
         </div>
+>>>>>>> origin/master
 
-        <?php include "gallery.php"; ?>
+            <?php include "gallery.php"; ?>
 
+<<<<<<< HEAD
         
+=======
+>>>>>>> origin/master
             <div class='wrapper'>
 
 			    <div>
@@ -103,11 +131,22 @@
 				
             
             </div>
+<<<<<<< HEAD
 
                 <
             </div>
 
+=======
+<<<<<<< HEAD
+            
+           <?php include "footer.php"; ?>
+            
+        </div>
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 
+>>>>>>> origin/master
     </body>
 </html>
 

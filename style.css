@@ -22,8 +22,6 @@ body,html{
     margin:0 auto;
     position:relative;
     background-color:#333;
-
-
 }
 
 .header{
@@ -32,6 +30,16 @@ body,html{
     height: 115px;
     margin-top:0px;
     margin:0 auto;
+}
+
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:140px;
+   width:100%;
+   background:#333;
+   z-index: 13;
 }
 
 .home-content{
@@ -121,8 +129,13 @@ div.leng{
     margin-top: 0;
     top: 0;
 }
-.banner{margin-left:18px;height:100%;}
+.banner{
+    margin-left:18px;
+    height:100%;
+}
+
 div.aboutus p{
     font-size:13px;
     color:#338585;
-    text-align:justify;}
+    text-align:justify;
+}
