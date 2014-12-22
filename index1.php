@@ -80,9 +80,7 @@
     </head>
     <body>
         <div id="header-2">
-            <div class="header_wrappera">
             
-            </div>
             <div class="header_wrapper">	
                 <?php include "menuJs.php"; ?>
             </div>
@@ -92,18 +90,14 @@
 
         <div class='main'>
             <div class='wrapper'>
-<<<<<<< HEAD
-                <div class='home-content'>
 
-=======
 			    <div>
 				 <?php include "aboutus.php"; ?>
 				</div>
                 <div class='banner'>
-				  <?php include "sliding-boxes-css3/index.html"; ?>
->>>>>>> origin/master
+                  <?php include "sliding-boxes-css3/index.html"; ?>
                 </div>
-            </div>
+            
         </div>
 
     </body>
