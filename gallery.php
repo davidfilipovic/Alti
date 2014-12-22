@@ -43,4 +43,4 @@
 
 </div><!-- .fluid_container -->
 
-<div style="clear:both; display:block; height:100px"></div>
+<div style="clear:both; display:block; height:0px"></div>
