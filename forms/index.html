@@ -161,6 +161,38 @@
                                 <button type="submit" class="submit">Potvrdi</button>
                             </div>
                         </section>
+
+                        <!-- Step 4 -->
+
+                        <section class="idealsteps-step">
+                            <h2>Radno iskustvo</h2>
+                            <div class="field">
+                                <label class="main">Poslodavac:</label>
+                                <input name="employer" type="text" placeholder="Alti d.o.o.">
+                                <span class="error"></span> </div>
+                            <div class="field">Period&nbsp zaposlenja:</div>
+                            <div class="field">    
+                                <label class="main">Od:</label>
+                                <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                <span class="error"></span> </div>
+                            <div class="field">
+                                <label class="main">Do:</label>
+                                <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                <span class="error"></span> </div>
+                            <div class="field">
+                                <label class="main">Pozicija:</label>
+                                <input name="position" type="text" placeholder="dipl. ing elektrotehnike">
+                                <span class="error"></span> </div>
+                            <div class="field">
+                                <label class="main">Opis posla:</label>
+                                <textarea name="jobcomment" cols="30" rows="10"></textarea>
+                                <span class="error"></span> </div>
+                            <div class="field buttons">
+                                <label class="main">&nbsp;</label>
+                                <button type="button" class="prev">&laquo; Nazad</button>
+                                <button type="submit" class="submit">Potvrdi</button>
+                            </div>
+                        </section>
                     </div>
                     <span id="invalid"></span>
                 </form>
@@ -188,6 +220,7 @@
                     'phone': 'required phone',
                     'zip': 'required zip',
                     'options': 'select:default',
+                    'jobcomment': '',
                 },
                 errors: {
                     'username': {
