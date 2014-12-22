@@ -106,7 +106,7 @@
                                     <input id="emailforgot" name="emailforgot" type="text" placeholder="Email" />
                                 </li>
                                 <li>
-                                    <input type="submit" value="Send" class="button" />
+                                    <input name="submit" type="submit" value="Send" class="button" />
                                 </li>
                             </ul>
                         </form>
