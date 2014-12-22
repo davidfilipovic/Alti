@@ -72,6 +72,7 @@ a:hover {
     max-width: 100%;
     width: 100%;
 }
+<<<<<<< HEAD
 div.social{
     /*margin:-75px 0 15px 1250px;*/
 }
@@ -82,6 +83,17 @@ height:77px;
 margin:0px;
 margin:-55px 0 15px 1100px;
 }
+=======
+
+/*position:float;
+width:78px;
+height:73px;
+margin:0px;
+padding-left:1120px;
+margin-top:-57px;
+}*/
+
+>>>>>>> origin/master
 div.social a{cursor:pointer;}
 
 
