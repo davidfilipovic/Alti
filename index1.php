@@ -79,18 +79,19 @@
 
     </head>
     <body>
-        <div id="header-2">
-            <div class="header_wrappera">
-
-            </div>
-            <div class="header_wrapper">	
-                <?php include "menuJs.php"; ?>
-            </div>
-        </div>
-
-        <?php include "gallery.php"; ?>
-
         <div class='main'>
+            
+            <div id="header-2">
+                <div class="header_wrappera">
+
+                </div>
+                <div class="header_wrapper">	
+                    <?php include "menuJs.php"; ?>
+                </div>
+            </div>
+
+            <?php include "gallery.php"; ?>
+
             <div class='wrapper'>
                 <div class='home-content'>
                     <div>
@@ -101,7 +102,10 @@
                     </div>
                 </div>
             </div>
-
+            
+           <?php include "footer.php"; ?>
+            
+        </div>
     </body>
 </html>
 
