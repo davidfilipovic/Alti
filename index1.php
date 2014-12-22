@@ -8,18 +8,26 @@
         <link rel='stylesheet' id='camera-css' href="camera.css" type='text/css' media='all'> 
         <link rel="stylesheet" href="menu/css/stylemenu.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="sliding-boxes-css3/style.css" type="text/css" media="screen"/>
 
-        <!-- gallery scripts 
-        <script type='text/javascript' src='camera/scripts/jquery.min.js'></script>
-        <script type='text/javascript' src='camera/scripts/jquery.easing.1.3.js'></script>--> 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
         <script type="text/javascript" src="menu/jquery.easing.1.3.js"></script>
         <script type='text/javascript' src='camera/scripts/camera.min.js'></script> 
         <script type='text/javascript' src='camera/scripts/jquery.mobile.customized.min.js'></script>
 
+        <!-- header scroll -->
+        <script>
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > $('#header-2').offset().top && !($('#header-2').hasClass('posi'))) {
+                    $('#header-2').addClass('header-scroll');
+                } else if ($(window).scrollTop() === 0) {
+                    $('#header-2').removeClass('header-scroll');
+                }
+            });
+        </script>
+        <!-- end of header scroll -->
 
         <script>
-
             jQuery(function () {
 
                 jQuery('#camera_wrap_1').camera({
@@ -71,18 +79,44 @@
 
     </head>
     <body>
-        <div class='header_wrapper'>	
-            <?php include "menuJs.php"; ?>
+        <div id="header-2">
+<<<<<<< HEAD
+            
+=======
+            <div class="header_wrappera">
+
+            </div>
+>>>>>>> origin/master
+            <div class="header_wrapper">	
+                <?php include "menuJs.php"; ?>
+            </div>
         </div>
 
         <?php include "gallery.php"; ?>
 
         <div class='main'>
             <div class='wrapper'>
+<<<<<<< HEAD
+
+			    <div>
+				 <?php include "aboutus.php"; ?>
+				</div>
+                <div class='banner'>
+                  <?php include "sliding-boxes-css3/index.html"; ?>
+                </div>
+            
+        </div>
+=======
                 <div class='home-content'>
+                    <div>
+                        <?php include "aboutus.php"; ?>
+                    </div>
+                    <div class='banner'>
+                        <?php include "sliding-boxes-css3/index.html"; ?>
+                    </div>
                 </div>
             </div>
-        </div>
+>>>>>>> origin/master
 
     </body>
 </html>

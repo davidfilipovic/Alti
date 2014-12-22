@@ -103,6 +103,7 @@
                         <section class="idealsteps-step">
 
 
+
                             <div class="field">
                                 <label class="main">Nivo obrazovanja:</label>
                                 <select name="level" id="level">
@@ -209,26 +210,6 @@
                                 <span class="error"></span> </div>
 
 
-                            <div class="field">
-                                <label class="main">Hobiji:</label>
-                                <p class="group">
-                                    <label>
-                                        <input name="hobbies[]" type="checkbox" value="football">
-                                        Fudbal</label>
-                                    <label>
-                                        <input name="hobbies[]" type="checkbox" value="basketball">
-                                        Košarka</label>
-                                    <label>
-                                        <input name="hobbies[]" type="checkbox" value="dancing">
-                                        Ples</label>
-                                    <label>
-                                        <input name="hobbies[]" type="checkbox" value="dancing">
-                                        Parkur</label>
-                                    <label>
-                                        <input name="hobbies[]" type="checkbox" value="dancing">
-                                        Videoigre</label>
-                                </p>
-                                <span class="error"></span> </div>
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
                                 <button type="button" class="prev">&laquo; Nazad</button>
@@ -255,7 +236,7 @@
                                 <span class="error"></span> </div>
                             <div class="field">
                                 <label class="main">Pozicija:</label>
-                                <input name="position" type="text" placeholder="dipl. ing elektrotehnike">
+                                <input name="position" type="text" placeholder="Softverski inženjer">
                                 <span class="error"></span> </div>
                             <div class="field">
                                 <label class="main">Opis posla:</label>
@@ -271,36 +252,33 @@
                         <!-- Step 4 -->
 
                         <section class="idealsteps-step">
+                            <h2>Dodatne informacije</h2>
                             <div class="field">
-                                <label class="main">Telefon:</label>
-                                <input name="phone" type="text" placeholder="000-000-0000">
-                                <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Poštanski broj:</label>
-                                <input name="zip" type="text" placeholder="00000">
-                                <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Opcije:</label>
-                                <select name="options" id="options">
-                                    <option value="default">&ndash; Odaberite opciju &ndash;</option>
-                                    <option value="1">Jedan</option>
-                                    <option value="2">Dva</option>
-                                    <option value="3">Tri</option>
-                                    <option value="4">Četiri</option>
-                                </select>
-                                <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Komentar:</label>
-                                <textarea name="comments" cols="30" rows="10"></textarea>
+                                <label class="main">Drugo:</label>
+                                <p class="group">
+                                    <label>
+                                        <input name="other" type="checkbox" value="filed">
+                                        Rad na terenu</label>
+                                    <label>
+                                        <input name="other" type="checkbox" value="othercity">
+                                        Rad u drugom gradu</label>
+                                    <label>
+                                        <input name="other" type="checkbox" value="invalidity">
+                                        Invaliditet</label>
+                                    <span class="error"></span> </div>
+                            <div class="field">    
+                                <label class="main">Moguć pocetak rada:</label>
+                                <input name="jobfrom" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                 <span class="error"></span> </div>
                             <div class="field buttons">
-                                <label class="main">&nbsp;</label>
-                                <button type="button" class="prev">&laquo; Nazad</button>
-                                <button type="submit" class="submit">Potvrdi</button>
+                                <div class="field buttons">
+                                    <label class="main">&nbsp;</label>
+                                    <button type="button" class="prev">&laquo; Nazad</button>
+                                    <button type="submit" class="submit">Potvrdi</button>
+                                </div>
                             </div>
+                            <span id="invalid"></span>
                         </section>
-                    </div>
-                    <span id="invalid"></span>
                 </form>
             </div>
         </div>
