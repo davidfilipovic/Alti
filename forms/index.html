@@ -56,12 +56,12 @@
 
                         <section class="idealsteps-step">
                             <h2>Osnovni podaci</h2> 
-                            
+
                             <div class="field">
                                 <label class="main">Ime:</label>
                                 <input name="name" type="text" >
                                 <span class="error"></span> </div>
-                                <div class="field">
+                            <div class="field">
                                 <label class="main">Prezime:</label>
                                 <input name="lastname" type="text" >
                                 <span class="error"></span> </div>
@@ -101,7 +101,7 @@
                         <!-- Step 2 -->
 
                         <section class="idealsteps-step">
-                            
+
                             <div class="field">
                                 <label class="main">Hobiji:</label>
                                 <p class="group">
@@ -160,40 +160,37 @@
                                 <button type="submit" class="submit">Potvrdi</button>
                             </div>
                         </section>
-                        
+
                         <!-- Step 4 -->
 
                         <section class="idealsteps-step">
-                            <div class="field">
-                                <label class="main">Telefon:</label>
-                                <input name="phone" type="text" placeholder="000-000-0000">
-                                <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Poštanski broj:</label>
-                                <input name="zip" type="text" placeholder="00000">
-                                <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Opcije:</label>
-                                <select name="options" id="options">
-                                    <option value="default">&ndash; Odaberite opciju &ndash;</option>
-                                    <option value="1">Jedan</option>
-                                    <option value="2">Dva</option>
-                                    <option value="3">Tri</option>
-                                    <option value="4">Četiri</option>
-                                </select>
-                                <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Komentar:</label>
-                                <textarea name="comments" cols="30" rows="10"></textarea>
-                                <span class="error"></span> </div>
+                            <h2>Dodatne informacije</h2>
+                            <label class="main">Drugo:</label>
+                            <p class="group">
+                                <label>
+                                    <input name="other" type="checkbox" value="football">
+                                    Rad na terenu</label>
+                                <label>
+                                    <input name="other" type="checkbox" value="basketball">
+                                    Rad u drugom gradu</label>
+                                <label>
+                                    <input name="other" type="checkbox" value="dancing">
+                                    Invaliditet</label>
+                            </p>
+                            <span class="error"></span> </div>
+                        <div class="field">    
+                            <label class="main">Moguć pocetak rada:</label>
+                            <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                            <span class="error"></span> </div>
+                        <div class="field buttons">
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
                                 <button type="button" class="prev">&laquo; Nazad</button>
                                 <button type="submit" class="submit">Potvrdi</button>
                             </div>
-                        </section>
-                    </div>
-                    <span id="invalid"></span>
+                            </section>
+                        </div>
+                        <span id="invalid"></span>
                 </form>
             </div>
         </div>
@@ -246,7 +243,7 @@
             $('form.idealforms').idealforms('addRules', {
                 'comments': 'required minmax:50:200'
             });
-            
+
             $('form.idealforms').idealforms('addRules', {
                 'phone': 'required minmax:8:12'
             });
