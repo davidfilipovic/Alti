@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
@@ -9,7 +9,7 @@
     <head>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/jquery.idealforms.css">
-        <meta charset=utf-8 />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Forme</title>
         <style>
             body {
@@ -46,10 +46,12 @@
     </head>
     <body>
 
+
+        
         <div class="content">
             <div class="idealsteps-container">
                 <nav class="idealsteps-nav"> </nav>
-                <form action="" novalidate autocomplete="off" class="idealforms">
+                <form method="post" action="/profile/profile.php" novalidate autocomplete="off" class="idealforms" >
                     <div class="idealsteps-wrap"> 
 
                         <!-- Step 1 -->
@@ -100,22 +102,53 @@
 
                         <!-- Step 2 -->
 
-                        <section class="idealsteps-step">
+                        <section  class="idealsteps-step">
 
-
+                            <h2>Obrazovanje</h2> 
 
                             <div class="field">
                                 <label class="main">Nivo obrazovanja:</label>
                                 <select name="level" id="level">
                                     <option value="default">&ndash; Odaberite opciju &ndash;</option>
-                                    <option value="1">III stepen - trogodišnja srednja skola</option>
-                                    <option value="2">IV stepen - četvorogodišnja srednja škola</option>
-                                    <option value="3">VI-1 stepen - trogodišnje strukovne studije</option>
-                                    <option value="4">VI-2 stepen - trogodišnje akademske studije</option>
-                                    <option value="5">VII-1a stepen - četvorogodišnje akademske studije</option>
-                                    <option value="6">VII-1b stepen - master studije</option>
-                                    <option value="7">VII-2 stepen - magistarske studije</option>
-                                    <option value="8">VIII stepen - doktorske studije studije</option>
+                                    
+                                    <?php
+                                      
+                                    
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "AltiDB";
+$i = 1;
+
+
+
+
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+mysql_query("SET NAMES UTF8");
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT name FROM edulevel";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<option value='" .$i++. "'>" . $row["name"]. "</option>";
+      
+        
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+                                    
+                                    
+                                    ?>
                                 </select>
                                 <span class="error"></span> </div>
 
@@ -210,6 +243,21 @@
                                 <span class="error"></span> </div>
 
 
+                            <div style="visibility: hidden" class="field">
+                                <label  class="main">Univerziteti:</label>
+                                <select name="universities1" id="universities1">
+                                    <option value="default">&ndash; Odaberite opciju &ndash;</option>
+                                    <option value="1"></option>
+                                    <option value="2"></option>
+                                    <option value="3"></option>
+                                    <option value="4"></option>
+                                    <option value="5"></option>
+                                    <option value="6"></option>
+                                    <option value="7"></option>
+                                    <option value="8"></option>
+                                </select>
+                                <span class="error"></span> </div>    
+                                
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
                                 <button type="button" class="prev">&laquo; Nazad</button>
@@ -245,7 +293,7 @@
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
                                 <button type="button" class="prev">&laquo; Nazad</button>
-                                <button type="submit" class="submit">Potvrdi</button>
+                                
                             </div>
                         </section>
 
@@ -297,8 +345,8 @@
             $('form.idealforms').idealforms({
                 silentLoad: false,
                 rules: {
-                    'name': 'required ajax',
-                    'lastname': 'required ajax',
+                    'name': 'required',
+                    'lastname': 'required',
                     'username': 'required username ajax',
                     'email': 'required email',
                     'password': 'required pass',
