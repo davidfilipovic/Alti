@@ -35,11 +35,11 @@ body,html{
 #footer {
    /*position:fixed;*/
    left:0px;
-   bottom:0px;
+   bottom:0px !important;
    height:140px;
    width:100%;
    background:#333;
-   z-index: 13;
+   z-index: 17;
 }
 
 .home-content{

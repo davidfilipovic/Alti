@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="menu/css/stylemenu.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="sliding-boxes-css3/style.css" type="text/css" media="screen"/>
-		
+
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
         <script type="text/javascript" src="menu/jquery.easing.1.3.js"></script>
@@ -81,31 +81,26 @@
     </head>
     <body>
 
-	<div class='main'>                                           
+        <div class='main'>                                           
 
-                <div class="header_wrapper">	
-                    <?php include "menuJs.php"; ?>
-                </div>
-    
+            <div class="header_wrapper">	
+                <?php include "menuJs.php"; ?>
+            </div>
+
             <?php include "gallery.php"; ?>
 
             <div class='wrapper'>
 
-			    <div>
-				 <?php include "aboutus.php"; ?>
-				</div>
-				
-                <div class='banner'>
-                  <?php include "sliding-boxes-css3/index.html"; ?>
+                <div>
+                    <?php include "aboutus.php"; ?>
                 </div>
-				  				
-            
-            </div>
-           
-           <?php include "footer.php"; ?>
-            
-        </div>
 
+                <div class='banner'>
+                    <?php include "sliding-boxes-css3/index.html"; ?>
+                </div>
+            </div>
+            <?php include "footer.php"; ?>
+        </div>
     </body>
 </html>
 
