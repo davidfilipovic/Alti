@@ -3,7 +3,7 @@
         <div class='logo'>
             <img src='alti2.png'>
             <div class='logo_text'>
-                <b>Inspirativan test...</b>
+                <b>Inspirativan tekst...</b>
             </div>
         </div>
         <div class="menu">
@@ -14,7 +14,7 @@
                         <span class="sdt_active"></span>
                         <span class="sdt_wrap">
                             <span class="sdt_link">About us</span>
-                            <span class="sdt_descr">Get to know us</span>
+                            <!--<span class="sdt_descr">Get to know us</span>-->
                         </span>
                     </a>
                 </li>
@@ -24,7 +24,7 @@
                         <span class="sdt_active"></span>
                         <span class="sdt_wrap">
                             <span class="sdt_link">Portfolio</span>
-                            <span class="sdt_descr">My work</span>
+                            <!--<span class="sdt_descr">My work</span>-->
                         </span>
                     </a>
                     <div class="sdt_box">
@@ -39,7 +39,7 @@
                         <span class="sdt_active"></span>
                         <span class="sdt_wrap">
                             <span class="sdt_link">Photos</span>
-                            <span class="sdt_descr">I like to photograph</span>
+                            <!--<span class="sdt_descr">I like to photograph</span>-->
                         </span>
                     </a>
                 </li>
@@ -49,7 +49,7 @@
                         <span class="sdt_active"></span>
                         <span class="sdt_wrap">
                             <span class="sdt_link">Blog</span>
-                            <span class="sdt_descr">I write about design</span>
+                            <!--<span class="sdt_descr">I write about design</span>-->
                         </span>
                     </a>
                 </li>
@@ -59,7 +59,7 @@
                         <span class="sdt_active"></span>
                         <span class="sdt_wrap">
                             <span class="sdt_link">Projects</span>
-                            <span class="sdt_descr">I like to code</span>
+                            <!--<span class="sdt_descr">I like to code</span>-->
                         </span>
                     </a>
                     <div class="sdt_box">
@@ -84,8 +84,8 @@
                         $elem.find('img')
                                 .stop(true)
                                 .animate({
-                                    'width': '170px',
-                                    'height': '170px',
+                                    'width': '150px',
+                                    'height': '150px',
                                     'left': '0px'
                                 }, 400, 'easeOutBack')
                                 .andSelf()
@@ -95,12 +95,12 @@
                                 .andSelf()
                                 .find('.sdt_active')
                                 .stop(true)
-                                .animate({'height': '170px'}, 300, function () {
+                                .animate({'height': '150px'}, 300, function () {
                                     var $sub_menu = $elem.find('.sdt_box');
                                     if ($sub_menu.length) {
-                                        var left = '170px';
+                                        var left = '270px';
                                         if ($elem.parent().children().length == $elem.index() + 1)
-                                            left = '-170px';
+                                            left = '-250px';
                                         $sub_menu.show().animate({'left': left}, 200);
                                     }
                                 });
@@ -118,19 +118,19 @@
                                 .animate({
                                     'width': '0px',
                                     'height': '0px',
-                                    'left': '170px'}, 400)
+                                    'left': '250px'}, 400)
                                 .andSelf()
                                 .find('.sdt_wrap')
                                 .stop(true)
-                                .animate({'top': '25px'}, 500);
+                                .animate({'top': '8px'}, 500);
                     });
                 });
             </script>
         </div>
         <div class='social'>
             <a><img src='icon/facebook.png' onmouseover="this.src = 'icon/facebook_h.png'" onmouseout="this.src = 'icon/facebook.png'" width='33px' height='33px'></a>
-            <a><img src='icon/twitter.png' onmouseover="this.src = 'icon/twitter_h.png'" onmouseout="this.src = 'icon/twitter.png'" width='33px' height='33px'></a><br>
-            <a><img src='icon/google.png' onmouseover="this.src = 'icon/google_h.png'" onmouseout="this.src = 'icon/google.png'" width='33px' height='33px'></a>
+            <a><img src='icon/twitter.png' onmouseover="this.src = 'icon/twitter_h.png'" onmouseout="this.src = 'icon/twitter.png'" width='33px' height='33px'></a>
+            <!--<a><img src='icon/google.png' onmouseover="this.src = 'icon/google_h.png'" onmouseout="this.src = 'icon/google.png'" width='33px' height='33px'></a>-->
             <a><img src='icon/linkedin.png' onmouseover="this.src = 'icon/linkedin_h.png'" onmouseout="this.src = 'icon/linkedin.png'" width='33px' height='33px'></a>
         </div>
     </div>
