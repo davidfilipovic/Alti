@@ -372,6 +372,157 @@ INSERT INTO `unis` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `edulevel`
+--
+
+CREATE TABLE IF NOT EXISTS `edulevel` (
+  `id` int(5) NOT NULL,
+  `name` varchar(40) COLLATE utf8_croatian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci COMMENT='Tabela sa imenima nivoa strucne spreme';
+
+--
+-- Dumping data for table `edulevel`
+--
+
+INSERT INTO `edulevel` (`id`, `name`) VALUES
+(1, 'III stepen - trogodišnja srednja skola'),
+(2, 'IV stepen - četvorogodišnja srednja škol'),
+(3, 'VI-1 stepen - trogodišnje strukovne stud'),
+(4, 'VI-2 stepen - trogodišnje akademske stud'),
+(5, 'VII-1a stepen - četvorogodišnje akademsk'),
+(6, 'VII-1b stepen - master studije'),
+(7, 'VII-2 stepen - magistarske studije'),
+(8, 'VIII stepen - doktorske studije studije');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `highschool`
+--
+
+CREATE TABLE IF NOT EXISTS `highschool` (
+  `id_fk` int(11) NOT NULL,
+  `field` int(11) DEFAULT NULL,
+  `name` varchar(50) COLLATE utf8_croatian_ci DEFAULT NULL,
+  `smer` varchar(50) COLLATE utf8_croatian_ci DEFAULT NULL,
+  PRIMARY KEY (`id_fk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hstypes`
+--
+
+CREATE TABLE IF NOT EXISTS `hstypes` (
+  `id` int(11) NOT NULL,
+  `name` varchar(40) COLLATE utf8_croatian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profession`
+--
+
+CREATE TABLE IF NOT EXISTS `profession` (
+  `id` int(5) NOT NULL,
+  `name` varchar(40) COLLATE utf8_croatian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci COMMENT='Tabela sa imenima profesija';
+
+--
+-- Dumping data for table `profession`
+--
+
+INSERT INTO `profession` (`id`, `name`) VALUES
+(1, 'Administrativni tehničar (birotehničar)'),
+(2, 'Agroekonomski tehničar'),
+(3, 'Alatničar'),
+(4, 'Automehaničar'),
+(5, 'Autosaobraćajni tehničar'),
+(6, 'Bravar'),
+(7, 'Daktilograf'),
+(8, 'Dipl. ing. arhitekture'),
+(9, 'Dipl. ing. za menadžment'),
+(10, 'Dipl. ing. melioracije'),
+(11, 'Dipl. ing. organizacije za informacione '),
+(12, 'Dipl. ing. poljoprivrede'),
+(13, 'Dipl. ing. prehrambene tehnologije'),
+(14, 'Dipl. ing. ratarstva i povrtarstva'),
+(15, 'Dipl. ing. stočarstva'),
+(16, 'Dipl. ing. tehnologije'),
+(17, 'Dipl. ing. za zaštitu na radu'),
+(18, 'Diplomirani agroekonomista'),
+(19, 'Diplomirani biolog'),
+(20, 'Diplomirani ekonomista'),
+(21, 'Diplomirani farmaceut'),
+(22, 'Diplomirani filolog'),
+(23, 'Diplomirani filozof'),
+(24, 'Diplomirani geograf'),
+(25, 'Diplomirani građevinski inženjer'),
+(26, 'Diplomirani hemičar'),
+(27, 'Diplomirani inženjer organizacionih nauk'),
+(28, 'Diplomirani mašinski inženjer'),
+(29, 'Diplomirani politikolog'),
+(30, 'Diplomirani pravnik'),
+(31, 'Diplomirani psiholog'),
+(32, 'Diplomirani saobraćajni inženjer'),
+(33, 'Diplomirani socijalni radnik'),
+(34, 'Diplomirani sociolog'),
+(35, 'Diplomirani stomatolog'),
+(36, 'Diplomirani turizmolog'),
+(37, 'Diplomirani veterinar'),
+(38, 'Dizajner'),
+(39, 'Doktor medicine'),
+(40, 'Ekonomski tehničar'),
+(41, 'Električar'),
+(42, 'Elektromehaničar'),
+(43, 'Elektromehaničar za termičke i rashladne'),
+(44, 'Elektrotehničar'),
+(45, 'Farmaceutski tehničar'),
+(46, 'Finansijski tehničar'),
+(47, 'Grafički dizajner'),
+(48, 'Građevinski tehničar'),
+(49, 'Hemijski laborant'),
+(50, 'Hemijski tehničar'),
+(51, 'Informatičar'),
+(52, 'Inženjer organizacionih nauka'),
+(53, 'Inženjer saobraćaja'),
+(54, 'Knjigovođa'),
+(55, 'Komercijalni tehničar'),
+(56, 'Komjuterski tehničar'),
+(57, 'Magacinski radnik'),
+(58, 'Magistar ekonomije'),
+(59, 'Magistar poljoprivrede'),
+(60, 'Mašinbravar'),
+(61, 'Mašinski inženjer'),
+(62, 'Mašinski tehničar'),
+(63, 'Mašinski tehničar za kompjutersko konstr'),
+(64, 'Maturant gimnazije'),
+(65, 'Mehaničar'),
+(66, 'Mesar'),
+(67, 'Operater na računaru'),
+(68, 'Osnovna škola'),
+(69, 'Ostalo'),
+(70, 'Pogonski tehničar'),
+(71, 'Poljoprivredni tehničar'),
+(72, 'Poslovni sekretar'),
+(73, 'Pravni tehničar'),
+(74, 'Prehrambeni tehničar'),
+(75, 'Programer'),
+(76, 'Računovodstveni tehničar'),
+(77, 'Saobraćajni tehničar'),
+(78, 'Serviser rashladnih uređaja'),
+(79, 'Stomatološki tehničar'),
+(80, 'Trgovac'),
+(81, 'Turistički tehničar'),
+(82, 'Vozač');
+
+-- --------------------------------------------------------
+--
 -- Table structure for table `users`
 --
 
