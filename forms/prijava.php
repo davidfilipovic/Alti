@@ -43,11 +43,182 @@
             }
         </style>
         <link href="/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+        <script language="javascript" type="text/javascript">
+            $(document).ready(function () {
+
+                //let's create arrays
+                var univ1 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+
+                var univ2 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                 var univ3 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                 var univ4 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                 var univ5 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                 var univ6 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                 var univ7 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                 var univ8 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                 var univ9 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                 var univ10 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                 var univ11 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                 var univ12 = [
+                    {display: "Arhitektura", value: ""},
+                ]; 
+                var univ13 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                var univ14 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                var univ15 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                var univ16 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                var univ17 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                var univ18 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                var univ19 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                var univ20 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                var univ21 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                var univ22 = [
+                    {display: "Arhitektura", value: ""},
+                ];
+                
+
+                //If parent option is changed
+                $("#parent_selection").change(function () {
+                    var parent = $(this).val(); //get option value from parent 
+
+                    switch (parent) { //using switch compare selected option and populate child
+                        case 'univ1':
+                            list(univ1);
+                            break;
+                            case 'univ2':
+                            list(univ2);
+                            break;
+                            case 'univ3':
+                            list(univ3);
+                            break;
+                            case 'univ4':
+                            list(univ4);
+                            break;
+                            case 'univ5':
+                            list(univ5);
+                            break;
+                            case 'univ6':
+                            list(univ6);
+                            break;
+                            case 'univ7':
+                            list(univ7);
+                            break;
+                            case 'univ8':
+                            list(univ8);
+                            break;
+                            case 'univ9':
+                            list(univ9);
+                            break;
+                            case 'univ10':
+                            list(univ10);
+                            break;
+                            case 'univ11':
+                            list(univ11);
+                            break;
+                            case 'univ12':
+                            list(univ12);
+                            break;
+                            case 'univ13':
+                            list(univ13);
+                            break;
+                            case 'univ14':
+                            list(univ14);
+                            break;
+                            case 'univ15':
+                            list(univ15);
+                            break;
+                            case 'univ16':
+                            list(univ16);
+                            break;
+                            case 'univ17':
+                            list(univ17);
+                            break;
+                            case 'univ18':
+                            list(univ18);
+                            break;
+                            case 'univ19':
+                            list(univ19);
+                            break;
+                            case 'univ20':
+                            list(univ20);
+                            break;
+                            case 'univ21':
+                            list(univ21);
+                            break;
+                            case 'univ22':
+                            list(univ22);
+                            break;
+                            
+                            
+                        
+                    }
+                });
+
+                //function to populate child select box
+                function list(array_list)
+                {
+                    $("#child_selection").html(""); //reset child options
+                    $(array_list).each(function (i) { //populate child options 
+                        $("#child_selection").append("<option value=\"" + array_list[i].value + "\">" + array_list[i].display + "</option>");
+                    });
+                }
+
+            });
+        </script>
+
+
+
+
+
+
     </head>
     <body>
 
 
-        
+
         <div class="content">
             <div class="idealsteps-container">
                 <nav class="idealsteps-nav"> </nav>
@@ -110,19 +281,13 @@
                                 <label class="main">Nivo obrazovanja:</label>
                                 <select name="level" id="level">
                                     <option value="default">&ndash; Odaberite opciju &ndash;</option>
-                                    
-                                    <?php
-                                      
-                                    
+
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "AltiDB";
 $i = 1;
-
-
-
-
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -130,25 +295,25 @@ mysql_query("SET NAMES UTF8");
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 
 $sql = "SELECT name FROM edulevel";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "<option value='" .$i++. "'>" . $row["name"]. "</option>";
-      
-        
+    while ($row = $result->fetch_assoc()) {
+        echo "<option value='" . $i++ . "'>" . $row["name"] . "</option>";
     }
 } else {
     echo "0 results";
 }
 $conn->close();
-                                    
-                                    
-                                    ?>
+?>
+
+
+
+
                                 </select>
                                 <span class="error"></span> </div>
 
@@ -156,146 +321,394 @@ $conn->close();
                                 <label class="main">Stručno zvanje:</label>
                                 <select name="profession" id="profession">
                                     <option value="default">&ndash; Odaberite opciju &ndash;</option>
-                                    <option value="1">Administrativni tehničar (birotehničar)</option>
-                                    <option value="2">Agroekonomski tehničar</option>
-                                    <option value="3">Alatničar</option>
-                                    <option value="4">Automehaničar</option>
-                                    <option value="5">Autosaobraćajni tehničar</option>
-                                    <option value="6">Bravar</option>
-                                    <option value="7">Daktilograf</option>
-                                    <option value="8">Dipl. ing. arhitekture</option>
-                                    <option value="9">Dipl. ing. za menadžment</option>
-                                    <option value="10">Dipl. ing. melioracije</option>
-                                    <option value="11">Dipl. ing. organizacije za informacione sisteme</option>
-                                    <option value="12">Dipl. ing. poljoprivrede</option>
-                                    <option value="13">Dipl. ing. prehrambene tehnologije</option>
-                                    <option value="14">Dipl. ing. ratarstva i povrtarstva</option>
-                                    <option value="15">Dipl. ing. stočarstva</option>
-                                    <option value="16">Dipl. ing. tehnologije</option>
-                                    <option value="17">Dipl. ing. za zaštitu na radu</option>
-                                    <option value="18">Diplomirani agroekonomista</option>
-                                    <option value="19">Diplomirani biolog</option>
-                                    <option value="20">Diplomirani ekonomista</option>
-                                    <option value="21">Diplomirani farmaceut</option>
-                                    <option value="22">Diplomirani filolog</option>
-                                    <option value="23">Diplomirani filozof</option>
-                                    <option value="24">Diplomirani geograf</option>
-                                    <option value="25">Diplomirani građevinski inženjer</option>
-                                    <option value="26">Diplomirani hemičar</option>
-                                    <option value="27">Diplomirani inženjer organizacionih nauka</option>
-                                    <option value="28">Diplomirani mašinski inženjer</option>
-                                    <option value="29">Diplomirani politikolog</option>
-                                    <option value="30">Diplomirani pravnik</option>
-                                    <option value="31">Diplomirani psiholog</option>
-                                    <option value="32">Diplomirani saobraćajni inženjer</option>
-                                    <option value="33">Diplomirani socijalni radnik</option>
-                                    <option value="34">Diplomirani sociolog</option>
-                                    <option value="35">Diplomirani stomatolog</option>
-                                    <option value="36">Diplomirani turizmolog</option>
-                                    <option value="37">Diplomirani veterinar</option>
-                                    <option value="38">Dizajner</option>
-                                    <option value="39">Doktor medicine</option>
-                                    <option value="40">Ekonomski tehničar</option>
-                                    <option value="41">Električar</option>
-                                    <option value="42">Elektromehaničar</option>
-                                    <option value="43">Elektromehaničar za termičke i rashladne uređaje</option>
-                                    <option value="44">Elektrotehničar</option>
-                                    <option value="45">Farmaceutski tehničar</option>
-                                    <option value="46">Finansijski tehničar</option>
-                                    <option value="47">Grafički dizajner</option>
-                                    <option value="48">Građevinski tehničar</option>
-                                    <option value="49">Hemijski laborant</option>
-                                    <option value="50">Hemijski tehničar</option>
-                                    <option value="51">Informatičar</option>
-                                    <option value="52">Inženjer organizacionih nauka</option>
-                                    <option value="53">Inženjer saobraćaja</option>
-                                    <option value="54">Knjigovođa</option>
-                                    <option value="55">Komercijalni tehničar</option>
-                                    <option value="56">Komjuterski tehničar</option>
-                                    <option value="57">Magacinski radnik</option>
-                                    <option value="58">Magistar ekonomije</option>
-                                    <option value="59">Magistar poljoprivrede</option>
-                                    <option value="60">Mašinbravar</option>
-                                    <option value="61">Mašinski inženjer</option>
-                                    <option value="62">Mašinski tehničar</option>
-                                    <option value="63">Mašinski tehničar za kompjutersko konstruisanje</option>
-                                    <option value="64">Maturant gimnazije</option>
-                                    <option value="65">Mehaničar</option>
-                                    <option value="66">Mesar</option>
-                                    <option value="67">Operater na računaru</option>
-                                    <option value="68">Osnovna škola</option>
-                                    <option value="69">Ostalo</option>
-                                    <option value="70">Pogonski tehničar</option>
-                                    <option value="71">Poljoprivredni tehničar</option>
-                                    <option value="72">Poslovni sekretar</option>
-                                    <option value="73">Pravni tehničar</option>
-                                    <option value="74">Prehrambeni tehničar</option>
-                                    <option value="75">Programer</option>
-                                    <option value="76">Računovodstveni tehničar</option>
-                                    <option value="77">Saobraćajni tehničar</option>
-                                    <option value="78">Serviser rashladnih uređaja</option>
-                                    <option value="79">Stomatološki tehničar</option>
-                                    <option value="80">Trgovac</option>
-                                    <option value="81">Turistički tehničar</option>
-                                    <option value="82">Vozač</option>
+
+
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "AltiDB";
+$i = 1;
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+mysql_query("SET NAMES UTF8");
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT name FROM profession";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<option value='" . $i++ . "'>" . $row["name"] . "</option>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>
 
                                 </select>
                                 <span class="error"></span> </div>
 
 
-                            <div style="visibility: hidden" class="field">
+
+
+
+
+
+
+
+
+                            <div  class="field">
                                 <label  class="main">Univerziteti:</label>
                                 <select name="universities1" id="universities1">
                                     <option value="default">&ndash; Odaberite opciju &ndash;</option>
-                                    <option value="1"></option>
-                                    <option value="2"></option>
-                                    <option value="3"></option>
-                                    <option value="4"></option>
-                                    <option value="5"></option>
-                                    <option value="6"></option>
-                                    <option value="7"></option>
-                                    <option value="8"></option>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "AltiDB";
+$i = 1;
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+mysql_query("SET NAMES UTF8");
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT name FROM unis ORDER BY name";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<option value='" . $i++ . "'>" . $row["name"] . "</option>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>
                                 </select>
                                 <span class="error"></span> </div>    
-                                
+
+
+
+
+
+
+
+                            <div  class="field">
+                                <label  class="main">Fakulteti odabranog univerziteta:</label>
+                                <select name="faculties" id="faculties">
+                                    <option value="default">&ndash; Odaberite opciju &ndash;</option>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "AltiDB";
+$i = 1;
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+mysql_query("SET NAMES UTF8");
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT name FROM faculties";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<option value='" . $i++ . "'>" . $row["name"] . "</option>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>
+                                </select>
+                                <span class="error"></span> </div>                                
+
+
+
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
                                 <button type="button" class="prev">&laquo; Nazad</button>
                                 <button type="button" class="next">Dalje &raquo;</button>
                             </div>
+
+
+                            <div class="field">
+                                Category : <select name="parent_selection" id="parent_selection">
+                                    <option value="">-- Please Select --</option>
+                                    <option value="univ1">Univerzitet u Beogradu</option>
+                                    <option value="univ2">Univerzitet umetnosti u Beogradu</option>
+                                    <option value="univ3">Akademija Lepih Umetnosti</option>
+                                    <option value="univ4">Univerzitet u Novom Sadu</option>
+                                    <option value="univ5">Univerzitet u Nišu</option>
+                                    <option value="univ6">Univerzitet u Kragujevcu</option>
+                                    <option value="univ7">Univerzitet u Novom Pazaru</option>
+                                    <option value="univ8">Univerzitet odbrane</option>
+                                    <option value="univ9">Univerzitet u Prištini sa trenutnim sedištem u Kosovskoj Mitrovici</option>
+                                    <option value="univ10">Visoke škole strukovnih studija</option>
+                                    <option value="univ11">Kriminalističko Policijska Akademija</option>
+                                    <option value="univ12">Alfa Univerzitet</option>
+                                    <option value="univ13">Evropski univerzitet</option>
+                                    <option value="univ14">Internacionalni univerzitet u Novom Pazaru</option>
+                                    <option value="univ15">Megatrend Univerzitet</option>
+                                    <option value="univ16">Panevropski univerzitet Apeiron</option>
+                                    <option value="univ17">Univerzitet Educons</option>
+                                    <option value="univ18">Univerzitet Metropolitan</option>
+                                    <option value="univ19">Univerzitet Privredna akademija</option>
+                                    <option value="univ20">Univerzitet Singidunum</option>
+                                    <option value="univ21">Univerzitet Union</option>
+                                    <option value="univ22">Univerzitet UNION – Nikola Tesla</option>
+                                </select>
+                                <select name="child_selection" id="child_selection">
+                                </select>
+                            </div>
+
+
+
+
                         </section>
 
                         <!-- Step 3 -->
 
+
+
+
+
+
+
                         <section id="workexp" class="idealsteps-step">
                             <h2>Radno iskustvo</h2>
-                            <div class="field">
-                                <label class="main">Poslodavac:</label>
-                                <input name="employer" type="text" placeholder="Alti d.o.o.">
-                                <span class="error"></span> </div>
-                            <div class="field">Period&nbsp zaposlenja:</div>
-                            <div class="field">    
-                                <label class="main">Od:</label>
-                                <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
-                                <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Do:</label>
-                                <input name="to" type="text" placeholder="mm/dd/yyyy" class="datepicker">
-                                <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Pozicija:</label>
-                                <input name="position" type="text" placeholder="Softverski inženjer">
-                                <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Opis posla:</label>
-                                <textarea name="jobcomment" cols="30" rows="10"></textarea>
-                                <span class="error"></span> </div>
+
+
+
+
+
+
+                            <div id="position1" style="display:none">
+                                <div class="field add" >
+                                    <label class="main">Poslodavac:</label>
+                                    <input name="employer" type="text" placeholder="Alti d.o.o.">
+                                    <span class="error"></span> </div>
+                                <div class="field add">Period&nbsp zaposlenja:</div>
+                                <div class="field" >    
+                                    <label class="main add">Od:</label>
+                                    <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Do:</label>
+                                    <input name="to" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Pozicija:</label>
+                                    <input name="position" type="text" placeholder="">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Opis posla:</label>
+                                    <textarea name="jobcomment" cols="30" rows="10"></textarea>
+                                    <span class="error"></span> </div>
+                            </div>
+
+
+                            <div id="position2" style="display:none">
+                                <div class="field add" >
+                                    <label class="main">Poslodavac:</label>
+                                    <input name="employer" type="text" placeholder="Alti d.o.o.">
+                                    <span class="error"></span> </div>
+                                <div class="field add">Period&nbsp zaposlenja:</div>
+                                <div class="field" >    
+                                    <label class="main add">Od:</label>
+                                    <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Do:</label>
+                                    <input name="to" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Pozicija:</label>
+                                    <input name="position" type="text" placeholder="">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Opis posla:</label>
+                                    <textarea name="jobcomment" cols="30" rows="10"></textarea>
+                                    <span class="error"></span> </div>
+                            </div>
+
+                            <div id="position3" style="display:none">
+                                <div class="field add" >
+                                    <label class="main">Poslodavac:</label>
+                                    <input name="employer" type="text" placeholder="Alti d.o.o.">
+                                    <span class="error"></span> </div>
+                                <div class="field add">Period&nbsp zaposlenja:</div>
+                                <div class="field" >    
+                                    <label class="main add">Od:</label>
+                                    <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Do:</label>
+                                    <input name="to" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Pozicija:</label>
+                                    <input name="position" type="text" placeholder="">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Opis posla:</label>
+                                    <textarea name="jobcomment" cols="30" rows="10"></textarea>
+                                    <span class="error"></span> </div>
+                            </div>
+
+
+                            <div id="position4" style="display:none">
+                                <div class="field add" >
+                                    <label class="main">Poslodavac:</label>
+                                    <input name="employer" type="text" placeholder="Alti d.o.o.">
+                                    <span class="error"></span> </div>
+                                <div class="field add">Period&nbsp zaposlenja:</div>
+                                <div class="field" >    
+                                    <label class="main add">Od:</label>
+                                    <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Do:</label>
+                                    <input name="to" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Pozicija:</label>
+                                    <input name="position" type="text" placeholder="">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Opis posla:</label>
+                                    <textarea name="jobcomment" cols="30" rows="10"></textarea>
+                                    <span class="error"></span> </div>
+                            </div>
+
+
+                            <div id="position5" style="display:none">
+                                <div class="field add" >
+                                    <label class="main">Poslodavac:</label>
+                                    <input name="employer" type="text" placeholder="Alti d.o.o.">
+                                    <span class="error"></span> </div>
+                                <div class="field add">Period&nbsp zaposlenja:</div>
+                                <div class="field" >    
+                                    <label class="main add">Od:</label>
+                                    <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Do:</label>
+                                    <input name="to" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Pozicija:</label>
+                                    <input name="position" type="text" placeholder="">
+                                    <span class="error"></span> </div>
+                                <div class="field" >
+                                    <label class="main">Opis posla:</label>
+                                    <textarea name="jobcomment" cols="30" rows="10"></textarea>
+                                    <span class="error"></span> </div>
+                            </div>
+
+
+
+                            <div class="field buttons">
+                                <label class="main">&nbsp;</label>
+                                <button onclick="addForm()" type="button" >Dodaj</button>
+
+                            </div>
+
+                            <div >
+                                <label class="main">&nbsp;</label>
+                                <button onclick="hideForm()" type="button" >Obriši</button>
+
+                            </div>
+
+
+                            <script>
+                                var clicks = 1;
+
+                                function addForm() {
+
+
+                                    if (clicks === 1) {
+                                        document.getElementById("position1").style.display = "block";
+                                        clicks++;
+                                    } else if (clicks === 2) {
+                                        document.getElementById("position2").style.display = "block";
+                                        clicks++;
+                                    } else if (clicks === 3) {
+                                        document.getElementById("position3").style.display = "block";
+                                        clicks++;
+                                    } else if (clicks === 4) {
+                                        document.getElementById("position4").style.display = "block";
+                                        clicks++;
+                                    } else if (clicks === 5) {
+                                        document.getElementById("position5").style.display = "block";
+                                        clicks++;
+                                    } else if (clicks === 6) {
+
+                                    }
+
+
+                                }
+
+
+                                function hideForm() {
+                                    if (clicks === 1) {
+
+                                    } else if (clicks === 2) {
+                                        document.getElementById("position1").style.display = "none";
+                                        clicks--;
+                                    } else if (clicks === 3) {
+                                        document.getElementById("position2").style.display = "none";
+                                        clicks--;
+                                    } else if (clicks === 4) {
+                                        document.getElementById("position3").style.display = "none";
+                                        clicks--;
+                                    } else if (clicks === 5) {
+                                        document.getElementById("position4").style.display = "none";
+                                        clicks--;
+                                    } else if (clicks === 6) {
+                                        document.getElementById("position5").style.display = "none";
+                                        clicks--;
+                                    }
+
+
+                                }
+
+
+
+                            </script>
+
+
+
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
                                 <button type="button" class="prev">&laquo; Nazad</button>
-                                
+
                             </div>
+
+
+
+
                         </section>
+
+
 
                         <!-- Step 4 -->
 
@@ -318,7 +731,7 @@ $conn->close();
                                 <label class="main">Moguć početak rada:</label>
                                 <input name="jobfrom" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                 <span class="error"></span> </div>
-                                <div class="field">
+                            <div class="field">
                                 <label class="main">Rad na računaru:</label>
                                 <textarea class="textareasmall" name="compskills" cols="30" rows="10"></textarea>
                                 <span class="error"></span> </div>
@@ -342,62 +755,62 @@ $conn->close();
         <!--<script src="js/out/jquery.idealforms.min.js"></script>--> 
         <script>
 
-            $('form.idealforms').idealforms({
-                silentLoad: false,
-                rules: {
-                    'name': 'required',
-                    'lastname': 'required',
-                    'username': 'required username ajax',
-                    'email': 'required email',
-                    'password': 'required pass',
-                    'confirmpass': 'required equalto:password',
-                    'date': 'required date',
-                    'picture': 'extension:jpg:png',
-                    'website': 'url',
-                    'hobbies[]': 'minoption:2 maxoption:3',
-                    'phone': 'required phone',
-                    'zip': 'required zip',
-                    'options': 'select:default',
-                    'jobcomment': '',
-                    'level': 'required select:default',
-                    'profession': 'required select:default',
-                },
-                errors: {
-                    'username': {
-                        ajaxError: 'Username not available'
-                    }
-                },
-                onSubmit: function (invalid, e) {
-                    e.preventDefault();
-                    $('#invalid')
-                            .show()
-                            .toggleClass('valid', !invalid)
-                            .text(invalid ? (invalid + ' neispravno popunjenih polja') : 'Uspešan unos!');
-                }
-            });
+                                $('form.idealforms').idealforms({
+                                    silentLoad: false,
+                                    rules: {
+                                        'name': 'required',
+                                        'lastname': 'required',
+                                        'username': 'required username ajax',
+                                        'email': 'required email',
+                                        'password': 'required pass',
+                                        'confirmpass': 'required equalto:password',
+                                        'date': 'required date',
+                                        'picture': 'extension:jpg:png',
+                                        'website': 'url',
+                                        'hobbies[]': 'minoption:2 maxoption:3',
+                                        'phone': 'required phone',
+                                        'zip': 'required zip',
+                                        'options': 'select:default',
+                                        'jobcomment': '',
+                                        'level': 'required select:default',
+                                        'profession': 'required select:default',
+                                    },
+                                    errors: {
+                                        'username': {
+                                            ajaxError: 'Username not available'
+                                        }
+                                    },
+                                    onSubmit: function (invalid, e) {
+                                        e.preventDefault();
+                                        $('#invalid')
+                                                .show()
+                                                .toggleClass('valid', !invalid)
+                                                .text(invalid ? (invalid + ' neispravno popunjenih polja') : 'Uspešan unos!');
+                                    }
+                                });
 
 
 
-            $('form.idealforms').find('input, select, textarea').on('change keyup', function () {
-                $('#invalid').hide();
-            });
+                                $('form.idealforms').find('input, select, textarea').on('change keyup', function () {
+                                    $('#invalid').hide();
+                                });
 
-            $('form.idealforms').idealforms('addRules', {
-                'comments': 'required minmax:50:200'
-            });
+                                $('form.idealforms').idealforms('addRules', {
+                                    'comments': 'required minmax:50:200'
+                                });
 
-            $('form.idealforms').idealforms('addRules', {
-                'phone': 'required minmax:8:12'
-            });
+                                $('form.idealforms').idealforms('addRules', {
+                                    'phone': 'required minmax:8:12'
+                                });
 
-            $('.prev').click(function () {
-                $('.prev').show();
-                $('form.idealforms').idealforms('prevStep');
-            });
-            $('.next').click(function () {
-                $('.next').show();
-                $('form.idealforms').idealforms('nextStep');
-            });
+                                $('.prev').click(function () {
+                                    $('.prev').show();
+                                    $('form.idealforms').idealforms('prevStep');
+                                });
+                                $('.next').click(function () {
+                                    $('.next').show();
+                                    $('form.idealforms').idealforms('nextStep');
+                                });
 
         </script>
     </body>
