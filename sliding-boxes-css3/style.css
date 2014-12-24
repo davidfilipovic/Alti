@@ -5,8 +5,8 @@ html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, p
 dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
 a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
 strong, sub, sup, tt, var, legend, fieldset {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 /* set html5 boxs to block */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
@@ -17,7 +17,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 GENERAL STYLING
 *************************************************************************************/
 body {font: .81em/150%  Arial, Helvetica, sans-serif;color: #ccc;}
+<<<<<<< HEAD
 #container{width:1200px;height:350px;margin:0px auto}
+=======
+#container{width:1200px;
+           height: 350px;
+           margin:0px auto}
+>>>>>>> origin/master
 .tit{text-align:center; padding:10px;}
 
 /* Imposto box */
@@ -26,40 +32,40 @@ body {font: .81em/150%  Arial, Helvetica, sans-serif;color: #ccc;}
 .icon{position:absolute;z-index:12; left:10px; font-size:20px; top:7px;  width:10px; height:10px;display:block; color:#00fffe  }
 .panel h1{font-size:13px;}
 .panel p{font-weight: normal;margin-top:4px;}
-	
-	
-	/*animazione sulle immagini */
-	.box img{margin-bottom:-5px;-webkit-transition: all 0.50s ease-out;-moz-transition: all 0.50s ease-out;-o-transition: all 0.50s ease-out;-ms-transition: all 0.50s ease-out;transition: all 0.50s ease-out;}
-	.box a:hover img{opacity:0.2}
-	
-	
-	/* imposto panel*/
-	.panel{
-		position:absolute; 
-		overflow:hidden; 
-		z-index:11; 
-		color:#fff;
-		background: url(img/bg-header.png); 
-		bottom:0;
-		left:0;
-		padding: 8px 0 0px 30px;
-		display:block;
-		margin:0px; 
-		transition: all ease-in-out 300ms;-o-transition: all ease-in-out 300ms;-moz-transition: all ease-in-out 300ms;-webkit-transition: all ease-in-out 300ms;}
-  	
-	
-	/*altezza e larghezza iniziale del animazione*/	
-	.vertical .panel{width:	300px; height:25px;}
 
-  
-		
-	/*altezza e larghezza finale del animazione*/	
- 	.box a:hover .panel{height: 100px; width:260px;}
- 	
 
-	/*animazione sul testo dei box*/
-	.diagonal p,.diagonal h1, .horizontal p, .horizontal h1, .vertical p{opacity:0;/* animation */transition: all ease-in-out 1000ms;-o-transition: all ease-in-out 1000ms;-moz-transition: all ease-in-out 1000ms;-webkit-transition: all ease-in-out 1000ms;}
-	.diagonal a:hover p, .diagonal a:hover h1, .horizontal a:hover p, .horizontal a:hover h1, .vertical a:hover p{opacity:1}
+/*animazione sulle immagini */
+.box img{margin-bottom:-5px;-webkit-transition: all 0.50s ease-out;-moz-transition: all 0.50s ease-out;-o-transition: all 0.50s ease-out;-ms-transition: all 0.50s ease-out;transition: all 0.50s ease-out;}
+.box a:hover img{opacity:0.2}
+
+
+/* imposto panel*/
+.panel{
+    position:absolute; 
+    overflow:hidden; 
+    z-index:11; 
+    color:#fff;
+    background: url(img/bg-header.png); 
+    bottom:0;
+    left:0;
+    padding: 8px 0 0px 30px;
+    display:block;
+    margin:0px; 
+    transition: all ease-in-out 300ms;-o-transition: all ease-in-out 300ms;-moz-transition: all ease-in-out 300ms;-webkit-transition: all ease-in-out 300ms;}
+
+
+/*altezza e larghezza iniziale del animazione*/	
+.vertical .panel{width:	300px; height:25px;}
+
+
+
+/*altezza e larghezza finale del animazione*/	
+.box a:hover .panel{height: 100px; width:260px;}
+
+
+/*animazione sul testo dei box*/
+.diagonal p,.diagonal h1, .horizontal p, .horizontal h1, .vertical p{opacity:0;/* animation */transition: all ease-in-out 1000ms;-o-transition: all ease-in-out 1000ms;-moz-transition: all ease-in-out 1000ms;-webkit-transition: all ease-in-out 1000ms;}
+.diagonal a:hover p, .diagonal a:hover h1, .horizontal a:hover p, .horizontal a:hover h1, .vertical a:hover p{opacity:1}
 
 
 
