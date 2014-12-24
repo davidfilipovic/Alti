@@ -1,4 +1,6 @@
-
+<!doctype html>
+<html>
+<body>
     <div class="header">
         <div class='logo'>
             <img src='alti2.png'>
@@ -125,6 +127,16 @@
                                 .animate({'top': '8px'}, 500);
                     });
                 });
+				
+				
+                     function myFunction() {
+	            var  d = document.getElementById("search_icon").style.display;
+	             if(d=="none"){
+                 document.getElementById("search_icon").style.display = "block";
+	             }
+	            else{document.getElementById("search_icon").style.display = "none";}
+                 }
+
             </script>
         </div>
         <div class='social'>
@@ -133,4 +145,15 @@
             <!--<a><img src='icon/google.png' onmouseover="this.src = 'icon/google_h.png'" onmouseout="this.src = 'icon/google.png'" width='33px' height='33px'></a>-->
             <a><img src='icon/linkedin.png' onmouseover="this.src = 'icon/linkedin_h.png'" onmouseout="this.src = 'icon/linkedin.png'" width='33px' height='33px'></a>
         </div>
+		<div id='search'>
+           <div class='input_search'>
+              <input id='add_button' type='text' class='add_now' placeholder='Search'/>
+	       </div>
+	       <div class='search_icon'>
+	       <input type='image' src='search/search.ico' width='33px' height='33px' onclick="myFunction()">
+	       </div>
+        </div>
     </div>
+	
+</body>
+</html>

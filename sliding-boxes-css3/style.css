@@ -17,7 +17,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 GENERAL STYLING
 *************************************************************************************/
 body {font: .81em/150%  Arial, Helvetica, sans-serif;color: #ccc;}
-#container{width:1200px; margin:0px auto}
+#container{width:1200px;height:350px;margin:0px auto}
 .tit{text-align:center; padding:10px;}
 
 /* Imposto box */
