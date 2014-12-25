@@ -49,7 +49,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             [\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])
             \d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|
             40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$/", $name)) {
-            $nameErr = "Pogresan format datuma";
+            $dateErr = "Pogresan format datuma";
+        }
+    }
+    
+    if (empty($_POST["from"])) {
+        $from = "Date is required";
+    } else {
+        $from = test_input($_POST["from"]);
+        // check if name only contains letters and whitespace
+        if (!preg_match("/^(((0[1-9]|[12][0-8])[\/](0[1-9]|1[012]))|((29|30|31)
+            [\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])
+            \d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|
+            40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$/", $from)) {
+            $fromErr = "Pogresan format datuma";
+        }
+    }
+    
+    if (empty($_POST["jobfrom"])) {
+        $jobfrom = "Date is required";
+    } else {
+        $jobfrom = test_input($_POST["jobfrom"]);
+        // check if name only contains letters and whitespace
+        if (!preg_match("/^(((0[1-9]|[12][0-8])[\/](0[1-9]|1[012]))|((29|30|31)
+            [\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])
+            \d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|
+            40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$/", $jobfrom)) {
+            $jobfromErr = "Pogresan format datuma";
+        }
+    }
+    
+    if (empty($_POST["to"])) {
+        $to = "Date is required";
+    } else {
+        $to = test_input($_POST["to"]);
+        // check if name only contains letters and whitespace
+        if (!preg_match("/^(((0[1-9]|[12][0-8])[\/](0[1-9]|1[012]))|((29|30|31)
+            [\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])
+            \d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|
+            40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$/", $to)) {
+            $toErr = "Pogresan format datuma";
         }
     }
     

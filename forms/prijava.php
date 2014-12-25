@@ -4,11 +4,10 @@
 <!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-
 <html lang="en">
     <!--<![endif]-->
     <head>
-
+        
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/jquery.idealforms.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -390,13 +389,20 @@
             });
         </script>
 
+
+
+
+
+
     </head>
     <body>
+
+
 
         <div class="content">
             <div class="idealsteps-container">
                 <nav class="idealsteps-nav"> </nav>
-                <form name="forma" id="forma" method="post" action="formend.php" novalidate autocomplete="off" class="idealforms" accept-charset="utf-8" >
+                <form method="post" action="/profile/profile.php" novalidate autocomplete="off" class="idealforms" accept-charset="utf-8" >
                     <div class="idealsteps-wrap"> 
 
                         <!-- Step 1 -->
@@ -416,10 +422,10 @@
                                 <label class="main">Pol:</label>
                                 <p class="group">
                                     <label>
-                                        <input name="gender" type="radio" <?php if (isset($gender) && $gender == "female") echo "checked"; ?> value="male">
+                                        <input name="sex" type="radio" value="male">
                                         Muški</label>
                                     <label>
-                                        <input name="gender" type="radio" <?php if (isset($gender) && $gender == "female") echo "checked"; ?> value="female">
+                                        <input name="sex" type="radio" value="female">
                                         Ženski</label>
                                 </p>
                                 <span class="error"></span> </div>  
@@ -453,7 +459,7 @@
 
                             <div class="field">
                                 <label class="main">Nivo obrazovanja:</label>
-                                <select name="level" id="level">
+                                <select onchange="showEdu()" name="level" id="level">
                                     <option value="default">&ndash; Odaberite opciju &ndash;</option>
 
                                     <?php
@@ -485,6 +491,9 @@
                                     $conn->close();
                                     ?>
 
+
+
+
                                 </select>
                                 <span class="error"></span> </div>
 
@@ -492,6 +501,8 @@
                                 <label class="main">Stručno zvanje:</label>
                                 <select name="profession" id="profession">
                                     <option value="default">&ndash; Odaberite opciju &ndash;</option>
+
+
 
                                     <?php
                                     header('Content-Type: text/html; charset=utf-8');
@@ -527,47 +538,69 @@
                                 </select>
                                 <span class="error"></span> </div>
 
-                            <div  class="field">
-                                <label  class="main">Univerziteti:</label>
-                                <select name="parent_selection" id="parent_selection">
-                                    <option value="default">&ndash; Odaberite opciju &ndash;</option>
-                                    <option value="univ1">Univerzitet u Beogradu</option>
-                                    <option value="univ2">Univerzitet umetnosti u Beogradu</option>
-                                    <option value="univ3">Akademija Lepih Umetnosti</option>
-                                    <option value="univ4">Univerzitet u Novom Sadu</option>
-                                    <option value="univ5">Univerzitet u Nišu</option>
-                                    <option value="univ6">Univerzitet u Kragujevcu</option>
-                                    <option value="univ7">Univerzitet u Novom Pazaru</option>
-                                    <option value="univ8">Univerzitet odbrane</option>
-                                    <option value="univ9">Univerzitet u Prištini sa trenutnim sedištem u Kosovskoj Mitrovici</option>
-                                    <option value="univ10">Visoke škole strukovnih studija</option>
-                                    <option value="univ11">Kriminalističko Policijska Akademija</option>
-                                    <option value="univ12">Alfa Univerzitet</option>
-                                    <option value="univ13">Evropski univerzitet</option>
-                                    <option value="univ14">Internacionalni univerzitet u Novom Pazaru</option>
-                                    <option value="univ15">Megatrend Univerzitet</option>
-                                    <option value="univ16">Panevropski univerzitet Apeiron</option>
-                                    <option value="univ17">Univerzitet Educons</option>
-                                    <option value="univ18">Univerzitet Metropolitan</option>
-                                    <option value="univ19">Univerzitet Privredna akademija</option>
-                                    <option value="univ20">Univerzitet Singidunum</option>
-                                    <option value="univ21">Univerzitet Union</option>
-                                    <option value="univ22">Univerzitet UNION – Nikola Tesla</option>
-                                </select>
-                                <span class="error"></span> </div>    
+
+
+ <script>
+                          function showEdu(){
+                              
+                              document.getElementById("faculties").style.display = 'block';
+                              
+                              
+                              
+                          }                                                                
+                              
 
 
 
 
-                            <div  class="field">
-                                <label  class="main">Fakulteti odabranog univerziteta:</label>
-                                <select name="child_selection" id="child_selection">
-                                    <option value="default">&ndash; Odaberite opciju &ndash;</option>
-
-                                </select>
-                                <span class="error"></span> </div>                                
+                            </script>
 
 
+
+
+
+                            <div id="faculties" style="display: none">
+                                <div  class="field" >
+                                    <label  class="main">Univerziteti:</label>
+                                    <select name="parent_selection" id="parent_selection" onchange="showFac()" >
+                                        <option value="default">&ndash; Odaberite opciju &ndash;</option>
+                                        <option  value="univ1">Univerzitet u Beogradu</option>
+                                        <option value="univ2">Univerzitet umetnosti u Beogradu</option>
+                                        <option value="univ3">Akademija Lepih Umetnosti</option>
+                                        <option value="univ4">Univerzitet u Novom Sadu</option>
+                                        <option value="univ5">Univerzitet u Nišu</option>
+                                        <option value="univ6">Univerzitet u Kragujevcu</option>
+                                        <option value="univ7">Univerzitet u Novom Pazaru</option>
+                                        <option value="univ8">Univerzitet odbrane</option>
+                                        <option value="univ9">Univerzitet u Prištini sa trenutnim sedištem u Kosovskoj Mitrovici</option>
+                                        <option value="univ10">Visoke škole strukovnih studija</option>
+                                        <option value="univ11">Kriminalističko Policijska Akademija</option>
+                                        <option value="univ12">Alfa Univerzitet</option>
+                                        <option value="univ13">Evropski univerzitet</option>
+                                        <option value="univ14">Internacionalni univerzitet u Novom Pazaru</option>
+                                        <option value="univ15">Megatrend Univerzitet</option>
+                                        <option value="univ16">Panevropski univerzitet Apeiron</option>
+                                        <option value="univ17">Univerzitet Educons</option>
+                                        <option value="univ18">Univerzitet Metropolitan</option>
+                                        <option value="univ19">Univerzitet Privredna akademija</option>
+                                        <option value="univ20">Univerzitet Singidunum</option>
+                                        <option value="univ21">Univerzitet Union</option>
+                                        <option value="univ22">Univerzitet UNION – Nikola Tesla</option>
+                                    </select>
+                                    <span class="error"></span> </div>    
+
+
+
+
+                                <div  class="field">
+                                    <label  class="main">Fakulteti odabranog univerziteta:</label>
+                                    <select name="child_selection" id="child_selection">
+                                        <option value="default">&ndash; Odaberite opciju &ndash;</option>
+
+                                    </select>
+                                    <span class="error"></span> </div>                                
+
+                            </div>
 
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
@@ -575,12 +608,42 @@
                                 <button type="button" class="next">Dalje &raquo;</button>
                             </div>
 
+                           
+
+                            <script > 
+                            function showFac(){
+                                
+                                
+                                document.getElementById("faculties").style.display = 'block';
+                                
+                                
+                            }
+                            
+                            
+                            
+                            </script>
+
+
+
+
+
                         </section>
 
                         <!-- Step 3 -->
 
+
+
+
+
+
+
                         <section id="workexp" class="idealsteps-step">
                             <h2>Radno iskustvo</h2>
+
+
+
+
+
 
                             <div id="position1" style="display:none">
                                 <div class="field add" >
@@ -725,6 +788,7 @@
 
                                 function addForm() {
 
+
                                     if (clicks === 1) {
                                         document.getElementById("position1").style.display = "block";
                                         clicks++;
@@ -741,8 +805,13 @@
                                         document.getElementById("position5").style.display = "block";
                                         clicks++;
                                     } else if (clicks === 6) {
+
                                     }
+
+
                                 }
+
+
                                 function hideForm() {
                                     if (clicks === 1) {
 
@@ -762,15 +831,28 @@
                                         document.getElementById("position5").style.display = "none";
                                         clicks--;
                                     }
+
+
                                 }
 
+
+
                             </script>
+
+
+
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
                                 <button type="button" class="prev">&laquo; Nazad</button>
 
                             </div>
+
+
+
+
                         </section>
+
+
 
                         <!-- Step 4 -->
 
@@ -809,8 +891,6 @@
                 </form>
             </div>
         </div>
-        
-
         <script src="js/jquery.min.js"></script> 
         <script src="js/jquery-ui.min.js"></script> 
         <script src="js/out/jquery.idealforms.js"></script>
@@ -844,14 +924,13 @@
                                             ajaxError: 'Username not available'
                                         }
                                     },
-//                                    onSubmit:
-//                                            function (invalid, e) {
-//                                        e.preventDefault();
-//                                        $('#invalid')
-//                                                .show()
-//                                                .toggleClass('valid', !invalid)
-//                                                .text(invalid ? (invalid + ' neispravno popunjenih polja') : 'Uspešan unos!');
-//                                    }
+                                    onSubmit: function (invalid, e) {
+                                        e.preventDefault();
+                                        $('#invalid')
+                                                .show()
+                                                .toggleClass('valid', !invalid)
+                                                .text(invalid ? (invalid + ' neispravno popunjenih polja') : 'Uspešan unos!');
+                                    }
                                 });
 
 
