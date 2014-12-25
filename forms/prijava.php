@@ -4,10 +4,11 @@
 <!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
+
 <html lang="en">
     <!--<![endif]-->
     <head>
-        
+
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/jquery.idealforms.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -389,20 +390,13 @@
             });
         </script>
 
-
-
-
-
-
     </head>
     <body>
-
-
 
         <div class="content">
             <div class="idealsteps-container">
                 <nav class="idealsteps-nav"> </nav>
-                <form method="post" action="/profile/profile.php" novalidate autocomplete="off" class="idealforms" accept-charset="utf-8" >
+                <form name="forma" id="forma" method="post" action="formend.php" novalidate autocomplete="off" class="idealforms" accept-charset="utf-8" >
                     <div class="idealsteps-wrap"> 
 
                         <!-- Step 1 -->
@@ -422,10 +416,10 @@
                                 <label class="main">Pol:</label>
                                 <p class="group">
                                     <label>
-                                        <input name="sex" type="radio" value="male">
+                                        <input name="gender" type="radio" <?php if (isset($gender) && $gender == "female") echo "checked"; ?> value="male">
                                         Muški</label>
                                     <label>
-                                        <input name="sex" type="radio" value="female">
+                                        <input name="gender" type="radio" <?php if (isset($gender) && $gender == "female") echo "checked"; ?> value="female">
                                         Ženski</label>
                                 </p>
                                 <span class="error"></span> </div>  
@@ -491,9 +485,6 @@
                                     $conn->close();
                                     ?>
 
-
-
-
                                 </select>
                                 <span class="error"></span> </div>
 
@@ -501,8 +492,6 @@
                                 <label class="main">Stručno zvanje:</label>
                                 <select name="profession" id="profession">
                                     <option value="default">&ndash; Odaberite opciju &ndash;</option>
-
-
 
                                     <?php
                                     header('Content-Type: text/html; charset=utf-8');
@@ -537,15 +526,6 @@
 
                                 </select>
                                 <span class="error"></span> </div>
-
-
-
-
-
-
-
-
-
 
                             <div  class="field">
                                 <label  class="main">Univerziteti:</label>
@@ -595,31 +575,12 @@
                                 <button type="button" class="next">Dalje &raquo;</button>
                             </div>
 
-
-
-
-
-
-
-
-
                         </section>
 
                         <!-- Step 3 -->
 
-
-
-
-
-
-
                         <section id="workexp" class="idealsteps-step">
                             <h2>Radno iskustvo</h2>
-
-
-
-
-
 
                             <div id="position1" style="display:none">
                                 <div class="field add" >
@@ -764,7 +725,6 @@
 
                                 function addForm() {
 
-
                                     if (clicks === 1) {
                                         document.getElementById("position1").style.display = "block";
                                         clicks++;
@@ -781,13 +741,8 @@
                                         document.getElementById("position5").style.display = "block";
                                         clicks++;
                                     } else if (clicks === 6) {
-
                                     }
-
-
                                 }
-
-
                                 function hideForm() {
                                     if (clicks === 1) {
 
@@ -807,28 +762,15 @@
                                         document.getElementById("position5").style.display = "none";
                                         clicks--;
                                     }
-
-
                                 }
 
-
-
                             </script>
-
-
-
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
                                 <button type="button" class="prev">&laquo; Nazad</button>
 
                             </div>
-
-
-
-
                         </section>
-
-
 
                         <!-- Step 4 -->
 
@@ -867,6 +809,8 @@
                 </form>
             </div>
         </div>
+        
+
         <script src="js/jquery.min.js"></script> 
         <script src="js/jquery-ui.min.js"></script> 
         <script src="js/out/jquery.idealforms.js"></script>
@@ -900,13 +844,14 @@
                                             ajaxError: 'Username not available'
                                         }
                                     },
-                                    onSubmit: function (invalid, e) {
-                                        e.preventDefault();
-                                        $('#invalid')
-                                                .show()
-                                                .toggleClass('valid', !invalid)
-                                                .text(invalid ? (invalid + ' neispravno popunjenih polja') : 'Uspešan unos!');
-                                    }
+//                                    onSubmit:
+//                                            function (invalid, e) {
+//                                        e.preventDefault();
+//                                        $('#invalid')
+//                                                .show()
+//                                                .toggleClass('valid', !invalid)
+//                                                .text(invalid ? (invalid + ' neispravno popunjenih polja') : 'Uspešan unos!');
+//                                    }
                                 });
 
 
