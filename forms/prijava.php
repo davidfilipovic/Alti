@@ -7,9 +7,10 @@
 <html lang="en">
     <!--<![endif]-->
     <head>
+        
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/jquery.idealforms.css">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Forme</title>
         <style>
             body {
@@ -401,7 +402,7 @@
         <div class="content">
             <div class="idealsteps-container">
                 <nav class="idealsteps-nav"> </nav>
-                <form method="post" action="/profile/profile.php" novalidate autocomplete="off" class="idealforms" >
+                <form method="post" action="/profile/profile.php" novalidate autocomplete="off" class="idealforms" accept-charset="utf-8" >
                     <div class="idealsteps-wrap"> 
 
                         <!-- Step 1 -->
@@ -504,6 +505,7 @@
 
 
                                     <?php
+                                    header('Content-Type: text/html; charset=utf-8');
                                     $servername = "localhost";
                                     $username = "root";
                                     $password = "";
@@ -513,6 +515,7 @@
 // Create connection
                                     $conn = new mysqli($servername, $username, $password, $dbname);
                                     mysql_query("SET NAMES UTF8");
+                                    mysql_set_charset('utf8', $conn);
 // Check connection
                                     if ($conn->connect_error) {
                                         die("Connection failed: " . $conn->connect_error);
