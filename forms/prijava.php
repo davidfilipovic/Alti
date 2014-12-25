@@ -7,7 +7,7 @@
 <html lang="en">
     <!--<![endif]-->
     <head>
-        
+
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/jquery.idealforms.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -441,10 +441,7 @@
                                 <label class="main">Telefon:</label>
                                 <input name="phone" type="text" placeholder="">
                                 <span class="error"></span> </div>
-                            <div class="field">
-                                <label class="main">Slika:</label>
-                                <input id="picture" name="picture" type="file" multiple>
-                                <span class="error"></span> </div>
+                           
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
                                 <button type="button" class="next">Dalje &raquo;</button>
@@ -458,8 +455,8 @@
                             <h2>Obrazovanje</h2> 
 
                             <div class="field">
-                                <label class="main">Nivo obrazovanja:</label>
-                                <select onchange="showEdu()" name="level" id="level">
+                                <label id="edulev" class="main">Nivo obrazovanja:</label>
+                                <select name="level" id="level" onchange="showEdu(this)">
                                     <option value="default">&ndash; Odaberite opciju &ndash;</option>
 
                                     <?php
@@ -483,7 +480,7 @@
                                     if ($result->num_rows > 0) {
                                         // output data of each row
                                         while ($row = $result->fetch_assoc()) {
-                                            echo "<option value='" . $i++ . "'>" . $row["name"] . "</option>";
+                                            echo "<option  value='" . $i++ . "'>" . $row["name"] . "</option>";
                                         }
                                     } else {
                                         echo "0 results";
@@ -497,7 +494,14 @@
                                 </select>
                                 <span class="error"></span> </div>
 
+
+
+
+
+
                             <div class="field">
+
+
                                 <label class="main">Stručno zvanje:</label>
                                 <select name="profession" id="profession">
                                     <option value="default">&ndash; Odaberite opciju &ndash;</option>
@@ -539,30 +543,69 @@
                                 <span class="error"></span> </div>
 
 
+                            <div id="highscool" style="display: none">
 
- <script>
-                          function showEdu(){
-                              
-                              document.getElementById("faculties").style.display = 'block';
-                              
-                              
-                              
-                          }                                                                
-                              
+                                <br><br><br><br><br><h3>Podaci o srednjoj školi</h3>
+                                <div class="field">
+                                    <label class="main">Područje rada:</label>
+                                    <select name="hstype" id="hstype">
+                                        <option value="default">&ndash; Odaberite opciju &ndash;</option>
 
 
 
+                                        <?php
+                                        header('Content-Type: text/html; charset=utf-8');
+                                        $servername = "localhost";
+                                        $username = "root";
+                                        $password = "";
+                                        $dbname = "AltiDB";
+                                        $i = 1;
 
-                            </script>
+// Create connection
+                                        $conn = new mysqli($servername, $username, $password, $dbname);
+                                        mysql_query("SET NAMES UTF8");
+                                        mysql_set_charset('utf8', $conn);
+// Check connection
+                                        if ($conn->connect_error) {
+                                            die("Connection failed: " . $conn->connect_error);
+                                        }
+
+                                        $sql = "SELECT name FROM hstypes";
+                                        $result = $conn->query($sql);
+
+                                        if ($result->num_rows > 0) {
+                                            // output data of each row
+                                            while ($row = $result->fetch_assoc()) {
+                                                echo "<option value='" . $i++ . "'>" . $row["name"] . "</option>";
+                                            }
+                                        } else {
+                                            echo "0 results";
+                                        }
+                                        $conn->close();
+                                        ?>
+
+                                    </select>
+                                    <span class="error"></span> </div>
+
+                                <div class="field" >
+                                    <label class="main">Naziv srednje škole:</label>
+                                    <input name="hsname" type="text" placeholder="Naziv i mesto">
+                                </div>                                
+                            </div> 
 
 
 
 
 
                             <div id="faculties" style="display: none">
+
+
                                 <div  class="field" >
+
+                                    <br><h3 >Podaci o završenom fakultetu</h3>
+
                                     <label  class="main">Univerziteti:</label>
-                                    <select name="parent_selection" id="parent_selection" onchange="showFac()" >
+                                    <select name="parent_selection" id="parent_selection" onchange="selOther(this)">
                                         <option value="default">&ndash; Odaberite opciju &ndash;</option>
                                         <option  value="univ1">Univerzitet u Beogradu</option>
                                         <option value="univ2">Univerzitet umetnosti u Beogradu</option>
@@ -586,20 +629,51 @@
                                         <option value="univ20">Univerzitet Singidunum</option>
                                         <option value="univ21">Univerzitet Union</option>
                                         <option value="univ22">Univerzitet UNION – Nikola Tesla</option>
+                                        <option value="univ23">- Ostalo -</option>
                                     </select>
                                     <span class="error"></span> </div>    
 
 
+                                <div name="choosenfax" id="choosenfax" style="display: none">
 
+                                    <div  class="field" >
+                                        <label  class="main">Fakulteti odabranog univerziteta:</label>
+                                        <select name="child_selection" id="child_selection">
+                                            <option value="default">&ndash; Odaberite opciju &ndash;</option>
 
-                                <div  class="field">
-                                    <label  class="main">Fakulteti odabranog univerziteta:</label>
-                                    <select name="child_selection" id="child_selection">
-                                        <option value="default">&ndash; Odaberite opciju &ndash;</option>
+                                        </select>
+                                        <span class="error"></span> </div>  
 
-                                    </select>
-                                    <span class="error"></span> </div>                                
+                                    <div class="field">
+                                        <label class="main">Od:</label>
+                                        <input name="date" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                        <span class="error"></span> </div>    
 
+                                    <div class="field">
+                                        <label class="main">Do:</label>
+                                        <input name="date" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                        <span class="error"></span> </div>     
+
+                                </div>
+
+                                <div name="addfax" id="addfax" style="display: none">
+                                <div class="field" >
+                                    <label class="main">Naziv fakulteta:</label>
+                                    <input name="hsname" type="text" placeholder="Naziv i mesto">
+                                </div>  
+
+                                    <div class="field">
+                                        <label class="main">Od:</label>
+                                        <input name="date" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                        <span class="error"></span> </div>    
+
+                                    <div class="field">
+                                        <label class="main">Do:</label>
+                                        <input name="date" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                        <span class="error"></span> </div>  
+                                
+                                </div>>
+                                
                             </div>
 
                             <div class="field buttons">
@@ -608,19 +682,42 @@
                                 <button type="button" class="next">Dalje &raquo;</button>
                             </div>
 
-                           
 
-                            <script > 
-                            function showFac(){
-                                
-                                
-                                document.getElementById("faculties").style.display = 'block';
-                                
-                                
-                            }
-                            
-                            
-                            
+
+                            <script >
+                                function showEdu(element) {
+
+                                    var value = element.options[element.selectedIndex].value;
+
+                                    if (value === "default") {
+                                        document.getElementById("highscool").style.display = 'none';
+                                        document.getElementById("faculties").style.display = 'none';
+                                    } else if (value === "1" || value === "2") {
+                                        document.getElementById("highscool").style.display = 'block';
+                                        document.getElementById("faculties").style.display = 'none';
+                                    } else if (value === "3" || value === "4" || value === "5" || value === "6" || value === "7" || value === "8") {
+                                        document.getElementById("highscool").style.display = 'block';
+                                        document.getElementById("faculties").style.display = 'block';
+                                    }
+                                }
+
+
+
+                                function selOther(element) {
+
+                                    var value = element.options[element.selectedIndex].value;
+
+                                    if (value === "univ23") {
+                                        document.getElementById("choosenfax").style.display = 'none';
+                                        document.getElementById("addfax").style.display = 'block';
+                                    } else {
+                                        document.getElementById("choosenfax").style.display = 'block';
+                                        document.getElementById("addfax").style.display = 'none';
+                                        
+                                        
+                                    }
+                                }
+
                             </script>
 
 
@@ -844,7 +941,7 @@
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
                                 <button type="button" class="prev">&laquo; Nazad</button>
-
+                                <button type="button" class="next">Dalje &raquo;</button>
                             </div>
 
 
@@ -888,6 +985,37 @@
                             </div>
                             <span id="invalid"></span>
                         </section>
+                        
+                        
+                        
+                        <!-- Step 5 -->
+
+                        <section class="idealsteps-step">
+                            <h2>Files</h2>
+                            
+                             <div class="field">
+                                <label class="main">Slika:</label>
+                                <input id="picture" name="picture" type="file" multiple>
+                                <span class="error"></span> </div>
+                                
+                                
+                                
+                            <div class="field">
+                                <label class="main">Rad na računaru:</label>
+                                <textarea class="textareasmall" name="compskills" cols="30" rows="10"></textarea>
+                                <span class="error"></span> </div>
+                            <div class="field buttons">
+                                <div class="field buttons">
+                                    <label class="main">&nbsp;</label>
+                                    <button type="button" class="prev">&laquo; Nazad</button>
+                                    <button type="submit" class="submit">Potvrdi</button>
+                                </div>
+                            </div>
+                            <span id="invalid"></span>
+                        </section>
+                        
+                        
+                        
                 </form>
             </div>
         </div>
