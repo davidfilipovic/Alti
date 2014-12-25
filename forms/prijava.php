@@ -459,7 +459,7 @@
 
                             <div class="field">
                                 <label class="main">Nivo obrazovanja:</label>
-                                <select name="level" id="level">
+                                <select onchange="showEdu()" name="level" id="level">
                                     <option value="default">&ndash; Odaberite opciju &ndash;</option>
 
                                     <?php
@@ -540,54 +540,67 @@
 
 
 
+ <script>
+                          function showEdu(){
+                              
+                              document.getElementById("faculties").style.display = 'block';
+                              
+                              
+                              
+                          }                                                                
+                              
+
+
+
+
+                            </script>
 
 
 
 
 
+                            <div id="faculties" style="display: none">
+                                <div  class="field" >
+                                    <label  class="main">Univerziteti:</label>
+                                    <select name="parent_selection" id="parent_selection" onchange="showFac()" >
+                                        <option value="default">&ndash; Odaberite opciju &ndash;</option>
+                                        <option  value="univ1">Univerzitet u Beogradu</option>
+                                        <option value="univ2">Univerzitet umetnosti u Beogradu</option>
+                                        <option value="univ3">Akademija Lepih Umetnosti</option>
+                                        <option value="univ4">Univerzitet u Novom Sadu</option>
+                                        <option value="univ5">Univerzitet u Nišu</option>
+                                        <option value="univ6">Univerzitet u Kragujevcu</option>
+                                        <option value="univ7">Univerzitet u Novom Pazaru</option>
+                                        <option value="univ8">Univerzitet odbrane</option>
+                                        <option value="univ9">Univerzitet u Prištini sa trenutnim sedištem u Kosovskoj Mitrovici</option>
+                                        <option value="univ10">Visoke škole strukovnih studija</option>
+                                        <option value="univ11">Kriminalističko Policijska Akademija</option>
+                                        <option value="univ12">Alfa Univerzitet</option>
+                                        <option value="univ13">Evropski univerzitet</option>
+                                        <option value="univ14">Internacionalni univerzitet u Novom Pazaru</option>
+                                        <option value="univ15">Megatrend Univerzitet</option>
+                                        <option value="univ16">Panevropski univerzitet Apeiron</option>
+                                        <option value="univ17">Univerzitet Educons</option>
+                                        <option value="univ18">Univerzitet Metropolitan</option>
+                                        <option value="univ19">Univerzitet Privredna akademija</option>
+                                        <option value="univ20">Univerzitet Singidunum</option>
+                                        <option value="univ21">Univerzitet Union</option>
+                                        <option value="univ22">Univerzitet UNION – Nikola Tesla</option>
+                                    </select>
+                                    <span class="error"></span> </div>    
 
 
-                            <div  class="field">
-                                <label  class="main">Univerziteti:</label>
-                                <select name="parent_selection" id="parent_selection">
-                                    <option value="default">&ndash; Odaberite opciju &ndash;</option>
-                                    <option value="univ1">Univerzitet u Beogradu</option>
-                                    <option value="univ2">Univerzitet umetnosti u Beogradu</option>
-                                    <option value="univ3">Akademija Lepih Umetnosti</option>
-                                    <option value="univ4">Univerzitet u Novom Sadu</option>
-                                    <option value="univ5">Univerzitet u Nišu</option>
-                                    <option value="univ6">Univerzitet u Kragujevcu</option>
-                                    <option value="univ7">Univerzitet u Novom Pazaru</option>
-                                    <option value="univ8">Univerzitet odbrane</option>
-                                    <option value="univ9">Univerzitet u Prištini sa trenutnim sedištem u Kosovskoj Mitrovici</option>
-                                    <option value="univ10">Visoke škole strukovnih studija</option>
-                                    <option value="univ11">Kriminalističko Policijska Akademija</option>
-                                    <option value="univ12">Alfa Univerzitet</option>
-                                    <option value="univ13">Evropski univerzitet</option>
-                                    <option value="univ14">Internacionalni univerzitet u Novom Pazaru</option>
-                                    <option value="univ15">Megatrend Univerzitet</option>
-                                    <option value="univ16">Panevropski univerzitet Apeiron</option>
-                                    <option value="univ17">Univerzitet Educons</option>
-                                    <option value="univ18">Univerzitet Metropolitan</option>
-                                    <option value="univ19">Univerzitet Privredna akademija</option>
-                                    <option value="univ20">Univerzitet Singidunum</option>
-                                    <option value="univ21">Univerzitet Union</option>
-                                    <option value="univ22">Univerzitet UNION – Nikola Tesla</option>
-                                </select>
-                                <span class="error"></span> </div>    
 
 
+                                <div  class="field">
+                                    <label  class="main">Fakulteti odabranog univerziteta:</label>
+                                    <select name="child_selection" id="child_selection">
+                                        <option value="default">&ndash; Odaberite opciju &ndash;</option>
 
+                                    </select>
+                                    <span class="error"></span> </div>                                
 
-                            <div  class="field">
-                                <label  class="main">Fakulteti odabranog univerziteta:</label>
-                                <select name="child_selection" id="child_selection">
-                                    <option value="default">&ndash; Odaberite opciju &ndash;</option>
-
-                                </select>
-                                <span class="error"></span> </div>                                
-
-
+                            </div>
 
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
@@ -595,9 +608,20 @@
                                 <button type="button" class="next">Dalje &raquo;</button>
                             </div>
 
+                           
 
-
-
+                            <script > 
+                            function showFac(){
+                                
+                                
+                                document.getElementById("faculties").style.display = 'block';
+                                
+                                
+                            }
+                            
+                            
+                            
+                            </script>
 
 
 
