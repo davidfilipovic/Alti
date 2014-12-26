@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="menu/css/stylemenu.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="sliding-boxes-css3/style.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" href="css/slide_text.css" type="text/css" media="screen"/>
 
 		<link rel="stylesheet" href="search/search_style.css" type="text/css" media="screen"/>
 		<!--<link rel="stylesheet" href="rotatingImageSlider/css/style.css" type="text/css" media="screen"/>
@@ -98,7 +99,7 @@
 			
 			    <!--About us text-->
 			    <div>
-				 <?php include "aboutus.php"; ?>
+				 <?php include "slide_text.html"; ?>
 				</div>
 				
 				<!--slajder partner logo
