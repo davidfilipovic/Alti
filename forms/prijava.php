@@ -399,6 +399,79 @@
 
 
 
+        <?php
+        include('connect.inc');
+        db_connect();
+
+        function LogIn() {
+            if (!empty($_POST['emaillog']) && !empty($_POST['passlog'])) {
+
+                $query = "SELECT * FROM users WHERE email = '$_POST[emaillog]' AND password = '$_POST[passlog]'";
+
+
+                $result = mysql_query($query) or die(mysql_error());
+                $num = mysql_num_rows($result);
+
+
+
+                if ($num != 1) {
+
+                    echo 'Pogrešno korisničko ime ili šifra';
+                } else {
+
+
+                    session_start();
+                    echo 'pocela sesija!';
+
+                    // Set session variables
+                    $_SESSION["email"] = $_POST['emaillog'];
+
+                    ;
+                }
+            }
+        }
+
+        if (isset($_POST['submit'])) {
+
+
+            LogIn();
+        }
+
+
+
+        $query1 = "SELECT id FROM users WHERE email = '$_SESSION[email]'";
+
+
+        $result1 = mysql_query($query1) or die(mysql_error());
+       
+
+        while ($row = mysql_fetch_row($result1)) {
+            $i = 0;
+ 
+                $id = $row[$i];  
+     
+}
+        
+        
+        
+        
+       
+
+
+
+
+
+        db_disconnect();
+        ?>
+
+
+
+
+
+
+
+
+
         <div class="content">
             <div class="idealsteps-container">
                 <nav class="idealsteps-nav"> </nav>
@@ -407,6 +480,7 @@
 
                         <!-- Step 1 -->
 
+                        
                         <section class="idealsteps-step">
                             <h2>Osnovni podaci</h2> 
 
@@ -441,12 +515,12 @@
                                 <label class="main">Telefon:</label>
                                 <input name="phone" type="text" placeholder="">
                                 <span class="error"></span> </div>
-                                
+
                             <div class="field">
                                 <label class="main">Adresa:</label>
                                 <input name="address" type="text" placeholder="">
                                 <span class="error"></span> </div>
-                                
+
 
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
@@ -465,34 +539,36 @@
                                 <select name="level" id="level" onchange="showEdu(this)">
                                     <option value="default">&ndash; Odaberite opciju &ndash;</option>
 
-                                    <?php
-                                    $servername = "localhost";
-                                    $username = "root";
-                                    $password = "";
-                                    $dbname = "AltiDB";
-                                    $i = 1;
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "AltiDB";
+$i = 1;
+
+
 
 // Create connection
-                                    $conn = new mysqli($servername, $username, $password, $dbname);
-                                    mysqli_set_charset($conn, 'utf8');
+$conn = new mysqli($servername , $username , $password , $dbname);
+mysqli_set_charset($conn , 'utf8');
 // Check connection
-                                    if ($conn->connect_error) {
-                                        die("Connection failed: " . $conn->connect_error);
-                                    }
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-                                    $sql = "SELECT name FROM edulevel";
-                                    $result = $conn->query($sql);
+$sql = "SELECT name FROM edulevel";
+$result = $conn->query($sql);
 
-                                    if ($result->num_rows > 0) {
-                                        // output data of each row
-                                        while ($row = $result->fetch_assoc()) {
-                                            echo "<option  value='" . $i++ . "'>" . $row["name"] . "</option>";
-                                        }
-                                    } else {
-                                        echo "0 results";
-                                    }
-                                    $conn->close();
-                                    ?>
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<option value = '" . $i++ . "' > " . $row["name"] . "</option>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>
 
 
 
@@ -514,35 +590,35 @@
 
 
 
-                                    <?php
-                                    header('Content-Type: text/html; charset=utf-8');
-                                    $servername = "localhost";
-                                    $username = "root";
-                                    $password = "";
-                                    $dbname = "AltiDB";
-                                    $i = 1;
+<?php
+header('Content-Type: text/html; charset=utf-8');
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "AltiDB";
+$i = 1;
 // Create connection
 
-                                    $conn = new mysqli($servername, $username, $password, $dbname);
-                                    mysqli_set_charset($conn, 'utf8');
+$conn = new mysqli($servername , $username , $password , $dbname);
+mysqli_set_charset($conn , 'utf8');
 // Check connection
-                                    if ($conn->connect_error) {
-                                        die("Connection failed: " . $conn->connect_error);
-                                    }
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-                                    $sql = "SELECT name FROM profession";
-                                    $result = $conn->query($sql);
+$sql = "SELECT name FROM profession";
+$result = $conn->query($sql);
 
-                                    if ($result->num_rows > 0) {
-                                        // output data of each row
-                                        while ($row = $result->fetch_assoc()) {
-                                            echo "<option value='" . $i++ . "'>" . $row["name"] . "</option>";
-                                        }
-                                    } else {
-                                        echo "0 results";
-                                    }
-                                    $conn->close();
-                                    ?>
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<option value = '" . $i++ . "' > " . $row["name"] . "</option>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>
 
                                 </select>
                                 <span class="error"></span> </div>
@@ -565,35 +641,35 @@
 
 
 
-                                        <?php
-                                        header('Content-Type: text/html; charset=utf-8');
-                                        $servername = "localhost";
-                                        $username = "root";
-                                        $password = "";
-                                        $dbname = "AltiDB";
-                                        $i = 1;
+<?php
+header('Content-Type: text/html; charset=utf-8');
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "AltiDB";
+$i = 1;
 
 // Create connection
-                                        $conn = new mysqli($servername, $username, $password, $dbname);
-                                        mysqli_set_charset($conn, 'utf8');
+$conn = new mysqli($servername , $username , $password , $dbname);
+mysqli_set_charset($conn , 'utf8');
 // Check connection
-                                        if ($conn->connect_error) {
-                                            die("Connection failed: " . $conn->connect_error);
-                                        }
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-                                        $sql = "SELECT name FROM hstypes";
-                                        $result = $conn->query($sql);
+$sql = "SELECT name FROM hstypes";
+$result = $conn->query($sql);
 
-                                        if ($result->num_rows > 0) {
-                                            // output data of each row
-                                            while ($row = $result->fetch_assoc()) {
-                                                echo "<option value='" . $i++ . "'>" . $row["name"] . "</option>";
-                                            }
-                                        } else {
-                                            echo "0 results";
-                                        }
-                                        $conn->close();
-                                        ?>
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<option value = '" . $i++ . "' > " . $row["name"] . "</option>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>
 
                                         <option value="17">&ndash; Ostalo &ndash;</option>
                                     </select>
@@ -640,7 +716,7 @@
                                         <option value="univ23">- Ostalo -</option>
                                     </select>
                                     <span class="error"></span> </div>    
-                                    
+
                                 <div name="choosenfax" id="choosenfax" style="display: none">
                                     <div  class="field" >
                                         <label  class="main">Fakulteti odabranog univerziteta:</label>
@@ -961,7 +1037,7 @@
                                     <button type="button" class="next">Dalje &raquo;</button>
                                 </div>
                             </div>
-                           
+
                         </section>
 
 
@@ -977,9 +1053,9 @@
                                 <input id="picture" name="picture" type="file" multiple>
                                 <span class="error"></span> 
                             </div>
-                            
-                            
-                             <!-- Polje za dodavanje cv-a u .pdf ili .doc formatu -->
+
+
+                            <!-- Polje za dodavanje cv-a u .pdf ili .doc formatu -->
                             <div class="field">
                                 <label class="main">CV:</label>
                                 <input id="cv" name="cv" type="file" multiple>
