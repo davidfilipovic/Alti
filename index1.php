@@ -110,6 +110,56 @@
                 </div>	
 				
             </div>
+			
+			<footer>
+			
+			<div class='wrapper'>
+			
+			     <div id='left' style='float:left'>
+			         <img src='alti2.png' width='130px' height='60px'><br>
+					 
+					 <ul>
+					    <li><a>Excvxcvzxcv</a></li>
+						<li><a>Sxcvxzvx xdfx adg</a></li>
+						<li><a>Csdgsdgf sdgsd sdg</a></li>
+						<li><a>Zdsga sdg dgd</a></li>
+						<li><a>Zdg  gds </a></li>											
+					 </ul>
+			     </div>
+			
+			    <div id='right' style='float:left'>
+				 <ul>
+					    <li><a>Excvxcvzxcv</a></li>
+						<li><a>Sxcvxzvx xdfx adg</a></li>
+						<li><a>Csdgsdgf sdgsd sdg</a></li>
+						<li><a>Zdsga sdg dgd</a></li>
+						<li><a>Zdg  gds </a></li>											
+					 </ul>
+			    </div>
+			
+			    <div id='center_left' style='float:left'>
+				 <ul>
+					    <li><a>Excvxcvzxcv</a></li>
+						<li><a>Sxcvxzvx xdfx adg</a></li>
+						<li><a>Csdgsdgf sdgsd sdg</a></li>
+						<li><a>Zdsga sdg dgd</a></li>
+						<li><a>Zdg  gds </a></li>											
+					 </ul>
+			    </div>
+			
+			    <div id='center_right' style='float:left'>
+				     <ul>
+					     <li><a><img src='icon/footer_facebook.png'></a></li>
+						 <li><a><img src='icon/footer_twitter.png'></a></li>
+						 <li><a><img src='icon/footer_linkedin.png'></a></li>				 
+					 </ul>
+			    </div>
+			
+			</div>
+			</footer>
+			<div id='copyright'>
+			   Copyright 2014
+			</div>
                                     
     </div>
 
