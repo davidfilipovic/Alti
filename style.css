@@ -5,12 +5,20 @@ body,html{
 
 .main{
     width:100%;
+<<<<<<< HEAD
 	height:100%;
+=======
+    height:100%;
+>>>>>>> origin/master
 }
 
 .wrapper{
     width:1200px;
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> origin/master
     margin:0 auto;
     position:relative;
 }
@@ -60,9 +68,9 @@ body,html{
     height: 70px;
 }
 .logo_text{
-width:230px;
-height:15px;
-margin-left:15px;
+    width:230px;
+    height:15px;
+    margin-left:15px;
 }
 
 .logo_text b{
@@ -91,21 +99,12 @@ div.social{
     margin:0px;
     margin:-46px 0 15px 1000px;
 }
-
 div.social a{
     cursor:pointer;
 }
-/*position:float;
-width:78px;
-height:73px;
-margin:0px;
-padding-left:1120px;
-margin-top:-57px;
-}*/
-
-div.social a{cursor:pointer;}
-
-
+div.social a{
+    cursor:pointer;
+}
 .social li img{
     width:33px;
     height:33px;
@@ -128,7 +127,11 @@ div.leng{
     top: 0;
 }
 .banner{
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> origin/master
     height:350px;
 }
 
@@ -138,17 +141,22 @@ div.aboutus p{
     text-align:justify;
 }
 
-footer {
-   /*position:fixed;*/
+<<<<<<< HEAD
+ #footer {
+     /*position:fixed;*/
    padding-top:20px;
    left:0px;
    bottom:0px !important;
    height:240px;
    width:100%;
-   background:#333;
-   z-index: 17;
-}
+   
+      background:#333;
+   z-index: 17; 
+}                    
 
+
+  
+}
 div#left,div#right,div#center_right,div#centerleft{
 width:300px;
 border-left:1px solid #33333;
@@ -179,4 +187,94 @@ width:100%;
 height:40px;
 background-color:#000E0E;
 }
+        
+=======
+footer {
+    /*position:fixed;*/
+    padding-top:20px;
+    left:0px;
+    bottom:0px !important;
+    height:240px;
+    width:100%;
+    background:#333;
+    z-index: 17;
+}
 
+/*div#left,div#right,div#center_right,div#centerleft{
+
+}*/
+#footer_div{
+    width:15%;
+    height: 80%;
+    display: block;
+    font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
+  
+}
+.footer_elements{
+      border-left: 1px solid white;
+      padding-left: 20px;
+    
+}
+footer #center_right ul li{
+    list-style-type:none;
+    float:left;
+}
+footer ul{
+    padding-left: 0px;
+    list-style-type:none;
+    /*margin-left:45px;*/
+}
+footer ul li{
+    list-style-type:none;
+    /*margin-left:45px;*/
+}
+footer ul li a{
+    cursor:pointer;
+    color:#989697;
+}
+footer ul li a:hover{
+    color:#A1001D;
+}
+
+footer ul li img{
+    width:25px;
+    height:25px;
+}
+div#copyright{
+    /*width:100%;*/
+    height:40px;
+    background-color:#000E0E;
+}
+div#copyright_text{
+    height:40px;
+    width:50%;
+    margin-left: 50%;
+    text-align: left;
+    vertical-align: middle;
+    display: table-cell;
+}
+.footer_logo{
+    height:40px;
+    float:left;
+    width: 50%;
+    text-align: right;
+}
+
+#footer_wrapper{
+    display: block;
+    /*margin-left: 50px;*/
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+h5{
+    color: #989697;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+>>>>>>> origin/master
