@@ -1,0 +1,26 @@
+﻿input[type=text]{
+width:135px;
+height:25px;
+z-index:90;
+display:none;
+}
+div#search{
+width:174px;
+height:33px;
+margin:-90px 0px 0px 1000px;
+}
+div.input_search{
+margin:0;
+padding:0;
+height:33px;
+width:141px;
+}
+div.search_icon{
+float:left;
+width:35px;
+height:35px;
+margin:-34px 1px 1px 140px;
+}
+div.search_icon img{
+z-index:90;
+}
