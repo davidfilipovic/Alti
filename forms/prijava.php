@@ -402,7 +402,7 @@
         <div class="content">
             <div class="idealsteps-container">
                 <nav class="idealsteps-nav"> </nav>
-                <form method="post" action="/profile/profile.php" novalidate autocomplete="off" class="idealforms" accept-charset="utf-8" >
+                <form method="post" action="formend.php" novalidate autocomplete="off" class="idealforms" accept-charset="utf-8" >
                     <div class="idealsteps-wrap"> 
 
                         <!-- Step 1 -->
@@ -441,6 +441,12 @@
                                 <label class="main">Telefon:</label>
                                 <input name="phone" type="text" placeholder="">
                                 <span class="error"></span> </div>
+                                
+                            <div class="field">
+                                <label class="main">Adresa:</label>
+                                <input name="address" type="text" placeholder="">
+                                <span class="error"></span> </div>
+                                
 
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
@@ -541,7 +547,13 @@
                                 </select>
                                 <span class="error"></span> </div>
 
+                            <script>
+                                function showEdu() {
 
+
+                                    document.getElementById("faculties").style.display = 'block';
+                                }
+                            </script>
                             <div id="highscool" style="display: none">
 
                                 <br><br><br><br><br>
@@ -593,10 +605,6 @@
                                 </div>                                
                             </div> 
 
-
-
-
-
                             <div id="faculties" style="display: none">
 
 
@@ -632,10 +640,8 @@
                                         <option value="univ23">- Ostalo -</option>
                                     </select>
                                     <span class="error"></span> </div>    
-
-
+                                    
                                 <div name="choosenfax" id="choosenfax" style="display: none">
-
                                     <div  class="field" >
                                         <label  class="main">Fakulteti odabranog univerziteta:</label>
                                         <select name="child_selection" id="child_selection">
@@ -682,9 +688,11 @@
                                 <button type="button" class="next">Dalje &raquo;</button>
                             </div>
 
-
-
                             <script >
+                                function showFac() {
+                                    document.getElementById("faculties").style.display = 'block';
+                                }
+
                                 function showEdu(element) {
 
                                     var value = element.options[element.selectedIndex].value;
@@ -719,28 +727,11 @@
                                 }
 
                             </script>
-
-
-
-
-
                         </section>
 
                         <!-- Step 3 -->
-
-
-
-
-
-
-
                         <section id="workexp" class="idealsteps-step">
                             <h2>Radno iskustvo</h2>
-
-
-
-
-
 
                             <div id="position1" style="display:none">
                                 <div class="field add" >
@@ -765,7 +756,6 @@
                                     <textarea name="jobcomment" cols="30" rows="10"></textarea>
                                     <span class="error"></span> </div>
                             </div>
-
 
                             <div id="position2" style="display:none">
                                 <div class="field add" >
@@ -815,7 +805,6 @@
                                     <span class="error"></span> </div>
                             </div>
 
-
                             <div id="position4" style="display:none">
                                 <div class="field add" >
                                     <label class="main">Poslodavac:</label>
@@ -839,7 +828,6 @@
                                     <textarea name="jobcomment" cols="30" rows="10"></textarea>
                                     <span class="error"></span> </div>
                             </div>
-
 
                             <div id="position5" style="display:none">
                                 <div class="field add" >
@@ -865,8 +853,6 @@
                                     <span class="error"></span> </div>
                             </div>
 
-
-
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
                                 <button onclick="addForm()" type="button" >Dodaj</button>
@@ -879,12 +865,10 @@
 
                             </div>
 
-
                             <script>
                                 var clicks = 1;
 
                                 function addForm() {
-
 
                                     if (clicks === 1) {
                                         document.getElementById("position1").style.display = "block";
@@ -902,12 +886,8 @@
                                         document.getElementById("position5").style.display = "block";
                                         clicks++;
                                     } else if (clicks === 6) {
-
                                     }
-
-
                                 }
-
 
                                 function hideForm() {
                                     if (clicks === 1) {
@@ -928,15 +908,9 @@
                                         document.getElementById("position5").style.display = "none";
                                         clicks--;
                                     }
-
-
                                 }
 
-
-
                             </script>
-
-
 
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
@@ -944,12 +918,7 @@
                                 <button type="button" class="next">Dalje &raquo;</button>
                             </div>
 
-
-
-
                         </section>
-
-
 
                         <!-- Step 4 -->
 
@@ -961,13 +930,13 @@
                                 <label class="main">Drugo:</label>
                                 <p class="group">
                                     <label>
-                                        <input name="other" type="checkbox" value="filed">
+                                        <input id="fieldwork" name="fieldwork" type="checkbox" value="fieled">
                                         Rad na terenu</label>
                                     <label>
-                                        <input name="other" type="checkbox" value="othercity">
+                                        <input id="remotework" name="remotework" type="checkbox" value="othercity">
                                         Rad u drugom gradu</label>
                                     <label>
-                                        <input name="other" type="checkbox" value="invalidity">
+                                        <input id="invalidity" name="invalidity" type="checkbox" value="invalidity">
                                         Invaliditet</label>
                                     <span class="error"></span> </div>
 
@@ -1069,16 +1038,14 @@
                                             ajaxError: 'Username not available'
                                         }
                                     },
-                                    onSubmit: function (invalid, e) {
-                                        e.preventDefault();
-                                        $('#invalid')
-                                                .show()
-                                                .toggleClass('valid', !invalid)
-                                                .text(invalid ? (invalid + ' neispravno popunjenih polja') : 'Uspešan unos!');
-                                    }
+//                                    onSubmit: function (invalid, e) {
+//                                        e.preventDefault();
+//                                        $('#invalid')
+//                                                .show()
+//                                                .toggleClass('valid', !invalid)
+//                                                .text(invalid ? (invalid + ' neispravno popunjenih polja') : 'Uspešan unos!');
+//                                    }
                                 });
-
-
 
                                 $('form.idealforms').find('input, select, textarea').on('change keyup', function () {
                                     $('#invalid').hide();
