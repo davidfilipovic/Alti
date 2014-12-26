@@ -87,19 +87,6 @@
     <body>
 
         <div class='main'>                                           
-<<<<<<< HEAD
-
-            <div class="header_wrapper">	
-                <?php include "menuJs.php"; ?>
-            </div>
-
-            <?php include "gallery.php"; ?>
-
-            <div class='wrapper'>
-                <div>
-                    <?php include "aboutus.php"; ?>
-                </div>
-=======
          
                 <div class="header_wrapper">	
                     <?php include "menuJs.php"; ?>
@@ -118,19 +105,64 @@
 				?php include "rotatingImageSlider/index.html"; ?>--> 
 				
 				<!--baneri Alti brendovi-->
->>>>>>> origin/master
                 <div class='banner'>
                   <?php include "sliding-boxes-css3/index.html"; ?>
                 </div>	
 				
             </div>
-<<<<<<< HEAD
-        </div>
-=======
+			
+			<footer>
+			
+			<div class='wrapper'>
+			
+			     <div id='left' style='float:left'>
+			         <img src='alti2.png' width='130px' height='60px'><br>
+					 
+					 <ul>
+					    <li><a>Excvxcvzxcv</a></li>
+						<li><a>Sxcvxzvx xdfx adg</a></li>
+						<li><a>Csdgsdgf sdgsd sdg</a></li>
+						<li><a>Zdsga sdg dgd</a></li>
+						<li><a>Zdg  gds </a></li>											
+					 </ul>
+			     </div>
+			
+			    <div id='right' style='float:left'>
+				 <ul>
+					    <li><a>Excvxcvzxcv</a></li>
+						<li><a>Sxcvxzvx xdfx adg</a></li>
+						<li><a>Csdgsdgf sdgsd sdg</a></li>
+						<li><a>Zdsga sdg dgd</a></li>
+						<li><a>Zdg  gds </a></li>											
+					 </ul>
+			    </div>
+			
+			    <div id='center_left' style='float:left'>
+				 <ul>
+					    <li><a>Excvxcvzxcv</a></li>
+						<li><a>Sxcvxzvx xdfx adg</a></li>
+						<li><a>Csdgsdgf sdgsd sdg</a></li>
+						<li><a>Zdsga sdg dgd</a></li>
+						<li><a>Zdg  gds </a></li>											
+					 </ul>
+			    </div>
+			
+			    <div id='center_right' style='float:left'>
+				     <ul>
+					     <li><a><img src='icon/footer_facebook.png'></a></li>
+						 <li><a><img src='icon/footer_twitter.png'></a></li>
+						 <li><a><img src='icon/footer_linkedin.png'></a></li>				 
+					 </ul>
+			    </div>
+			
+			</div>
+			</footer>
+			<div id='copyright'>
+			   Copyright 2014
+			</div>
                                     
     </div>
 
->>>>>>> origin/master
     </body>
 </html>
 
