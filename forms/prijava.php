@@ -389,11 +389,6 @@
             });
         </script>
 
-
-
-
-
-
     </head>
     <body>
 
@@ -466,16 +461,11 @@
 
 
 
-
-
-
-
-
-
         <div class="content">
             <div class="idealsteps-container">
                 <nav class="idealsteps-nav"> </nav>
-                <form method="post" action="formend.php" novalidate autocomplete="off" class="idealforms" accept-charset="utf-8" >
+                <form method="post" action="formend.php" novalidate autocomplete="off" 
+                      class="idealforms" accept-charset="utf-8" enctype="multipart/form-data" >
                     <div class="idealsteps-wrap"> 
 
                         <!-- Step 1 -->
@@ -1050,6 +1040,7 @@ $conn->close();
                             <!-- Polje za dodavanje slike -->
                             <div class="field">
                                 <label class="main">Slika:</label>
+                                <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
                                 <input id="picture" name="picture" type="file" multiple>
                                 <span class="error"></span> 
                             </div>
@@ -1058,6 +1049,7 @@ $conn->close();
                             <!-- Polje za dodavanje cv-a u .pdf ili .doc formatu -->
                             <div class="field">
                                 <label class="main">CV:</label>
+                                <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
                                 <input id="cv" name="cv" type="file" multiple>
                                 <span class="error"></span> 
                             </div>
@@ -1071,11 +1063,8 @@ $conn->close();
                                 </div>
                             </div>
 
-
                             <span id="invalid"></span>
                         </section>
-
-
 
                 </form>
             </div>
