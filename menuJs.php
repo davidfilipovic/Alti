@@ -11,7 +11,7 @@
         <div class="menu">
             <ul id="sdt_menu" class="sdt_menu">
                 <li>
-                    <a href="#">
+                    <a href="/alti/aboutus.php">
 
                         <span class="sdt_active"></span>
                         <span class="sdt_wrap">
