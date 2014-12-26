@@ -119,7 +119,13 @@ ul.sdt_menu li div.sdt_box a:first-child{
 ul.sdt_menu li div.sdt_box a:hover{
 	color:#fff;
 }
-ul a img{height:130px !important;}
+<<<<<<< HEAD
+ul a img{
+    height:130px;
+}
+=======
+
+>>>>>>> origin/master
  
 
 

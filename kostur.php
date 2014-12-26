@@ -94,9 +94,16 @@
     
 
             <div class='wrapper'>
+<<<<<<< HEAD
 			                          
                     
 				      
+=======
+			                       <br><br><br> <br> <br><br> <br> <br>
+			     
+                    
+				      <br> <br> <br> <br><br><br><br>
+>>>>>>> origin/master
             </div>
 			
 			<footer>

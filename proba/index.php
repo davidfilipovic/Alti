@@ -88,6 +88,7 @@
                                     <input id="passreg" name="passreg" type="password" placeholder="Šifra" />
                                 </li>
                                 <li>
+
                                     <input name="submit" type="submit" value="Registruj se" class="button" />
                                 </li>
                             </ul>
