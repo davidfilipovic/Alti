@@ -90,16 +90,13 @@
             <?php include "gallery.php"; ?>
 
             <div class='wrapper'>
-
                 <div>
                     <?php include "aboutus.php"; ?>
                 </div>
-
                 <div class='banner'>
                     <?php include "sliding-boxes-css3/index.html"; ?>
                 </div>
             </div>
-            <?php include "footer.php"; ?>
         </div>
     </body>
 </html>
