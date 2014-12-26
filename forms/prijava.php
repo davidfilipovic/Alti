@@ -441,7 +441,7 @@
                                 <label class="main">Telefon:</label>
                                 <input name="phone" type="text" placeholder="">
                                 <span class="error"></span> </div>
-                           
+
                             <div class="field buttons">
                                 <label class="main">&nbsp;</label>
                                 <button type="button" class="next">Dalje &raquo;</button>
@@ -468,7 +468,7 @@
 
 // Create connection
                                     $conn = new mysqli($servername, $username, $password, $dbname);
-                                    mysql_query("SET NAMES UTF8");
+                                    mysqli_set_charset($conn, 'utf8');
 // Check connection
                                     if ($conn->connect_error) {
                                         die("Connection failed: " . $conn->connect_error);
@@ -515,11 +515,10 @@
                                     $password = "";
                                     $dbname = "AltiDB";
                                     $i = 1;
-
 // Create connection
+
                                     $conn = new mysqli($servername, $username, $password, $dbname);
-                                    mysql_query("SET NAMES UTF8");
-                                    mysql_set_charset('utf8', $conn);
+                                    mysqli_set_charset($conn, 'utf8');
 // Check connection
                                     if ($conn->connect_error) {
                                         die("Connection failed: " . $conn->connect_error);
@@ -545,7 +544,8 @@
 
                             <div id="highscool" style="display: none">
 
-                                <br><br><br><br><br><h3>Podaci o srednjoj školi</h3>
+                                <br><br><br><br><br>
+                                <h3>Podaci o srednjoj školi</h3>
                                 <div class="field">
                                     <label class="main">Područje rada:</label>
                                     <select name="hstype" id="hstype">
@@ -563,8 +563,7 @@
 
 // Create connection
                                         $conn = new mysqli($servername, $username, $password, $dbname);
-                                        mysql_query("SET NAMES UTF8");
-                                        mysql_set_charset('utf8', $conn);
+                                        mysqli_set_charset($conn, 'utf8');
 // Check connection
                                         if ($conn->connect_error) {
                                             die("Connection failed: " . $conn->connect_error);
@@ -584,6 +583,7 @@
                                         $conn->close();
                                         ?>
 
+                                        <option value="17">&ndash; Ostalo &ndash;</option>
                                     </select>
                                     <span class="error"></span> </div>
 
@@ -657,10 +657,10 @@
                                 </div>
 
                                 <div name="addfax" id="addfax" style="display: none">
-                                <div class="field" >
-                                    <label class="main">Naziv fakulteta:</label>
-                                    <input name="hsname" type="text" placeholder="Naziv i mesto">
-                                </div>  
+                                    <div class="field" >
+                                        <label class="main">Naziv fakulteta:</label>
+                                        <input name="hsname" type="text" placeholder="Naziv i mesto">
+                                    </div>  
 
                                     <div class="field">
                                         <label class="main">Od:</label>
@@ -671,9 +671,9 @@
                                         <label class="main">Do:</label>
                                         <input name="date" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                         <span class="error"></span> </div>  
-                                
-                                </div>>
-                                
+
+                                </div>
+
                             </div>
 
                             <div class="field buttons">
@@ -713,8 +713,8 @@
                                     } else {
                                         document.getElementById("choosenfax").style.display = 'block';
                                         document.getElementById("addfax").style.display = 'none';
-                                        
-                                        
+
+
                                     }
                                 }
 
@@ -955,6 +955,8 @@
 
                         <section class="idealsteps-step">
                             <h2>Dodatne informacije</h2>
+
+                            <!-- Checkbox za rad na terenu, rad u drugom gradu, invaliditet -->  
                             <div class="field">
                                 <label class="main">Drugo:</label>
                                 <p class="group">
@@ -968,42 +970,54 @@
                                         <input name="other" type="checkbox" value="invalidity">
                                         Invaliditet</label>
                                     <span class="error"></span> </div>
+
+                            <!-- Odabir datuma moguceg pocetka rada -->    
                             <div class="field">    
                                 <label class="main">Moguć početak rada:</label>
                                 <input name="jobfrom" type="text" placeholder="mm/dd/yyyy" class="datepicker">
-                                <span class="error"></span> </div>
+                                <span class="error"></span> 
+                            </div>
+
+                            <!-- Tekstualno polje za unos info o poznavanju rada na racunaru -->  
                             <div class="field">
                                 <label class="main">Rad na računaru:</label>
                                 <textarea class="textareasmall" name="compskills" cols="30" rows="10"></textarea>
                                 <span class="error"></span> </div>
                             <div class="field buttons">
+
+                                <!-- Dugme za povratak nazad i za korak napred -->  
                                 <div class="field buttons">
                                     <label class="main">&nbsp;</label>
                                     <button type="button" class="prev">&laquo; Nazad</button>
-                                    <button type="submit" class="submit">Potvrdi</button>
+                                    <button type="button" class="next">Dalje &raquo;</button>
                                 </div>
                             </div>
-                            <span id="invalid"></span>
+                           
                         </section>
-                        
-                        
-                        
+
+
+
                         <!-- Step 5 -->
 
                         <section class="idealsteps-step">
-                            <h2>Files</h2>
-                            
-                             <div class="field">
+                            <h2>Datoteke</h2>
+
+                            <!-- Polje za dodavanje slike -->
+                            <div class="field">
                                 <label class="main">Slika:</label>
                                 <input id="picture" name="picture" type="file" multiple>
-                                <span class="error"></span> </div>
-                                
-                                
-                                
+                                <span class="error"></span> 
+                            </div>
+                            
+                            
+                             <!-- Polje za dodavanje cv-a u .pdf ili .doc formatu -->
                             <div class="field">
-                                <label class="main">Rad na računaru:</label>
-                                <textarea class="textareasmall" name="compskills" cols="30" rows="10"></textarea>
-                                <span class="error"></span> </div>
+                                <label class="main">CV:</label>
+                                <input id="cv" name="cv" type="file" multiple>
+                                <span class="error"></span> 
+                            </div>
+
+                            <!-- Dugme za povratak nazad i potvrdjivanje forme -->    
                             <div class="field buttons">
                                 <div class="field buttons">
                                     <label class="main">&nbsp;</label>
@@ -1011,11 +1025,13 @@
                                     <button type="submit" class="submit">Potvrdi</button>
                                 </div>
                             </div>
+
+
                             <span id="invalid"></span>
                         </section>
-                        
-                        
-                        
+
+
+
                 </form>
             </div>
         </div>
@@ -1038,6 +1054,7 @@
                                         'confirmpass': 'required equalto:password',
                                         'date': 'required date',
                                         'picture': 'extension:jpg:png',
+                                        'cv': 'extension:pdf:doc:docx',
                                         'website': 'url',
                                         'hobbies[]': 'minoption:2 maxoption:3',
                                         'phone': 'required phone',
