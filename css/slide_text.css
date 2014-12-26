@@ -2,6 +2,7 @@
 .slider {
   width: 100%;
   height: 400px;
+  margin:30px 0px 30px 0px;
 }
 .slide {
   float: left;
@@ -10,11 +11,11 @@
 }
 .slide p{
 margin:20px;
-font-size:14px;
-font-family:batang;
+font-size:11px;
+font-family:arial;
 line-height:26px;
-color:#8A2E2E;
-
+color:#292929;
+ text-transform: uppercase;
 }
 .slide{
 border-left:1px solid #808080;
@@ -34,8 +35,11 @@ content: url('../icon/before.ico');
 .slide li a{
 cursor:pointer;
 font-size:16px;
-position:bottom;
+bottom:0;
 }
+div.slide:hover{
+color:#fff;
+background-color:#CC0000;
 }
 .holder {
   width: 300%;

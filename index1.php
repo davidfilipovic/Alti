@@ -96,19 +96,7 @@
             <?php include "gallery.php"; ?>
 
             <div class='wrapper'>
-<<<<<<< HEAD
-
-                <!--About us text-->
-                <div>
-                    <?php include "aboutus.php"; ?>
-                </div>
-
-                <!--slajder partner logo
-                ?php include "rotatingImageSlider/index.html"; ?>--> 
-
-                <!--baneri Alti brendovi-->
-=======
-			
+		
 			    <!--About us text-->
 			    <div>
 				 <?php include "slide_text.html"; ?>
@@ -118,7 +106,6 @@
 				?php include "rotatingImageSlider/index.html"; ?>--> 
 				
 				<!--baneri Alti brendovi-->
->>>>>>> origin/master
                 <div class='banner'>
                     <?php include "sliding-boxes-css3/index.html"; ?>
                 </div>	
