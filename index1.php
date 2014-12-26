@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="menu/css/stylemenu.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="sliding-boxes-css3/style.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" href="css/slide_text.css" type="text/css" media="screen"/>
 
         <link rel="stylesheet" href="search/search_style.css" type="text/css" media="screen"/>
         <!--<link rel="stylesheet" href="rotatingImageSlider/css/style.css" type="text/css" media="screen"/>
@@ -95,6 +96,7 @@
             <?php include "gallery.php"; ?>
 
             <div class='wrapper'>
+<<<<<<< HEAD
 
                 <!--About us text-->
                 <div>
@@ -105,6 +107,18 @@
                 ?php include "rotatingImageSlider/index.html"; ?>--> 
 
                 <!--baneri Alti brendovi-->
+=======
+			
+			    <!--About us text-->
+			    <div>
+				 <?php include "slide_text.html"; ?>
+				</div>
+				
+				<!--slajder partner logo
+				?php include "rotatingImageSlider/index.html"; ?>--> 
+				
+				<!--baneri Alti brendovi-->
+>>>>>>> origin/master
                 <div class='banner'>
                     <?php include "sliding-boxes-css3/index.html"; ?>
                 </div>	
