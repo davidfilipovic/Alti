@@ -59,7 +59,7 @@
                         <p>
                             Da bi bili u mogućnosti da se prijavite, prvo se morate registrovati. 
                         </p>
-                        <form method="post" action="login.php">
+                        <form method="post" action="http://localhost:8080/Alti/forms/prijava.php">
                             <ul>
                                 <li>
                                     <input id="emaillog" name="emaillog" type="text" placeholder="Email" />
