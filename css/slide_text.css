@@ -39,6 +39,10 @@ bottom:0;
 }
 div.slide:hover{
 color:#fff;
+<<<<<<< HEAD
+background-color:#CC0000;
+=======
+>>>>>>> origin/master
 }
 .holder {
   width: 300%;
