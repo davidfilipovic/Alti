@@ -5,12 +5,23 @@ body,html{
 
 .main{
     width:100%;
+<<<<<<< HEAD
+	height:100%;
+=======
     height:100%;
+>>>>>>> origin/master
 }
 
 .wrapper{
     width:1200px;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	
+=======
 
+>>>>>>> origin/master
+>>>>>>> origin/master
     margin:0 auto;
     position:relative;
 }
@@ -119,7 +130,11 @@ div.leng{
     top: 0;
 }
 .banner{
+<<<<<<< HEAD
+    
+=======
 
+>>>>>>> origin/master
     height:350px;
 }
 
@@ -129,23 +144,69 @@ div.aboutus p{
     text-align:justify;
 }
 
+<<<<<<< HEAD
+ #footer {
+     /*position:fixed;*/
+   padding-top:20px;
+   left:0px;
+   bottom:0px !important;
+   height:240px;
+   width:100%;
+   
+      background:#333;
+   z-index: 17; 
+}                    
+
+
+  
+}
+div#left,div#right,div#center_right,div#centerleft{
+width:300px;
+border-left:1px solid #33333;
+}
+footer #center_right ul li{
+list-style-type:none;
+float:left;
+}
+footer ul li{
+list-style-type:none;
+margin-left:45px;
+}
+footer ul li a{
+cursor:pointer;
+color:#587474;
+}
+footer ul li a:hover{
+color:#004747;
+}
+
+footer ul li img{
+width:25px;
+height:25px;
+}
+
+div#copyright{
+width:100%;
+height:40px;
+background-color:#000E0E;
+}
+        
+=======
 footer {
     /*position:fixed;*/
     padding-top:20px;
     left:0px;
     bottom:0px !important;
-    height:240px;
+    height:270px;
     width:100%;
     background:#333;
     z-index: 17;
 }
 
-/*div#left,div#right,div#center_right,div#centerleft{
 
-}*/
 #footer_div{
     width:15%;
-    height: 80%;
+    height: 190px;
     display: block;
     font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
 }
@@ -153,9 +214,11 @@ footer {
       border-left: 1px solid white;
       padding-left: 20px;
 }
+footer #center_right{border-bottom:1px solid #989697;}
 footer #center_right ul li{
     list-style-type:none;
     float:left;
+	margin-top:-10px;
 }
 footer ul{
     padding-left: 0px;
@@ -174,9 +237,11 @@ footer ul li a:hover{
     color:#A1001D;
 }
 
-footer ul li img{
+footer #center_right ul li img{
     width:25px;
     height:25px;
+	opacity:0.3;
+	margin-right:15px;
 }
 div#copyright{
     /*width:100%;*/
@@ -215,4 +280,27 @@ h5{
     margin-bottom: 10px;
     padding-left: 20px;
 }
+<<<<<<< HEAD
+div#center_right img:hover{
+opacity:1;
+}
+div#vector{
+text-align:center;
+width:580px;
+height:80px;
+margin:0 auto;
+}
+#vector img{
+cursor:pointer;
+opacity:0,5;
+float:left;
+margin-right:30px;
+}
+div#vector{
+opacity:1;
+filter: alpha(opacity=40);
+}
+=======
 
+>>>>>>> origin/master
+>>>>>>> origin/master

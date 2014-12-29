@@ -62,20 +62,24 @@
 
             <div id='center_right' style='float:left'>
                 <ul>
+				    <li><h5>mreže</h5></li><br><br>
                     <li><a><img src='icon/footer_facebook.png'></a></li>
                     <li><a><img src='icon/footer_twitter.png'></a></li>
                     <li><a><img src='icon/footer_linkedin.png'></a></li>				 
                 </ul>
-            </div>
+            </div><br>
+			
+			<div id='vector'>
+			<a href="http://www.emmi.rs/naslovna_stranica.1.html"><img src='icon/emmi_op04.png' width='150px' height='80px'/></a>
+			<a href='http://www.winwin.rs/'><img src='icon/winwin_op04.png' width='150px' height='80px'/></a>
+			<a href='http://pcpractic.rs/'><img src='icon/pcpractic_op04.png' width='150px' height='80px'/></a>
+			</div>
         </div>
     </div>
 </footer>
 
 <div id='copyright'>
     <div class='wrapper'>
-        <div class="footer_logo">
-            <img src='alti2.png' width='130px' height='40px'>
-        </div>
         <div id='copyright_text'>© Copyright 2014. All rights reserved.</div>
     </div>
 </div>

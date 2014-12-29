@@ -39,7 +39,10 @@ bottom:0;
 }
 div.slide:hover{
 color:#fff;
+<<<<<<< HEAD
 background-color:#CC0000;
+=======
+>>>>>>> origin/master
 }
 .holder {
   width: 300%;
@@ -47,12 +50,15 @@ background-color:#CC0000;
 #slide-0 {
 opacity:0.5;
 }
+div#slide-0:hover{opacity:0.9;}
 #slide-1 {
 opacity:0.5;
 }
+div#slide-1:hover{opacity:0.9;}
 #slide-2 {
   opacity:0.5;
 }
+div#slide-2:hover{opacity:0.9;}
 .slide:before {
   content: "";
   position: absolute;

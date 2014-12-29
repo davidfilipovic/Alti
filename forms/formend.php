@@ -9,17 +9,16 @@ $i = 1;
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-mysqli_set_charset($conn,"UTF8");
+mysqli_set_charset($conn, "UTF8");
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     echo 'Proslo';
-    
+
 //    ----------------------------------------------------PROVERE FORMATA UNOSA
 //    
 //    -------------------------------------------------(Osnovni podaci) KORAK 1
@@ -42,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $nameErr = "Dozvoljena su samo slova i razmaci";
         }
     }
-    
+
     if (empty($_POST["gender"])) {
         $genderErr = "0";
     } elseif ($_POST["gender"] = 'female') {
@@ -89,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $jobcomments = test_input($_POST["address"]);
     }
-    
+
 //    ----------------------------------------------------(Obrazovanje) KORAK 2
 
     if (empty($_POST["employer"])) {
@@ -123,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $toErr = "Pogresan format datuma";
         }
     }
-    
+
 //  ---------------------------------------------------(Radno iskustvo) KORAK 3
     if (empty($_POST["jobcomment"])) {
         $jobcomment = "";
@@ -149,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $jobfromErr = "Pogresan format datuma";
         }
     }
-    
+
 //    --------------------------------------------(Dodatne informacije) KORAK 4 
 
     if (empty($_POST["fieldwork"])) {
@@ -163,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $fieldwork = "true";
     }
-     echo $_POST["remotework"];
+    echo $_POST["remotework"];
     if (empty($_POST["invalidity"])) {
         $fieldwork = "false";
     } else {
@@ -172,11 +171,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 //    $ = $_POST[''];
 //  -----------------------------------------------------------  INSERTI U BAZU
-    
+
     $sql = "INSERT INTO basicinfo (name,lastname, birthdate, phone, mail, gender, address) "
             . "VALUES ('$name','$lastname', '$date','$phone','$mail', '$gender','$address')";
     $result = $conn->query($sql);
-        
+
     $sql = "INSERT INTO education (edulevel, profession, otheredu, computers, unis, faculties, "
             . "otherfac, lang1, lang1lvl, lang2, lang2lvl, lang3, lang3lvl, lang4, lanh4lvl) "
             . "VALUES ('$edulevel', '$profession', '$otheredu', '$computers', '$unis', '$faculties',"
@@ -188,25 +187,115 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO workexp1 (employer,od, do, position, about) "
             . "VALUES ('$employer','$od','$do','$position','$about')";
     $result = $conn->query($sql);
-   
+
     $sql = "INSERT INTO workexp2 (employer,od, do, position, about) "
             . "VALUES ('$employer','$od','$do','$position','$about')";
     $result = $conn->query($sql);
-   
+
     $sql = "INSERT INTO workexp3 (employer,od, do, position, about) "
             . "VALUES ('$employer','$od','$do','$position','$about')";
     $result = $conn->query($sql);
-  
+
     $sql = "INSERT INTO workexp4 (employer,od, do, position, about) "
             . "VALUES ('$employer','$od','$do','$position','$about')";
     $result = $conn->query($sql);
-    
+
     if ($result) {
         echo "YOUR REGISTRATION IS COMPLETED...";
     }
 
+//  ------------------------------------------------------------- UPLOAD SLIKE
+
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($_FILES["picture"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+    //  Check if image file is a actual image or fake image
+    $check = getimagesize($_FILES["picture"]["tmp_name"]);
+    if ($check !== false) {
+        echo "Fajl je slika - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "Fajl nije slika.";
+        $uploadOk = 0;
+    }
+
+    // Provera da li fajl vec postoji u bazi
+    if (file_exists($target_file)) {
+        echo "Sorry, fajl vec postoji u bazi.";
+        $uploadOk = 0;
+    }
+
+    // Provera velicine 
+    if ($_FILES["slika"]["size"] > 5000000) {
+        echo "Sorry, fajl je preveliki.";
+        $uploadOk = 0;
+    }
+
+    // dozvoljavaju se samo neki formati
+    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+        echo "Sorry, samo JPG, JPEG, PNG & GIF fajlovi su dopusteni.";
+        $uploadOk = 0;
+    }
+
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+        // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["slika"]["tmp_name"], $target_file)) {
+            echo "The file " . basename($_FILES["slika"]["name"]) . " has been uploaded.";
+            $sql = "INSERT INTO uploads ('/uploads/" . basename($_FILES["cv"]["name"]) . "') "
+                    . "VALUES ('$cv')";
+            $result = $conn->query($sql);
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+
+//  --------------------------------------------------------------- UPLOAD CV-a
+
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($_FILES["cv"]["name"]);
+    $uploadOk = 1;
+    $FileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+    // Provera da li fajl vec postoji u bazi
+    if (file_exists($target_file)) {
+        echo "Sorry, fajl vec postoji u bazi.";
+        $uploadOk = 0;
+    }
+
+    // Provera velicine 
+    if ($_FILES["cv"]["size"] > 5000000) {
+        echo "Sorry, fajl je preveliki.";
+        $uploadOk = 0;
+    }
+
+    // dozvoljavaju se samo neki formati
+    if ($FileType != "pdf" && $FileType != "doc" && $FileType != "docx") {
+        echo "Sorry, samo PDF, DOC, DOCX fajlovi su dopusteni.";
+        $uploadOk = 0;
+    }
+
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+        // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["cv"]["tmp_name"], $target_file)) {
+            echo "The file " . basename($_FILES["cv"]["name"]) . " has been uploaded.";
+            $sql = "INSERT INTO uploads ('/uploads/" . basename($_FILES["cv"]["name"]) . "') "
+                    . "VALUES ('$cv')";
+            $result = $conn->query($sql);
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+
 //    -----------------FUNKCIJA KOJA TRIMUJE UNOSE I SKIDA SPECIJALNE KARAKTERE
-    
+
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
