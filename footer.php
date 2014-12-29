@@ -6,8 +6,12 @@
             <div id='footer_div' style='float:left;'>
                 <ul>
                     <h5>About us</h5>
-                    <div class="footer_elements">
+                    <div class="footer_elements" style='float:left; border:none;'>
                         <li><a>Alti grupacije</a></li>
+                        <li><a>Softver</a></li>
+                        <li><a>Hardver</a></li>
+                        <li><a>Projekti</a></li>
+                        <li><a>Servis</a></li>
                     </div>
                 </ul>
             </div>
@@ -30,7 +34,10 @@
 
                     <li><h5>Corporate</h5></li>
                     <div class="footer_elements">
-
+                        <li><a>Softver</a></li>
+                        <li><a>Hardver</a></li>
+                        <li><a>Projekti</a></li>
+                        <li><a>Servis</a></li>
                     </div>
                 </ul>
             </div>
@@ -38,6 +45,12 @@
             <div id='footer_div' style='float:left'>
                 <ul>
                     <li><h5>Partneri</h5></li>
+                    <div class="footer_elements">
+                        <li><a>Softver</a></li>
+                        <li><a>Hardver</a></li>
+                        <li><a>Projekti</a></li>
+                        <li><a>Servis</a></li>
+                    </div>
                 </ul>
             </div>
 

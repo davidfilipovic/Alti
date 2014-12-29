@@ -9,11 +9,11 @@
         <link rel="stylesheet" href="menu/css/stylemenu.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="sliding-boxes-css3/style.css" type="text/css" media="screen"/>
-		<link rel="stylesheet" href="css/slide_text.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="css/slide_text.css" type="text/css" media="screen"/>
 
         <link rel="stylesheet" href="search/search_style.css" type="text/css" media="screen"/>
         <!--<link rel="stylesheet" href="rotatingImageSlider/css/style.css" type="text/css" media="screen"/>
-<link rel="stylesheet" href="rotatingImageSlider/css/reset.css" type="text/css" media="screen"/>-->
+        <link rel="stylesheet" href="rotatingImageSlider/css/reset.css" type="text/css" media="screen"/>-->
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
         <script type="text/javascript" src="menu/jquery.easing.1.3.js"></script>
@@ -96,35 +96,28 @@
             <?php include "gallery.php"; ?>
 
             <div class='wrapper'>
-<<<<<<< HEAD
+
+                <!--About us text-->
+                <!--slajder partner logo
+                ?php include "rotatingImageSlider/index.html"; ?>--> 
+
+                <!--baneri Alti brendovi-->
 
                 <!--About us text-->
                 <div>
-                    <?php include "aboutus.php"; ?>
+                    <?php include "slide_text.html"; ?>
                 </div>
 
                 <!--slajder partner logo
                 ?php include "rotatingImageSlider/index.html"; ?>--> 
 
                 <!--baneri Alti brendovi-->
-=======
-			
-			    <!--About us text-->
-			    <div>
-				 <?php include "slide_text.html"; ?>
-				</div>
-				
-				<!--slajder partner logo
-				?php include "rotatingImageSlider/index.html"; ?>--> 
-				
-				<!--baneri Alti brendovi-->
->>>>>>> origin/master
                 <div class='banner'>
                     <?php include "sliding-boxes-css3/index.html"; ?>
                 </div>	
 
             </div>
-            <?php include 'footer.php';?>
+            <?php include 'footer.php'; ?>
         </div>
     </body>
 </html>
