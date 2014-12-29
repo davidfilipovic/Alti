@@ -53,7 +53,8 @@
                     <li><a><img src='icon/footer_facebook.png'></a></li>
                     <li><a><img src='icon/footer_twitter.png'></a></li>
                     <li><a><img src='icon/footer_linkedin.png'></a></li>				 
-                </ul>
+                </ul><br>
+				<h5>otvorene pozicije</h5>
             </div><br>
 			
 			<div id='vector'>
