@@ -15,9 +15,21 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+//    -----------------FUNKCIJA KOJA TRIMUJE UNOSE I SKIDA SPECIJALNE KARAKTERE
+
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    echo 'Proslo';
+ /*   echo 'Proslo';
 
 //    ----------------------------------------------------PROVERE FORMATA UNOSA
 //    
@@ -169,7 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fieldwork = "true";
     }
 
-//    $ = $_POST[''];
+//    $ = $_POST[''];*/
 //  -----------------------------------------------------------  INSERTI U BAZU
 
     $sql = "INSERT INTO basicinfo (name,lastname, birthdate, phone, mail, gender, address) "
@@ -294,14 +306,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-//    -----------------FUNKCIJA KOJA TRIMUJE UNOSE I SKIDA SPECIJALNE KARAKTERE
 
-    function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
 
     $conn->close();
 }    
