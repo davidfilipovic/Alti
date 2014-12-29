@@ -10,7 +10,6 @@ body,html{
 
 .wrapper{
     width:1200px;
-
     margin:0 auto;
     position:relative;
 }
@@ -134,18 +133,16 @@ footer {
     padding-top:20px;
     left:0px;
     bottom:0px !important;
-    height:240px;
+    height:270px;
     width:100%;
     background:#333;
     z-index: 17;
 }
 
-/*div#left,div#right,div#center_right,div#centerleft{
 
-}*/
 #footer_div{
     width:15%;
-    height: 80%;
+    height: 190px;
     display: block;
     font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
   
@@ -155,9 +152,11 @@ footer {
       padding-left: 20px;
     
 }
+footer #center_right{border-bottom:1px solid #989697;}
 footer #center_right ul li{
     list-style-type:none;
     float:left;
+	margin-top:-10px;
 }
 footer ul{
     padding-left: 0px;
@@ -176,9 +175,11 @@ footer ul li a:hover{
     color:#A1001D;
 }
 
-footer ul li img{
+footer #center_right ul li img{
     width:25px;
     height:25px;
+	opacity:0.3;
+	margin-right:15px;
 }
 div#copyright{
     /*width:100%;*/
@@ -216,4 +217,22 @@ h5{
     margin-bottom: 10px;
     padding-left: 20px;
 }
-
+div#center_right img:hover{
+opacity:1;
+}
+div#vector{
+text-align:center;
+width:580px;
+height:80px;
+margin:0 auto;
+}
+#vector img{
+cursor:pointer;
+opacity:0,5;
+float:left;
+margin-right:30px;
+}
+div#vector{
+opacity:1;
+filter: alpha(opacity=40);
+}
