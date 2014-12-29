@@ -152,7 +152,7 @@ footer {
       padding-left: 20px;
     
 }
-footer #center_right{border-bottom:1px solid #989697;}
+
 footer #center_right ul li{
     list-style-type:none;
     float:left;
@@ -235,4 +235,18 @@ margin-right:30px;
 div#vector{
 opacity:1;
 filter: alpha(opacity=40);
+}
+div#num_openpos {
+width:30px;
+height:30px;
+line-height:30px;
+margin:-50px 0px 20px 27px;
+position:float;
+}
+div#openpos a{
+text-decoration:none;
+color: #989697;
+font-size:16px;
+font-weight: bold;
+display:block;
 }

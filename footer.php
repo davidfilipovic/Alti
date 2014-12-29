@@ -54,7 +54,18 @@
                     <li><a><img src='icon/footer_twitter.png'></a></li>
                     <li><a><img src='icon/footer_linkedin.png'></a></li>				 
                 </ul><br>
-				<h5>otvorene pozicije</h5>
+				
+				<div id='openpos'>
+					<h5>otvorene pozicije</h5>
+				
+					
+					<img src='icon/op.png'>
+						<div id='num_openpos'>
+							<a href='karijera.php'><?php include "openpos.php"; ?><a/>
+						</div>	
+                 					 
+				</div>
+				
             </div><br>
 			
 			<div id='vector'>
