@@ -5,23 +5,12 @@ body,html{
 
 .main{
     width:100%;
-<<<<<<< HEAD
-	height:100%;
-=======
     height:100%;
->>>>>>> origin/master
+    height:100%;
 }
 
 .wrapper{
     width:1200px;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-	
-=======
-
->>>>>>> origin/master
->>>>>>> origin/master
     margin:0 auto;
     position:relative;
 }
@@ -44,8 +33,6 @@ body,html{
     margin-top:0px;
     margin:0 auto;
 }
-
-
 .home-content{
     position:relative;
     overflow:hidden;
@@ -56,7 +43,6 @@ body,html{
     width: 250px;
     float: left;
 }
-
 .logo img{
     margin-top:5px;
     width: 260px;
@@ -64,7 +50,6 @@ body,html{
     width: 250px;
     float: left;
 }
-
 .logo img{
     margin-top:5px;
     width: 230px;
@@ -75,14 +60,12 @@ body,html{
     height:15px;
     margin-left:15px;
 }
-
 .logo_text b{
     font-size:13px;
     margin-left:60px;
     font-family:Arial;
     color:#fff;
 }
-
 a {
     color: #09f;
 }
@@ -116,8 +99,8 @@ div.leng{
     width:100px;
     height:85px;
     min-height:80px;
-    margin:-60px 0px 0px 0px;}
-
+    margin:-60px 0px 0px 0px;
+}
 .leng a{
     color:#006666;
 }
@@ -130,68 +113,54 @@ div.leng{
     top: 0;
 }
 .banner{
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> origin/master
     height:350px;
 }
-
 div.aboutus p{
     font-size:14px;
     color:#338585;
     text-align:justify;
 }
-
-<<<<<<< HEAD
- #footer {
-     /*position:fixed;*/
-   padding-top:20px;
-   left:0px;
-   bottom:0px !important;
-   height:240px;
-   width:100%;
-   
-      background:#333;
-   z-index: 17; 
+#footer {
+    /*position:fixed;*/
+    padding-top:20px;
+    left:0px;
+    bottom:0px !important;
+    height:240px;
+    width:100%;
+    background:#333;
+    z-index: 17; 
 }                    
-
-
-  
-}
 div#left,div#right,div#center_right,div#centerleft{
-width:300px;
-border-left:1px solid #33333;
+    width:300px;
+    border-left:1px solid #33333;
 }
 footer #center_right ul li{
-list-style-type:none;
-float:left;
+    list-style-type:none;
+    float:left;
 }
 footer ul li{
-list-style-type:none;
-margin-left:45px;
+    list-style-type:none;
+    margin-left:45px;
 }
 footer ul li a{
-cursor:pointer;
-color:#587474;
+    cursor:pointer;
+    color:#587474;
 }
 footer ul li a:hover{
-color:#004747;
+    color:#004747;
 }
-
 footer ul li img{
-width:25px;
-height:25px;
+    width:25px;
+    height:25px;
 }
 
 div#copyright{
-width:100%;
-height:40px;
-background-color:#000E0E;
+    /*position: fixed;*/
+    bottom: 0px;
+    width:100%;
+    height:40px;
+    background-color:#000E0E;
 }
-        
-=======
 footer {
     /*position:fixed;*/
     padding-top:20px;
@@ -203,7 +172,6 @@ footer {
     z-index: 17;
 }
 
-
 #footer_div{
     width:15%;
     height: 190px;
@@ -211,14 +179,16 @@ footer {
     font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
 }
 .footer_elements{
-      border-left: 1px solid white;
-      padding-left: 20px;
+    border-left: 1px solid #989697;
+    padding-left: 20px;
 }
-footer #center_right{border-bottom:1px solid #989697;}
+footer #center_right{
+}
+
 footer #center_right ul li{
     list-style-type:none;
     float:left;
-	margin-top:-10px;
+    margin-top:-10px;
 }
 footer ul{
     padding-left: 0px;
@@ -240,11 +210,13 @@ footer ul li a:hover{
 footer #center_right ul li img{
     width:25px;
     height:25px;
-	opacity:0.3;
-	margin-right:15px;
+    opacity:0.3;
+    margin-right:15px;
 }
 div#copyright{
     /*width:100%;*/
+    /*position: absolute;
+    bottom:0px;*/
     height:40px;
     background-color:#333;
     border-top: 1px solid white;
@@ -263,7 +235,6 @@ div#copyright_text{
     width: 50%;
     text-align: right;
 }
-
 #footer_wrapper{
     display: block;
     /*margin-left: 50px;*/
@@ -271,7 +242,6 @@ div#copyright_text{
     height: 100%;
     margin: 0 auto;
 }
-
 h5{
     color: #989697;
     text-transform: uppercase;
@@ -280,27 +250,22 @@ h5{
     margin-bottom: 10px;
     padding-left: 20px;
 }
-<<<<<<< HEAD
 div#center_right img:hover{
-opacity:1;
+    opacity:1;
 }
 div#vector{
-text-align:center;
-width:580px;
-height:80px;
-margin:0 auto;
+    text-align:center;
+    width:580px;
+    height:80px;
+    margin:0 auto;
+    /*position:fixed;*/
+    /*margin-bottom: 40px;*/
+    opacity:1;
+    filter: alpha(opacity=40);
 }
 #vector img{
-cursor:pointer;
-opacity:0,5;
-float:left;
-margin-right:30px;
+    cursor:pointer;
+    opacity:0,5;
+    float:left;
+    margin-right:30px;
 }
-div#vector{
-opacity:1;
-filter: alpha(opacity=40);
-}
-=======
-
->>>>>>> origin/master
->>>>>>> origin/master

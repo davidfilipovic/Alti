@@ -30,7 +30,6 @@ list-style:none;
 margin:20px;
 }
 .slide h3:before{
-content: url('../icon/before.ico');
 }
 .slide li a{
 cursor:pointer;
@@ -39,10 +38,6 @@ bottom:0;
 }
 div.slide:hover{
 color:#fff;
-<<<<<<< HEAD
-background-color:#CC0000;
-=======
->>>>>>> origin/master
 }
 .holder {
   width: 300%;
@@ -59,11 +54,11 @@ div#slide-1:hover{opacity:0.9;}
   opacity:0.5;
 }
 div#slide-2:hover{opacity:0.9;}
-.slide:before {
+/*.slide:before {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 40%;
-}
+}*/
