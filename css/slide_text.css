@@ -12,7 +12,7 @@
 .slide p{
 margin:20px;
 font-size:11px;
-font-family:arial;
+font-family:"Resamitz",sans-serif;
 line-height:26px;
 color:#292929;
  text-transform: uppercase;
@@ -39,10 +39,6 @@ bottom:0;
 }
 div.slide:hover{
 color:#fff;
-<<<<<<< HEAD
-background-color:#CC0000;
-=======
->>>>>>> origin/master
 }
 .holder {
   width: 300%;
