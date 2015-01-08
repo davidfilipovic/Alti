@@ -42,6 +42,22 @@
         <?php
         include('connect.inc');
         db_connect();
+
+
+session_start();
+
+
+
+
+$query1 = "SELECT id FROM altidb.users WHERE email = '$_SESSION[email]'";
+$result1 = mysql_query($query1) or die("Greska1:" . mysql_error());
+
+while ($row = mysql_fetch_row($result1)) {
+    $i = 0;
+
+    $id = $row[$i];
+
+}
         ?>
 
 
@@ -85,13 +101,15 @@
         <div class="clearfix">
             <!--Profile container-->
             <div id="profile" class="container">
-                <div class="span3"> <img src="img/mini.png"> </div>
+                <?php
+                echo "<div class='span3'> <img src='../forms/images/$_SESSION[email].jpg' > </div>";
+                ?>
                 <div class="span5">
                     <h1> <?php
                     
                      
            
-        $servername = "localhost";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "altidb";
@@ -103,40 +121,135 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT ime FROM data WHERE html = '20'";
-$result = mysqli_query($conn, $sql);
+// Upit koji kupi ime
+$sql1 = "SELECT name FROM basicinfo WHERE id_fk =  ".$id;
+$result1 = mysqli_query($conn, $sql1);
 
-if (mysqli_num_rows($result) > 0) {
+if (mysqli_num_rows($result1) > 0) {
     // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        echo $row["ime"];
+    while($row1 = mysqli_fetch_assoc($result1)) {
+        echo $row1["name"];
     }
 } else {
     echo "0 results";
 }
 
-mysqli_close($conn);
+                        // Upit koji kupi prezime
+                        $sql = "SELECT lastname FROM basicinfo WHERE id_fk =  ".$id;
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            while($row = mysqli_fetch_assoc($result)) {
+                                echo " ".$row["lastname"];
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+
+
+
+
+
         ?>
                     </h1>
                     <h3>Web &amp; Graphics Designer</h3>
                     <p> 
 
-                        Datum rođenja: <?php
-        echo "$_POST[rodj]";
+                        <h4> Datum rođenja: </h4> <?php
+
+
+
+                        // Upit koji kupi datum rodjenja
+                        $sql = "SELECT birthdate FROM basicinfo WHERE id_fk =  ".$id;
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            while($row = mysqli_fetch_assoc($result)) {
+                                echo " ".$row["birthdate"];
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+
+
+
         ?>
+                        <br/> <h4> Email: </h4> <?php
+
+
+
+                        // Upit koji kupi email
+                        $sql = "SELECT mail FROM basicinfo WHERE id_fk =  ".$id;
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            while($row = mysqli_fetch_assoc($result)) {
+                                echo " ".$row["mail"];
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+
+
+
+                        ?>
+
+
+                        <br/> <h4> Kontakt telefon:</h4> <?php
+
+
+
+                        // Upit koji kupi email
+                        $sql = "SELECT phone FROM basicinfo WHERE id_fk =  ".$id;
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            while($row = mysqli_fetch_assoc($result)) {
+                                echo " ".$row["phone"];
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+
+
+
+                        ?>
+
+
+
+                        <br/><h4>Adresa: </h4><?php
+
+
+
+                        // Upit koji kupi email
+                        $sql = "SELECT address FROM basicinfo WHERE id_fk =  ".$id;
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            while($row = mysqli_fetch_assoc($result)) {
+                                echo " ".$row["address"];
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+
+
+
+                        ?>
+
+
+
+
+
 
                     </p>
                     <a href="#" class="hire-me"><i class="icon-paper-plane"></i> Hire Me </a>
-                    <div class="row social">
-                        <ul class="social-icons">
-                            <li><a href="#" target="_blank"><img src="img/fb.png" alt="facebook"></a></li>
-                            <li><a href="#" target="_blank"><img src="img/tw.png" alt="twitter"></a></li>
-                            <li><a href="#" target="_blank"><img src="img/go.png" alt="google plus"></a></li>
-                            <li><a href="#" target="_blank"><img src="img/pin.png" alt="pinterest"></a></li>
-                            <li><a href="#" target="_blank"><img src="img/st.png" alt="stumbleupon"></a></li>
-                            <li><a href="#" target="_blank"><img src="img/dr.png" alt="dribbble"></a></li>
-                        </ul>
-                    </div>
+
                 </div>
                 <!-- Social Icons -->
                 <!-- END: Social Icons -->
@@ -178,6 +291,12 @@ mysqli_close($conn);
                             background:#ee742b;
                             -moz-animation:css3 2s ease-out;
                             -webkit-animation:css3 2s ease-out;
+                        }
+
+                        h4 {
+                            font-weight: bold;
+                            color:#ee742b;
+
                         }
 
                     </style>
