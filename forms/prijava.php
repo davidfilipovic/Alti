@@ -420,8 +420,6 @@
 
                     // Set session variables
                     $_SESSION["email"] = $_POST['emaillog'];
-
-                    
                 }
             }
         }
@@ -431,18 +429,17 @@
 
             LogIn();
         }
- $query1 = "SELECT id FROM users WHERE email = '$_SESSION[email]'";
+        $query1 = "SELECT id FROM users WHERE email = '$_SESSION[email]'";
 
 
         $result1 = mysql_query($query1) or die(mysql_error());
-       
+
 
         while ($row = mysql_fetch_row($result1)) {
             $i = 0;
- 
-                $id = $row[$i];  
-     
-}
+
+            $id = $row[$i];
+        }
         db_disconnect();
         ?>
 
@@ -457,7 +454,7 @@
 
                         <!-- Step 1 -->
 
-                        
+
                         <section class="idealsteps-step">
                             <h2>Osnovni podaci</h2> 
 
@@ -482,8 +479,14 @@
                                 <span class="error"></span> </div>  
                             <div class="field">
                                 <label class="main">Datum rodjenja:</label>
-                                <input name="date" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                <input id="birthdate" name="birthdate" type="text" placeholder="yyyy-dd-mm" class="datepicker">
                                 <span class="error"></span> </div>
+
+
+
+
+
+
                             <div class="field">
                                 <label class="main">E-Mail:</label>
                                 <input name="email" type="email">
@@ -526,8 +529,8 @@ $i = 1;
 
 
 // Create connection
-$conn = new mysqli($servername , $username , $password , $dbname);
-mysqli_set_charset($conn , 'utf8');
+$conn = new mysqli($servername, $username, $password, $dbname);
+mysqli_set_charset($conn, 'utf8');
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -576,8 +579,8 @@ $dbname = "AltiDB";
 $i = 1;
 // Create connection
 
-$conn = new mysqli($servername , $username , $password , $dbname);
-mysqli_set_charset($conn , 'utf8');
+$conn = new mysqli($servername, $username, $password, $dbname);
+mysqli_set_charset($conn, 'utf8');
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -627,8 +630,8 @@ $dbname = "AltiDB";
 $i = 1;
 
 // Create connection
-$conn = new mysqli($servername , $username , $password , $dbname);
-mysqli_set_charset($conn , 'utf8');
+$conn = new mysqli($servername, $username, $password, $dbname);
+mysqli_set_charset($conn, 'utf8');
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -705,12 +708,12 @@ $conn->close();
 
                                     <div class="field">
                                         <label class="main">Od:</label>
-                                        <input name="date" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                        <input id="faxod1" name="faxod1" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                         <span class="error"></span> </div>    
 
                                     <div class="field">
                                         <label class="main">Do:</label>
-                                        <input name="date" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                        <input id="faxdo1" name="faxdo1" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                         <span class="error"></span> </div>     
 
                                 </div>
@@ -718,7 +721,7 @@ $conn->close();
                                 <div name="addfax" id="addfax" style="display: none">
                                     <div class="field" >
                                         <label class="main">Naziv fakulteta:</label>
-                                        <input name="hsname" type="text" placeholder="Naziv i mesto">
+                                        <input name="facname" type="text" placeholder="Naziv i mesto">
                                     </div>  
 
                                     <div class="field">
@@ -1007,6 +1010,28 @@ $conn->close();
                                 <span class="error"></span> </div>
                             <div class="field buttons">
 
+
+
+
+                                <!-- poznavanje jezika -->
+
+                                    <h2>Poznavanje jezika</h2>
+
+                                    <div id="lang1" >
+
+
+                                        <div id="langadd" class="field">
+
+
+
+
+                                            <input type="button" id="addnewform" value="Dodajte novi jezik" />
+
+
+                                            <span class="error"></span> </div>
+
+
+
                                 <!-- Dugme za povratak nazad i za korak napred -->  
                                 <div class="field buttons">
                                     <label class="main">&nbsp;</label>
@@ -1053,6 +1078,15 @@ $conn->close();
                             <span id="invalid"></span>
                         </section>
 
+
+
+
+
+
+
+
+
+
                 </form>
             </div>
         </div>
@@ -1063,6 +1097,111 @@ $conn->close();
         <!--<script src="js/out/jquery.idealforms.js"></script> --> 
         <!--<script src="js/out/jquery.idealforms.min.js"></script>--> 
         <script>
+
+            var count =1;
+            $("#addnewform").click (function(){
+                // Add
+
+           var newSelectField = " <br/> <br/> " +
+               "<label class='main'> Odaberite jezik:</label> " +
+               "<select name='lang"+count+"' id='lang"+count+"'> " +
+               "<option value='default'>&ndash; Odaberite opciju &ndash;</option> " +
+               "<option value='1'>Albanski</option> " +
+               "<option value='2'>Arapski</option> " +
+               "<option value='3'>Bosanski</option> " +
+               "<option value='4'>Bošnjački</option> " +
+               "<option value='5'>Bugarski</option> " +
+               "<option value='6'>Češki</option> " +
+               "<option value='7'>Danski</option> " +
+               "<option value='8'>Engleski</option> " +
+               "<option value='9'>Esperanto</option> " +
+               "<option value='10'>Farsi</option> " +
+               "<option value='11'>Finski</option> " +
+               "<option value='12'>Francuski</option> " +
+               "<option value='13'>Gestovni govor</option> " +
+               "<option value='14'>Grčki</option> " +
+               "<option value='15'>Hebrejski</option> " +
+               "<option value='16'>Holandski</option> " +
+               "<option value='17'>Hrvatski</option> " +
+               "<option value='18'>Italijanski</option> " +
+               "<option value='19'>Japanski</option> " +
+               "<option value='20'>Korejski</option> " +
+               "<option value='21'>Mađarski</option> " +
+               "<option value='22'>Makedonski</option> " +
+               "<option value='23'>Nemački</option> " +
+               "<option value='24'>Norveški</option> " +
+               "<option value='25'>Poljski</option> " +
+               "<option value='26'>Portugalski</option> " +
+               "<option value='27'>Rumunski</option> " +
+               "<option value='28'>Rusinski</option> " +
+               "<option value='29'>Ruski</option> " +
+               "<option value='30'>Slovački</option> " +
+               "<option value='31'>Slovenački</option> " +
+               "<option value='32'>Srpski</option> " +
+               "<option value='33'>Španski</option> " +
+               "<option value='34'>Švedski</option> " +
+               "<option value='35'>Turski</option> " +
+               "<option value='36'>Ukrajinski</option> " +
+
+
+
+               "<option value='other'>&ndash; Ostalo &ndash;</option> " +
+               "</select>" +
+               "<br/> <br/>" +
+               "<label class='main'> čitanje:</label>" +
+               "<select name='reading"+count+"' id='reading"+count+"'>" +
+               "<option value='default'>&ndash; Odaberite opciju &ndash;</option> " +
+               "<option value='1'>A1 - Uvodni nivo</option> " +
+               "<option value='2'>A2 - Srednji nivo</option> " +
+               "<option value='3'>B1 - Napredni</option> " +
+               "<option value='4'>B2 - Prag znanja jezika</option> " +
+               "<option value='5'>C1 - Napredni nivo</option> " +
+               "<option value='6'>C2 - Samostalni</option> " +
+               "</select>" +
+               "<br/> <br/>" +
+               "<label class='main'> pisanje:</label>" +
+               "<select name='reading"+count+"' id='reading"+count+"'>" +
+               "<option value='default'>&ndash; Odaberite opciju &ndash;</option> " +
+               "<option value='1'>A1 - Uvodni nivo</option> " +
+               "<option value='2'>A2 - Srednji nivo</option> " +
+               "<option value='3'>B1 - Napredni</option> " +
+               "<option value='4'>B2 - Prag znanja jezika</option> " +
+               "<option value='5'>C1 - Napredni nivo</option> " +
+               "<option value='6'>C2 - Samostalni</option> " +
+               "</select>" +
+               "<br/> <br/>" +
+               "<label class='main'> govor:</label>" +
+               "<select name='reading"+count+"' id='reading"+count+"'>" +
+               "<option value='default'>&ndash; Odaberite opciju &ndash;</option> " +
+               "<option value='1'>A1 - Uvodni nivo</option> " +
+               "<option value='2'>A2 - Srednji nivo</option> " +
+               "<option value='3'>B1 - Napredni</option> " +
+               "<option value='4'>B2 - Prag znanja jezika</option> " +
+               "<option value='5'>C1 - Napredni nivo</option> " +
+               "<option value='6'>C2 - Samostalni</option> " +
+               "</select>" +
+               "<br/> <br/>" +
+               "<label class='main'> Sertifikat:</label>" +
+               "<input name='certificate"+count+"' id='certificate"+count+"'type='text' placeholder='Unesite naziv sertifikata ako ga imate'>" +
+               "<br/> <br/>";
+
+
+                count++;
+
+
+
+
+
+
+
+
+
+            $("#langadd").before(newSelectField);
+            });
+
+
+
+
 
                                 $('form.idealforms').idealforms({
                                     silentLoad: false,
@@ -1121,5 +1260,13 @@ $conn->close();
                                 });
 
         </script>
+
+
+
+
+
+
+
+
     </body>
 </html>
