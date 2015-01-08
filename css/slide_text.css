@@ -30,7 +30,10 @@ list-style:none;
 margin:20px;
 }
 .slide h3:before{
+<<<<<<< HEAD
 
+=======
+>>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
 }
 .slide li a{
 cursor:pointer;
@@ -55,11 +58,11 @@ div#slide-1:hover{opacity:0.9;}
   opacity:0.5;
 }
 div#slide-2:hover{opacity:0.9;}
-.slide:before {
+/*.slide:before {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 40%;
-}
+}*/

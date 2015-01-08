@@ -421,7 +421,7 @@
                     // Set session variables
                     $_SESSION["email"] = $_POST['emaillog'];
 
-                    ;
+                    
                 }
             }
         }
@@ -431,10 +431,7 @@
 
             LogIn();
         }
-
-
-
-        $query1 = "SELECT id FROM users WHERE email = '$_SESSION[email]'";
+ $query1 = "SELECT id FROM users WHERE email = '$_SESSION[email]'";
 
 
         $result1 = mysql_query($query1) or die(mysql_error());
@@ -446,16 +443,6 @@
                 $id = $row[$i];  
      
 }
-        
-        
-        
-        
-       
-
-
-
-
-
         db_disconnect();
         ?>
 
@@ -464,7 +451,7 @@
         <div class="content">
             <div class="idealsteps-container">
                 <nav class="idealsteps-nav"> </nav>
-                <form method="post" action="formend.php" novalidate autocomplete="off" 
+                <form method="post" action="formsubmit.php" novalidate autocomplete="off" 
                       class="idealforms" accept-charset="utf-8" enctype="multipart/form-data" >
                     <div class="idealsteps-wrap"> 
 
@@ -802,120 +789,120 @@ $conn->close();
                             <div id="position1" style="display:none">
                                 <div class="field add" >
                                     <label class="main">Poslodavac:</label>
-                                    <input name="employer" type="text" placeholder="Alti d.o.o.">
+                                    <input name="employer1" type="text" placeholder="Alti d.o.o.">
                                     <span class="error"></span> </div>
                                 <div class="field add">Period&nbsp zaposlenja:</div>
                                 <div class="field" >    
                                     <label class="main add">Od:</label>
-                                    <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <input name="from1" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Do:</label>
-                                    <input name="to" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <input name="to1" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Pozicija:</label>
-                                    <input name="position" type="text" placeholder="">
+                                    <input name="position1" type="text" placeholder="">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Opis posla:</label>
-                                    <textarea name="jobcomment" cols="30" rows="10"></textarea>
+                                    <textarea name="jobcomment1" cols="30" rows="10"></textarea>
                                     <span class="error"></span> </div>
                             </div>
 
                             <div id="position2" style="display:none">
                                 <div class="field add" >
                                     <label class="main">Poslodavac:</label>
-                                    <input name="employer" type="text" placeholder="Alti d.o.o.">
+                                    <input name="employer2" type="text" placeholder="Alti d.o.o.">
                                     <span class="error"></span> </div>
                                 <div class="field add">Period&nbsp zaposlenja:</div>
                                 <div class="field" >    
                                     <label class="main add">Od:</label>
-                                    <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <input name="from2" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Do:</label>
-                                    <input name="to" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <input name="to2" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Pozicija:</label>
-                                    <input name="position" type="text" placeholder="">
+                                    <input name="position2" type="text" placeholder="">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Opis posla:</label>
-                                    <textarea name="jobcomment" cols="30" rows="10"></textarea>
+                                    <textarea name="jobcomment2" cols="30" rows="10"></textarea>
                                     <span class="error"></span> </div>
                             </div>
 
                             <div id="position3" style="display:none">
                                 <div class="field add" >
                                     <label class="main">Poslodavac:</label>
-                                    <input name="employer" type="text" placeholder="Alti d.o.o.">
+                                    <input name="employer3" type="text" placeholder="Alti d.o.o.">
                                     <span class="error"></span> </div>
                                 <div class="field add">Period&nbsp zaposlenja:</div>
                                 <div class="field" >    
                                     <label class="main add">Od:</label>
-                                    <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <input name="from3" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Do:</label>
-                                    <input name="to" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <input name="to3" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Pozicija:</label>
-                                    <input name="position" type="text" placeholder="">
+                                    <input name="position3" type="text" placeholder="">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Opis posla:</label>
-                                    <textarea name="jobcomment" cols="30" rows="10"></textarea>
+                                    <textarea name="jobcomment3" cols="30" rows="10"></textarea>
                                     <span class="error"></span> </div>
                             </div>
 
                             <div id="position4" style="display:none">
                                 <div class="field add" >
                                     <label class="main">Poslodavac:</label>
-                                    <input name="employer" type="text" placeholder="Alti d.o.o.">
+                                    <input name="employer4" type="text" placeholder="Alti d.o.o.">
                                     <span class="error"></span> </div>
                                 <div class="field add">Period&nbsp zaposlenja:</div>
                                 <div class="field" >    
                                     <label class="main add">Od:</label>
-                                    <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <input name="from4" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Do:</label>
-                                    <input name="to" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <input name="to4" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Pozicija:</label>
-                                    <input name="position" type="text" placeholder="">
+                                    <input name="position4" type="text" placeholder="">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Opis posla:</label>
-                                    <textarea name="jobcomment" cols="30" rows="10"></textarea>
+                                    <textarea name="jobcomment4" cols="30" rows="10"></textarea>
                                     <span class="error"></span> </div>
                             </div>
 
                             <div id="position5" style="display:none">
                                 <div class="field add" >
                                     <label class="main">Poslodavac:</label>
-                                    <input name="employer" type="text" placeholder="Alti d.o.o.">
+                                    <input name="employer5" type="text" placeholder="Alti d.o.o.">
                                     <span class="error"></span> </div>
                                 <div class="field add">Period&nbsp zaposlenja:</div>
                                 <div class="field" >    
                                     <label class="main add">Od:</label>
-                                    <input name="from" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <input name="from5" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Do:</label>
-                                    <input name="to" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                    <input name="to5" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Pozicija:</label>
-                                    <input name="position" type="text" placeholder="">
+                                    <input name="position5" type="text" placeholder="">
                                     <span class="error"></span> </div>
                                 <div class="field" >
                                     <label class="main">Opis posla:</label>
-                                    <textarea name="jobcomment" cols="30" rows="10"></textarea>
+                                    <textarea name="jobcomment5" cols="30" rows="10"></textarea>
                                     <span class="error"></span> </div>
                             </div>
 
@@ -1009,7 +996,7 @@ $conn->close();
                             <!-- Odabir datuma moguceg pocetka rada -->    
                             <div class="field">    
                                 <label class="main">Moguć početak rada:</label>
-                                <input name="jobfrom" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                                <input name="startdate" type="text" placeholder="mm/dd/yyyy" class="datepicker">
                                 <span class="error"></span> 
                             </div>
 

@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="menu/css/stylemenu.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="sliding-boxes-css3/style.css" type="text/css" media="screen"/>
-        <link rel="stylesheet" href="css/slide_text.css" type="text/css" media="screen"/>
 
         <link rel="stylesheet" href="search/search_style.css" type="text/css" media="screen"/>
         <!--<link rel="stylesheet" href="rotatingImageSlider/css/style.css" type="text/css" media="screen"/>
@@ -88,46 +87,10 @@
     <body>
 
         <div class='main'>                                           
-<<<<<<< HEAD
 
-=======
->>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
             <div class="header_wrapper">	
                 <?php include "menuJs.php"; ?>
             </div>
 
-            <?php include "gallery.php"; ?>
-
-<<<<<<< HEAD
-            <div class='wrapper'>		
-
-			    <!--About us text-->
-			    <div>
-				 <?php include "slide_text.html"; ?>
-				</div>
-				
-				<!--baneri Alti brendovi-->
-=======
             <div class='wrapper'>
-
-                <div>
-                    <?php include "slide_text.html"; ?>
-                </div>
-
->>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
-                <div class='banner'>
-                    <?php include "sliding-boxes-css3/index.html"; ?>
-                </div>	
-
-            </div>
-<<<<<<< HEAD
-
-            <?php include 'footer.php'; ?>			
-
-=======
-            <?php include 'footer.php'; ?>
->>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
-        </div>
-    </body>
-</html>
-
+                
