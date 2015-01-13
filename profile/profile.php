@@ -80,16 +80,18 @@ while ($row = mysql_fetch_row($result1)) {
         ?>
 
 
+
+
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
-                <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#profile"><img src="img/user.jpg"/></a>
+                <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#profile">
+                        <img src="img/user.jpg"/></a>
                     <ul class="nav nav-collapse pull-right">
                         <li><a href="#profile"><i class="icon-user"></i> Profil</a></li>
+                        <li><a href="#education"><i class="icon-trophy"></i> Obrazovanje</a></li>
                         <li><a href="#skills"><i class="icon-trophy"></i> Veštine</a></li>
                         <li><a href="#work"><i class="icon-picture"></i> Iskustvo</a></li>
                         <li><a href="#resume"><i class="icon-doc-text"></i> CV</a></li>
-                        <li><a href="#resume"><i class="icon-doc-text"></i> Projekti</a></li>
-                        <li><a href="#resume"><i class="icon-doc-text"></i> Projekti</a></li>
                     </ul>
                     <!-- Everything you want hidden at 940px or less, place within here -->
                     <div class="nav-collapse collapse">
@@ -102,7 +104,46 @@ while ($row = mysql_fetch_row($result1)) {
             <!--Profile container-->
             <div id="profile" class="container">
                 <?php
-                echo "<div class='span3'> <img src='../forms/images/$_SESSION[email].jpg' > </div>";
+
+                $ind = 0;
+                $filename = '../forms/images/'.$_SESSION["email"].'.jpg';
+
+                if (file_exists($filename)) {
+                    echo    "<div class='span3'> <img src='../forms/images/$_SESSION[email].jpg' > </div>";
+                    $ind = 1;
+
+                }
+
+                $filename = '../forms/images/'.$_SESSION["email"].'.png';
+
+                if (file_exists($filename)) {
+                    echo   "<div class='span3'> <img src='../forms/images/$_SESSION[email].png' > </div>";
+                    $ind = 1;
+
+                }
+
+                $filename = '../forms/images/'.$_SESSION["email"].'.gif';
+
+                if (file_exists($filename)) {
+                    echo   "<div class='span3'> <img src='../forms/images/$_SESSION[email].gif' > </div>";
+                    $ind = 1;
+
+                }
+
+                if($ind == 0){
+
+                    echo   "<div class='span3'> <img src='img/mini.png' > </div>";
+
+                }
+
+
+
+
+
+
+
+
+
                 ?>
                 <div class="span5">
                     <h1> <?php
@@ -116,6 +157,7 @@ $dbname = "altidb";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
+                        mysqli_set_charset($conn, 'utf8');
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
@@ -251,8 +293,72 @@ if (mysqli_num_rows($result1) > 0) {
                     <a href="#" class="hire-me"><i class="icon-paper-plane"></i> Hire Me </a>
 
                 </div>
-                <!-- Social Icons -->
-                <!-- END: Social Icons -->
+
+
+                <!--Education container-->
+                <div id="education" class="container">
+                    <h2>Obrazovanje</h2>
+
+                    <h4>Nivo obrazovanja:</h4>
+
+                    <?php
+                    header('Content-Type: text/html; charset=utf-8');
+                    $ind_exp = 0;
+
+
+                    // Upit koji kupi obrazovanje
+                    $sql = "SELECT name FROM edulevel e1 INNER JOIN education e2 ON e1.id = e2.edulvl
+                              WHERE id_fk =  ".$id;
+                    $result = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($result) > 0) {
+                        $ind_exp = 1;
+                        // output data of each row
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo "".$row["name"];
+                        }
+                    }
+
+
+
+
+                    echo "<h4>Zvanje:</h4>";
+                    // Upit koji kupi profesiju
+                    $sql = "SELECT name FROM profession p1 INNER JOIN education e2 ON p1.id = e2.profession
+                              WHERE id_fk =  ".$id;
+                    $result = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($result) > 0) {
+                        $ind_exp = 1;
+                        // output data of each row
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo "".$row["name"];
+                        }
+                    }
+
+
+
+                    echo "<h4>Srednja škola:</h4>";
+                    // Upit koji kupi profesiju
+                    $sql = "SELECT hsname FROM education WHERE id_fk =  ".$id;
+                    $result = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($result) > 0) {
+                        $ind_exp = 1;
+                        // output data of each row
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo "".$row["hsname"];
+                        }
+                    }
+                    ?>
+
+
+
+
+                </div>
+                <!--END: Education container-->
+
+
             </div>
             <!--END: Profile container-->
             <!--Skills container-->
@@ -328,50 +434,155 @@ if (mysqli_num_rows($result1) > 0) {
             <!-- Works container -->
             <div id="work" class="container">
                 <h2>Iskustvo</h2>
-                <ul class="work-images">
-                    <li>
-                        <div><a class="fancybox-thumb" rel="fancybox-thumb" href="img/1.jpg" title="Image 01"><img src="img/1-thumb.jpg" /></a></div>
-                    </li>
-                    <li>
-                        <div><a class="fancybox-thumb" rel="fancybox-thumb" href="img/2.jpg"><img src="img/2-thumb.jpg" /></a></div>
-                    </li>
-                    <li>
-                        <div><a class="fancybox-thumb" rel="fancybox-thumb" href="img/3.jpg"><img src="img/3-thumb.jpg" /></a></div>
-                    </li>
-                </ul>
-                <ul class="work-images">
-                    <li>
-                        <div><a class="fancybox-thumb" rel="fancybox-thumb" href="img/4.jpg"><img src="img/4-thumb.jpg" /></a></div>
-                    </li>
-                    <li>
-                        <div><a class="fancybox-thumb" rel="fancybox-thumb" href="img/5.jpg"><img src="img/5-thumb.jpg" /></a></div>
-                    </li>
-                    <li>
-                        <div><a class="fancybox-thumb" rel="fancybox-thumb" href="img/6.jpg"><img src="img/6-thumb.jpg" /></a></div>
-                    </li>
-                </ul>
-                <!--Dummy images by The Fox And King :: http://dribbble.com/snootyfox-->
+
+                <?php
+                $ind_exp = 0;
+
+
+                // Upit koji kupi radno iskustvo1
+                $sql = "SELECT employer, od, do, position, about FROM workexp1 WHERE id_fk =  ".$id;
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) > 0) {
+                    $ind_exp = 1;
+                    // output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo "<br/><h4>Od: </h4>".$row["od"]."<h4>Do: </h4> ".$row["do"]." <h4>Poslodavac: </h4> ".$row["employer"]." <h4>Pozicija: </h4> ".$row["position"]." <h4>Opis: </h4> ".$row["about"];
+                    }
+                }
+
+
+
+                // Upit koji kupi radno iskustvo2
+                $sql = "SELECT employer, od, do, position, about FROM workexp2 WHERE id_fk =  ".$id;
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) > 0) {
+                    $ind_exp = 1;
+                    // output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo "<br/><br/><h4>Od: </h4>".$row["od"]."<h4>Do: </h4> ".$row["do"]." <h4>Poslodavac: </h4> ".$row["employer"]." <h4>Pozicija: </h4> ".$row["position"]." <h4>Opis: </h4> ".$row["about"];
+                    }
+                }
+
+
+                // Upit koji kupi radno iskustvo3
+                $sql = "SELECT employer, od, do, position, about FROM workexp3 WHERE id_fk =  ".$id;
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) > 0) {
+                    $ind_exp = 1;
+                    // output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo "<br/><br/><h4>Od: </h4>".$row["od"]."<h4>Do: </h4> ".$row["do"]." <h4>Poslodavac: </h4> ".$row["employer"]." <h4>Pozicija: </h4> ".$row["position"]." <h4>Opis: </h4> ".$row["about"];
+                    }
+                }
+
+                // Upit koji kupi radno iskustvo4
+                $sql = "SELECT employer, od, do, position, about FROM workexp4 WHERE id_fk =  ".$id;
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) > 0) {
+                    $ind_exp = 1;
+                    // output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo "<br/><br/><h4>Od: </h4>".$row["od"]."<h4>Do: </h4> ".$row["do"]." <h4>Poslodavac: </h4> ".$row["employer"]." <h4>Pozicija: </h4> ".$row["position"]." <h4>Opis: </h4> ".$row["about"];
+                    }
+                }
+
+
+
+                // Upit koji kupi radno iskustvo5
+                $sql = "SELECT employer, od, do, position, about FROM workexp5 WHERE id_fk =  ".$id;
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) > 0) {
+                    $ind_exp = 1;
+                    // output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo "<br/><br/><h4>Od: </h4>".$row["od"]."<h4>Do: </h4> ".$row["do"]." <h4>Poslodavac: </h4> ".$row["employer"]." <h4>Pozicija: </h4> ".$row["position"]." <h4>Opis: </h4> ".$row["about"];
+                    }
+                }
+
+                if($ind_exp == 0)
+                echo "Bez radnog iskustva";
+
+                ?>
+
+
             </div>
             <!--END: Work container-->
             <!-- Resume container -->
             <div id="resume" class="container">
                 <h2>CV</h2>
                 <h3>You can download my resume for your reference and I hope that we will meet very soon! :)</h3>
-                <div class="btn-center"> <a href="#" class="hire-me"><i class="icon-download"></i> Preuzmi CV</a>
-                    <h2>125kb</h2>
+
+
+                    <?php
+
+                    $ind1 = 0;
+                    $filename1 = '../forms/cvs/'.$_SESSION["email"].'.pdf';
+
+                    if (file_exists($filename1)) {
+                        echo    " <div class='btn-center'> <a href='../forms/cvs/$_SESSION[email].pdf' class='hire-me'><i class='icon-download'></i> Preuzmi CV</a>";
+                        $ind1 = 1;
+
+                    }
+
+                    $filename1 = '../forms/images/'.$_SESSION["email"].'.docx';
+
+                    if (file_exists($filename1)) {
+                        echo    " <div class='btn-center'> <a href='../forms/cvs/$_SESSION[email].docx' class='hire-me'><i class='icon-download'></i> Preuzmi CV</a>";
+                        $ind1 = 1;
+
+                    }
+
+                    $filename1 = '../forms/images/'.$_SESSION["email"].'.doc';
+
+                    if (file_exists($filename1)) {
+                        echo    " <div class='btn-center'> <a href='../forms/cvs/$_SESSION[email].doc' class='hire-me'><i class='icon-download'></i> Preuzmi CV</a>";
+                        $ind1 = 1;
+
+                    }
+
+
+                    if($ind1 == 0){
+
+                        echo    " <div class='btn-center'> <a href='#' class='hire-me'><i class='icon-download'></i> Preuzmi CV</a>";
+
+                    }
+
+
+
+
+
+
+
+
+                    ?>
+
+
+
+
+
+
+
+
+
+
+                    <h2>
+                        <?php
+                            echo filesize("../forms/cvs/$_SESSION[email].pdf")/1000;
+
+                        ?>
+                        kB</h2>
                 </div>
             </div>
             <!--END: Resume container-->
             <!-- Social Icons -->
 
 
-            <div id="resume" class="container">
-                <h2>Projekti</h2>
-                <h3>You can download my resume for your reference and I hope that we will meet very soon! :)</h3>
-                <div class="btn-center"> <a href="#" class="hire-me"><i class="icon-download"></i> Preuzmi CV</a>
-                    <h2>125kb</h2>
-                </div>
-            </div>
+
 
 
 

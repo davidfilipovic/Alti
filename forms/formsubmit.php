@@ -136,7 +136,7 @@ $faxod1 = new DateTime($_POST['faxod1']);
 $faxod1 = $faxod1->format('Y-m-d');
 $faxdo1 = new DateTime($_POST['faxdo1']);
 $faxdo1 = $faxdo1->format('Y-m-d');
-/*
+
 
   $query = "INSERT INTO Altidb.basicinfo (id_fk, name, lastname, birthdate, phone, mail, gender, address) "
   . "VALUES ($id, '$name', '$lastname', '$birthdate', '$phone', '$mail', '$gender', '$address')";
@@ -176,7 +176,7 @@ $query7 = "INSERT INTO Altidb.education (id_fk, edulvl, profession, hstype, hsna
         . "VALUES ($id,$edulvl,$profession,$hstype,'$hsname', '$univname', '$univfax', '$faxname','$faxod1','$faxdo1')";
 $data7 = mysql_query($query7)or die("Greska1:" . mysql_error());
 
-*/
+
 
 
 if ( $data7) {
@@ -195,7 +195,7 @@ if ( $data7) {
     }
   */
 
-
+//Upload Picture
 $target_dir = "images/";
 $target_file = $target_dir .$_SESSION[email].substr(basename($_FILES["picture"]["name"]), -4);
 echo $target_file;
@@ -221,7 +221,7 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["picture"]["size"] > 500000) {
+if ($_FILES["picture"]["size"] > 11500000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
@@ -238,6 +238,20 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["picture"]["name"]). " has been uploaded.";
+
+
+            $tmpname  = $_FILES["picture"]["tmp_name"];
+            @img_resize( $tmpname , 75 , "images/" , "pic.jpg");
+
+
+
+
+
+
+
+
+
+
     } else {
         echo "Sorry, there was an error uploading your file. ";
         echo $target_file;
@@ -246,7 +260,129 @@ if ($uploadOk == 0) {
 
 
 
+
+//Upload CV
+$target_dir1 = "cvs/";
+
+if(substr(basename($_FILES["cv"]["name"]), -1) != "x") {
+    $target_file1 = $target_dir1 . $_SESSION[email] . substr(basename($_FILES["cv"]["name"]), -4);
+}else {
+    $target_file1 = $target_dir1 . $_SESSION[email] . substr(basename($_FILES["cv"]["name"]), -5);
+}
+echo $target_file1;
+$uploadOk1 = 1;
+$imageFileType1 = pathinfo($target_file1,PATHINFO_EXTENSION);
+
+
+
+
+// Check if file already exists
+if (file_exists($target_file1)) {
+    echo "Sorry, file already exists.";
+    $uploadOk1 = 0;
+}
+// Check file size
+if ($_FILES["cv"]["size"] > 500000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk1 = 0;
+}
+// Allow certain file formats
+if($imageFileType1 != "doc" && $imageFileType1 != "docx" && $imageFileType1 != "pdf" ) {
+    echo "Sorry, only DOC, DOCX & PDF files are allowed.";
+    $uploadOk1 = 0;
+}
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk1 == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["cv"]["tmp_name"], $target_file1)) {
+        echo "The file ". basename( $_FILES["cv"]["name"]). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file. ";
+        echo $target_file1;
+    }
+}
+
+
+
+
+
+
 ?>
+
+
+// Resize image
+<?php
+/**
+ * Make thumbs from JPEG, PNG, GIF source file
+ *
+ * $tmpname = $_FILES['source']['tmp_name'];
+ * $size - max width size
+ * $save_dir - destination folder
+ * $save_name - tnumb new name
+ * $maxisheight - is max for width (if not is for height)
+ *
+ * Author:  David Taubmann http://www.quidware.com (edited from LEDok - http://www.citadelavto.ru/)
+ */
+
+/*/    // And now how using this function fast:
+if ($_POST[pic])
+    {
+    $tmpname  = $_FILES['pic']['tmp_name'];
+    @img_resize( $tmpname , 600 , "../album" , "album_".$id.".jpg");
+    @img_resize( $tmpname , 120 , "../album" , "album_".$id."_small.jpg");
+    @img_resize( $tmpname , 60 , "../album" , "album_".$id."_maxheight.jpg", 1);
+    }
+    else
+    echo "No Images uploaded via POST";
+/**/
+
+function img_resize( $tmpname, $size, $save_dir, $save_name, $maxisheight = 0 )
+{
+    $save_dir     .= ( substr($save_dir,-1) != "/") ? "/" : "";
+    $gis        = getimagesize($tmpname);
+    $type        = $gis[2];
+    switch($type)
+    {
+        case "1": $imorig = imagecreatefromgif($tmpname); break;
+        case "2": $imorig = imagecreatefromjpeg($tmpname);break;
+        case "3": $imorig = imagecreatefrompng($tmpname); break;
+        default:  $imorig = imagecreatefromjpeg($tmpname);
+    }
+
+    $x = imagesx($imorig);
+    $y = imagesy($imorig);
+
+    $woh = (!$maxisheight)? $gis[0] : $gis[1] ;
+
+    if($woh <= $size)
+    {
+        $aw = $x;
+        $ah = $y;
+    }
+    else
+    {
+        if(!$maxisheight){
+            $aw = $size;
+            $ah = $size * $y / $x;
+        } else {
+            $aw = $size * $x / $y;
+            $ah = $size;
+        }
+    }
+    $im = imagecreatetruecolor($aw,$ah);
+    if (imagecopyresampled($im,$imorig , 0,0,0,0,$aw,$ah,$x,$y))
+        if (imagejpeg($im, $save_dir.$save_name))
+            return true;
+        else
+            return false;
+}
+
+
+
+?>
+
 
 </body>
 
