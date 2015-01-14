@@ -3,17 +3,71 @@ body,html{
     padding:0px;
 }
 
+@font-face {
+	font-family: 'Gotham-Book';
+	src:url('fonts/Gotham-Book.otf');
+	/*src:url('fonts/Gotham-Black.otf');
+	src:url('fonts/Gotham-BlackIta.otf');
+	src:url('fonts/Gotham-Bold.otf');
+	src:url('fonts/Gotham-BoldIta.otf');
+	src:url('fonts/Gotham-BookIta.otf');
+	src:url('fonts/GothamHTF-Black.otf');
+	src:url('fonts/GothamHTF-BlackItalic.otf');
+	src:url('fonts/GothamHTF-Bold.otf');
+	src:url('fonts/GothamHTF-BoldCondensed.otf');
+	src:url('fonts/GothamHTF-BoldItalic.otf');
+	src:url('fonts/GothamHTF-Book.otf');
+	src:url('fonts/GothamHTF-BookCondensed.otf');
+	src:url('fonts/GothamHTF-BookItalic.otf');
+	src:url('fonts/GothamHTF-BookItalic.otf');
+	src:url('fonts/GothamHTF-LightCondensed.otf');
+	src:url('fonts/GothamHTF-LightItalic.otf');
+	src:url('fonts/GothamHTF-Medium.otf');
+	src:url('fonts/GothamHTF-MediumCondensed.otf');
+	src:url('fonts/GothamHTF-MediumItalic.otf');
+	src:url('fonts/GothamHTF-Thin.otf');
+	src:url('fonts/GothamHTF-ThinItalic.otf');
+	src:url('fonts/GothamHTF-Ultra.otf');
+	src:url('fonts/GothamHTF-UltraItalic.otf');
+	src:url('fonts/GothamHTF-XLight.otf');
+	src:url('fonts/GothamHTF-XLight.otf');
+	src:url('fonts/GothamHTF-XLightItalic.otf');
+	src:url('fonts/Gotham-Light.otf');
+	src:url('fonts/Gotham-LightIta.otf');
+	src:url('fonts/Gotham-Medium.otf');
+	src:url('fonts/Gotham-MediumIta.otf');
+	src:url('fonts/GothamRnd-Bold.otf');
+	src:url('fonts/GothamRnd-BoldItal.otf');
+	src:url('fonts/GothamRnd-Book.otf');
+	src:url('fonts/GothamRnd-BookItal.otf');
+	src:url('fonts/GothamRnd-Light.otf');
+	src:url('fonts/GothamRnd-LightItal.otf');
+	src:url('fonts/GothamRnd-MedItal.otf');
+	src:url('fonts/GothamRnd-Medium.otf');
+	src:url('fonts/Gotham-Thin.otf');
+	src:url('fonts/Gotham-ThinIta.otf');
+	src:url('fonts/Gotham-Ultra.otf');
+	src:url('fonts/Gotham-UltraIta.otf');
+	src:url('fonts/Gotham-XLight.otf');
+	src:url('fonts/Gotham-XLightIta.otf');
+	font-weight: normal;
+	font-style: normal;*/
+}
+@font-face {
+	font-family: 'Gotham-Light';
+	src:url('fonts/Gotham-Light.otf');
+	}
+@font-face {
+	font-family: 'GothamHTF-ThinItalic';
+	src:url('fonts/GothamHTF-ThinItalic.otf');
+	}
+@font-face {
+	font-family: 'Gotham-Bold';
+	src:url('fonts/Gotham-Bold.otf');
+	}
 .main{
     width:100%;
-<<<<<<< HEAD
     height:100%;
-=======
-    height:100%;
-<<<<<<< HEAD
-=======
-    height:100%;
->>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
->>>>>>> origin/master
 }
 
 .wrapper{
@@ -27,18 +81,45 @@ body,html{
 }
 
 .header_wrapper{
-    width:100%;
+    width:1200px;
     margin:0 auto;
     position:relative;
-    background-color:#333;
 }
 
 .header{
-    width: 1200px;
+    width: 100%;
     position:relative;
     height: 90px;
-    margin-top:0px;
-    margin:0 auto;
+    margin-top:0px;   
+	background-color:#A41A27;
+}
+h1{
+font-size:40px;
+font-family:Gotham-Book;
+color:#A41A27;
+}
+h2{
+font-size:30px;
+font-family:Trebuchet MS;
+color:#525252;
+}
+h3{
+font-size:20px;
+font-family:GothamHTF-ThinItalic;
+color:#666666;
+}
+
+div.top_text{
+width:100%;
+margin-top:40px;
+text-align:center;
+border-bottom:2px solid #A41A27;
+margin-bottom:40px;
+}
+
+div.top_text h3{
+margin-top:25px;
+margin-bottom:25px;
 }
 .home-content{
     position:relative;
@@ -47,7 +128,7 @@ body,html{
     min-height:1050px;
 }
 .logo{
-    width: 250px;
+    width: 200px;
     float: left;
 }
 .logo img{
@@ -58,25 +139,23 @@ body,html{
     float: left;
 }
 .logo img{
-    margin-top:5px;
-    width: 250px;
-    height: 80px;
+    margin-top:10px;
+    width: 200px;
+    height:70px;
 }
 .logo_text{
     width:100%;
     height:15px;
     margin-left:0px;
 }
-<<<<<<< HEAD
 
 .logo_text h2{
     font-size:15px;
-=======
+}
 .logo_text b{
     font-size:13px;
     margin-left:60px;
     font-family:Arial;
->>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
     color:#fff;
 	text-transform:uppercase;
 	font-weight: 300;
@@ -98,23 +177,24 @@ div#nav{
 width:200px;
 height:28px;
 float:right;
-margin-top:50px;
+margin-top:31px;
 position:relative;
+margin-left:-200px;
 }
 div.social{
     position:relative;
-    width:110px;
+    width:130px;
     height:30px;
 }
 div.social a{
     cursor:pointer;
 }
-div.social a{
-    cursor:pointer;
+
+.social a img{
+	opacity:0.6;
 }
-.social li img{
-    width:33px;
-    height:33px;
+.social a img:hover{
+	opacity:1;
 }
 div.leng{
     width:100px;
@@ -133,16 +213,8 @@ div.leng{
     margin-top: 0;
     top: 0;
 }
-<<<<<<< HEAD
-.banner{
 
-=======
-<<<<<<< HEAD
 .bnr{
-=======
-.banner{
->>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
->>>>>>> origin/master
     height:350px;
 }
 div.aboutus p{
@@ -150,22 +222,22 @@ div.aboutus p{
     color:#338585;
     text-align:justify;
 }
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
+div.top_footer_image{
+width:100%;
+height:408px;
+margin:0 auto;
+}
+div.top_footer_image img{
+width:100%;
+height:100%;
+}
 
-=======
-#footer {
-    /*position:fixed;*/
-    padding-top:20px;
-    left:0px;
-    bottom:0px !important;
-    height:240px;
-    width:100%;
-    background:#333;
-    z-index: 17; 
-}                    
+div.footer_wrapper {
+    width:1200px;
+    margin:0 auto;
+    position:relative;
+}                  
 div#left,div#right,div#center_right,div#centerleft{
     width:300px;
     border-left:1px solid #33333;
@@ -186,8 +258,15 @@ footer ul li a:hover{
     color:#004747;
 }
 footer ul li img{
-    width:25px;
-    height:25px;
+    width:18px;
+    height:18px;
+	float:left;
+	margin-top:20px;
+	margin-left:15px;
+}
+footer ul {
+    width:100%;
+	text-align:center;
 }
 
 div#copyright{
@@ -197,14 +276,14 @@ div#copyright{
     height:40px;
     background-color:#000E0E;
 }
->>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
->>>>>>> origin/master
+
 footer {
-    /*position:fixed;*/
+position:relative;
+	 float:bottom;
     padding-top:20px;
-    left:0px;
-    bottom:0px !important;
-    height:270px;
+	margin: 0 auto;
+    bottom:0;
+    height:100%;
     width:100%;
     background:#333;
     z-index: 17;
@@ -212,22 +291,15 @@ footer {
 
 #footer_div{
     width:15%;
-    height: 190px;
+    height: 100%;
     display: block;
     font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
-  
 }
 .footer_elements{
-<<<<<<< HEAD
-      border-left: 1px solid white;
-      padding-left: 20px;
-    
-=======
-    border-left: 1px solid #989697;
+    /*border-left: 1px solid #989697;*/
     padding-left: 20px;
 }
 footer #center_right{
->>>>>>> origin/master
 }
 
 footer #center_right ul li{
@@ -259,11 +331,13 @@ footer #center_right ul li img{
     margin-right:15px;
 }
 div#copyright{
-    /*width:100%;*/
-    /*position: absolute;
-    bottom:0px;*/
+    width:100%;
+    position:relative;
+	float:bottom;
+    bottom:0px;
     height:40px;
-    background-color:#000E0E;
+    background-color:#333;
+    border-top: 1px solid white;
 }
 div#copyright_text{
     height:40px;
@@ -279,20 +353,13 @@ div#copyright_text{
     width: 50%;
     text-align: right;
 }
-#footer_wrapper{
-    display: block;
-    /*margin-left: 50px;*/
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-}
-h5{
+
+footer h3{
     color: #989697;
-    text-transform: uppercase;
-    font-size: 16px;
     margin-top: 10px;
     margin-bottom: 10px;
     padding-left: 20px;
+	font-family:Gotham-Book;
 }
 div#center_right img:hover{
     opacity:1;
@@ -308,7 +375,6 @@ div#vector{
     filter: alpha(opacity=40);
 }
 #vector img{
-<<<<<<< HEAD
 cursor:pointer;
 opacity:0,5;
 float:left;
@@ -318,8 +384,6 @@ div#vector{
 opacity:1;
 filter: alpha(opacity=40);
 }
-<<<<<<< HEAD
-=======
 div#num_openpos {
 width:30px;
 height:30px;
@@ -334,11 +398,19 @@ font-size:16px;
 font-weight: bold;
 display:block;
 }
-=======
-    cursor:pointer;
-    opacity:0,5;
-    float:left;
-    margin-right:30px;
+
+div.gallery{width:100%;}  
+
+div#contact_form{
+float:left;
+margin-top:30px;
+position:relative;
+width:48%;
+height:500px;
+margin-left:30px;
+} 
+div #googleMap2{
+position:relative;
 }
->>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
->>>>>>> origin/master
+
+
