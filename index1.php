@@ -118,35 +118,67 @@
     </div>
 
         <div class='main'>                                           
+<<<<<<< HEAD
                 
                 <div class="header_wrapper">	
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
+            <div class="header_wrapper">	
+>>>>>>> origin/master
                 <?php include "menuJs.php"; ?>
             </div>              
                   </header><!-- /header -->
             <?php include "gallery.php"; ?>
 
+<<<<<<< HEAD
             <div class='wrapper'>
+=======
+<<<<<<< HEAD
+            <div class='wrapper'>		
+>>>>>>> origin/master
 
 			    <!--About us text-->
 			    <div>
 				 <?php include "slide_text.html"; ?>
 				</div>
 				
-				<!--slajder partner logo
-				?php include "rotatingImageSlider/index.html"; ?>--> 
-				
 				<!--baneri Alti brendovi-->
+<<<<<<< HEAD
+=======
+=======
+            <div class='wrapper'>
+
+                <div>
+                    <?php include "slide_text.html"; ?>
+                </div>
+
+>>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
+>>>>>>> origin/master
                 <div class='banner'>
                     <?php include "sliding-boxes-css3/index.html"; ?>
                 </div>	
 
             </div>
+<<<<<<< HEAD
                  <div id="wrapper">
 		
                                     
     </div>       <!-- /#wrapper -->
             <?php include 'footer.php';?>   
                 
+=======
+<<<<<<< HEAD
+
+            <?php include 'footer.php'; ?>			
+
+=======
+            <?php include 'footer.php'; ?>
+>>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
+        </div>
+>>>>>>> origin/master
     </body>
 </html>
 

@@ -38,6 +38,7 @@
                         <li><a>Hardver</a></li>
                         <li><a>Projekti</a></li>
                         <li><a>Servis</a></li>
+                        <li><a>Servis</a></li>
                     </div>
                 </ul>
             </div>
@@ -49,6 +50,7 @@
                         <li><a>Softver</a></li>
                         <li><a>Hardver</a></li>
                         <li><a>Projekti</a></li>
+                        <li><a>Servis</a></li>
                         <li><a>Servis</a></li>
                     </div>
                 </ul>
@@ -68,24 +70,41 @@
 
             <div id='center_right' style='float:left'>
                 <ul>
-				    <li><h5>mreže</h5></li><br><br>
+                    <li><h5>Mreže</h5></li><br><br>
                     <li><a><img src='icon/footer_facebook.png'></a></li>
                     <li><a><img src='icon/footer_twitter.png'></a></li>
                     <li><a><img src='icon/footer_linkedin.png'></a></li>				 
-                </ul>
+                </ul><br>
+				
+				<div id='openpos'>
+					<h5>otvorene pozicije</h5>
+				
+					
+					<img src='icon/op.png'>
+						<div id='num_openpos'>
+							<a href='karijera.php'><?php include "openpos.php"; ?><a/>
+						</div>	
+                 					 
+				</div>
+				
             </div><br>
-			
-			<div id='vector'>
-			<a href="http://www.emmi.rs/naslovna_stranica.1.html"><img src='icon/emmi_op04.png' width='150px' height='80px'/></a>
-			<a href='http://www.winwin.rs/'><img src='icon/winwin_op04.png' width='150px' height='80px'/></a>
-			<a href='http://pcpractic.rs/'><img src='icon/pcpractic_op04.png' width='150px' height='80px'/></a>
-			</div>
+
+
+            <div id='vector'>
+                <a href="http://www.emmi.rs/naslovna_stranica.1.html"><img src='icon/emmi_op04.png' width='150px' height='80px'/></a>
+                <a href='http://www.winwin.rs/'><img src='icon/winwin_op04.png' width='150px' height='80px'/></a>
+                <a href='http://pcpractic.rs/'><img src='icon/pcpractic_op04.png' width='150px' height='80px'/></a>
+            </div>
+
+
+
         </div>
     </div>
-</footer>
 
+</footer>
 <div id='copyright'>
     <div class='wrapper'>
         <div id='copyright_text'>© Copyright 2014. All rights reserved.</div>
     </div>
 </div>
+

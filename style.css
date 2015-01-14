@@ -5,7 +5,15 @@ body,html{
 
 .main{
     width:100%;
+<<<<<<< HEAD
     height:100%;
+=======
+    height:100%;
+<<<<<<< HEAD
+=======
+    height:100%;
+>>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
+>>>>>>> origin/master
 }
 
 .wrapper{
@@ -32,8 +40,6 @@ body,html{
     margin-top:0px;
     margin:0 auto;
 }
-
-
 .home-content{
     position:relative;
     overflow:hidden;
@@ -44,7 +50,6 @@ body,html{
     width: 250px;
     float: left;
 }
-
 .logo img{
     margin-top:5px;
     width: 260px;
@@ -52,25 +57,31 @@ body,html{
     width: 250px;
     float: left;
 }
-
 .logo img{
     margin-top:5px;
-    width: 230px;
-    height: 70px;
+    width: 250px;
+    height: 80px;
 }
 .logo_text{
-    width:230px;
+    width:100%;
     height:15px;
-    margin-left:15px;
+    margin-left:0px;
 }
+<<<<<<< HEAD
 
+.logo_text h2{
+    font-size:15px;
+=======
 .logo_text b{
     font-size:13px;
     margin-left:60px;
     font-family:Arial;
+>>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
     color:#fff;
+	text-transform:uppercase;
+	font-weight: 300;
+	font-family: bree-web, Bree, sans-serif;
 }
-
 a {
     color: #09f;
 }
@@ -83,12 +94,17 @@ a:hover {
     max-width: 100%;
     width: 100%;
 }
+div#nav{
+width:200px;
+height:28px;
+float:right;
+margin-top:50px;
+position:relative;
+}
 div.social{
     position:relative;
     width:110px;
-    height:77px;
-    margin:0px;
-    margin:-46px 0 15px 1000px;
+    height:30px;
 }
 div.social a{
     cursor:pointer;
@@ -104,8 +120,8 @@ div.leng{
     width:100px;
     height:85px;
     min-height:80px;
-    margin:-60px 0px 0px 0px;}
-
+    margin:-60px 0px 0px 0px;
+}
 .leng a{
     color:#006666;
 }
@@ -117,17 +133,72 @@ div.leng{
     margin-top: 0;
     top: 0;
 }
+<<<<<<< HEAD
 .banner{
 
+=======
+<<<<<<< HEAD
+.bnr{
+=======
+.banner{
+>>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
+>>>>>>> origin/master
     height:350px;
 }
-
 div.aboutus p{
     font-size:14px;
     color:#338585;
     text-align:justify;
 }
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+#footer {
+    /*position:fixed;*/
+    padding-top:20px;
+    left:0px;
+    bottom:0px !important;
+    height:240px;
+    width:100%;
+    background:#333;
+    z-index: 17; 
+}                    
+div#left,div#right,div#center_right,div#centerleft{
+    width:300px;
+    border-left:1px solid #33333;
+}
+footer #center_right ul li{
+    list-style-type:none;
+    float:left;
+}
+footer ul li{
+    list-style-type:none;
+    margin-left:45px;
+}
+footer ul li a{
+    cursor:pointer;
+    color:#587474;
+}
+footer ul li a:hover{
+    color:#004747;
+}
+footer ul li img{
+    width:25px;
+    height:25px;
+}
+
+div#copyright{
+    /*position: fixed;*/
+    bottom: 0px;
+    width:100%;
+    height:40px;
+    background-color:#000E0E;
+}
+>>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
+>>>>>>> origin/master
 footer {
     /*position:fixed;*/
     padding-top:20px;
@@ -139,7 +210,6 @@ footer {
     z-index: 17;
 }
 
-
 #footer_div{
     width:15%;
     height: 190px;
@@ -148,15 +218,22 @@ footer {
   
 }
 .footer_elements{
+<<<<<<< HEAD
       border-left: 1px solid white;
       padding-left: 20px;
     
+=======
+    border-left: 1px solid #989697;
+    padding-left: 20px;
+}
+footer #center_right{
+>>>>>>> origin/master
 }
 
 footer #center_right ul li{
     list-style-type:none;
     float:left;
-	margin-top:-10px;
+    margin-top:-10px;
 }
 footer ul{
     padding-left: 0px;
@@ -178,11 +255,13 @@ footer ul li a:hover{
 footer #center_right ul li img{
     width:25px;
     height:25px;
-	opacity:0.3;
-	margin-right:15px;
+    opacity:0.3;
+    margin-right:15px;
 }
 div#copyright{
     /*width:100%;*/
+    /*position: absolute;
+    bottom:0px;*/
     height:40px;
     background-color:#000E0E;
 }
@@ -200,7 +279,6 @@ div#copyright_text{
     width: 50%;
     text-align: right;
 }
-
 #footer_wrapper{
     display: block;
     /*margin-left: 50px;*/
@@ -208,7 +286,6 @@ div#copyright_text{
     height: 100%;
     margin: 0 auto;
 }
-
 h5{
     color: #989697;
     text-transform: uppercase;
@@ -218,15 +295,20 @@ h5{
     padding-left: 20px;
 }
 div#center_right img:hover{
-opacity:1;
+    opacity:1;
 }
 div#vector{
-text-align:center;
-width:580px;
-height:80px;
-margin:0 auto;
+    text-align:center;
+    width:580px;
+    height:80px;
+    margin:0 auto;
+    /*position:fixed;*/
+    /*margin-bottom: 40px;*/
+    opacity:1;
+    filter: alpha(opacity=40);
 }
 #vector img{
+<<<<<<< HEAD
 cursor:pointer;
 opacity:0,5;
 float:left;
@@ -236,3 +318,27 @@ div#vector{
 opacity:1;
 filter: alpha(opacity=40);
 }
+<<<<<<< HEAD
+=======
+div#num_openpos {
+width:30px;
+height:30px;
+line-height:30px;
+margin:-50px 0px 20px 27px;
+position:float;
+}
+div#openpos a{
+text-decoration:none;
+color: #989697;
+font-size:16px;
+font-weight: bold;
+display:block;
+}
+=======
+    cursor:pointer;
+    opacity:0,5;
+    float:left;
+    margin-right:30px;
+}
+>>>>>>> 934659d7689f3cb811cbbfe260df93cb0a2823e8
+>>>>>>> origin/master
