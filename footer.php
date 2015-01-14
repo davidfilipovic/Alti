@@ -57,6 +57,12 @@
             <div id='footer_div' style='float:left'>
                 <ul>
                     <li><h5>Kontakt</h5></li>
+                    <div class="footer_elements">
+                        <li><a>E-mail: alti@mail.com</a></li>
+                        <li>011</a></li>
+                        <li><a>mob</a></li>
+                        <li><a>Servis</a></li>
+                    </div>
                 </ul>
             </div>
 

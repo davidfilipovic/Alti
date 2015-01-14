@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
     <head>
@@ -9,17 +10,20 @@
         <link rel="stylesheet" href="menu/css/stylemenu.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="sliding-boxes-css3/style.css" type="text/css" media="screen"/>
-        <link rel="stylesheet" href="css/slide_text.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" href="css/slide_text.css" type="text/css" media="screen"/>
+     <link rel="stylesheet" href="css/hed.css" />
 
         <link rel="stylesheet" href="search/search_style.css" type="text/css" media="screen"/>
         <!--<link rel="stylesheet" href="rotatingImageSlider/css/style.css" type="text/css" media="screen"/>
-        <link rel="stylesheet" href="rotatingImageSlider/css/reset.css" type="text/css" media="screen"/>-->
+<link rel="stylesheet" href="rotatingImageSlider/css/reset.css" type="text/css" media="screen"/>-->
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
         <script type="text/javascript" src="menu/jquery.easing.1.3.js"></script>
         <script type='text/javascript' src='camera/scripts/camera.min.js'></script> 
         <script type='text/javascript' src='camera/scripts/jquery.mobile.customized.min.js'></script>
         <script type='text/javascript' src='search/search.js'></script>
+        <script type='text/javascript' src="js/classie.js"></script>
+       
 
 
         <!-- header scroll -->
@@ -83,50 +87,46 @@
             .menu li{background-color:#333;}
         </style>
         <!-- end of menu internal style-->
+       
+        <!-- js -->
+<script src="js/classie.js"></script>
+<script>
+    function init() {
+        window.addEventListener('scroll', function(e){
+            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                shrinkOn = 300,
+                header = document.querySelector("header");
+            if (distanceY > shrinkOn) {
+                classie.add(header,"smaller");
+            } else {
+                if (classie.has(header,"smaller")) {
+                    classie.remove(header,"smaller");
+                }
+            }
+        });
+    }
+    window.onload = init();
+</script>
 
     </head>
     <body>
+              <div id="wrapper">
+
+<header>  
+    <div class="container clearfix">
+        
+    </div>
 
         <div class='main'>                                           
-<<<<<<< HEAD
-         
+                
                 <div class="header_wrapper">	
-                    <?php include "menuJs.php"; ?>
-                </div>
-    
-                <?php include "gallery.php"; ?>
-
-            <div class='wrapper'>
-			
-=======
-
-            <div class="header_wrapper">	
                 <?php include "menuJs.php"; ?>
-            </div>
-
+            </div>              
+                  </header><!-- /header -->
             <?php include "gallery.php"; ?>
 
             <div class='wrapper'>
-<<<<<<< HEAD
 
-                <!--About us text-->
-                <!--slajder partner logo
-                ?php include "rotatingImageSlider/index.html"; ?>--> 
-
-                <!--baneri Alti brendovi-->
-
-                <!--About us text-->
-                <div>
-                    <?php include "slide_text.html"; ?>
-                </div>
-
-                <!--slajder partner logo
-                ?php include "rotatingImageSlider/index.html"; ?>--> 
-
-                <!--baneri Alti brendovi-->
-=======
-		
->>>>>>> origin/master
 			    <!--About us text-->
 			    <div>
 				 <?php include "slide_text.html"; ?>
@@ -136,74 +136,17 @@
 				?php include "rotatingImageSlider/index.html"; ?>--> 
 				
 				<!--baneri Alti brendovi-->
->>>>>>> origin/master
                 <div class='banner'>
                     <?php include "sliding-boxes-css3/index.html"; ?>
                 </div>	
 
             </div>
-<<<<<<< HEAD
-            <?php include 'footer.php'; ?>
-=======
-<<<<<<< HEAD
-			
-			<footer>
-			
-			<div class='wrapper'>
-			
-			     <div id='left' style='float:left'>
-			         <img src='alti2.png' width='130px' height='60px'><br>
-					 
-					 <ul>
-					    <li><a>Excvxcvzxcv</a></li>
-						<li><a>Sxcvxzvx xdfx adg</a></li>
-						<li><a>Csdgsdgf sdgsd sdg</a></li>
-						<li><a>Zdsga sdg dgd</a></li>
-						<li><a>Zdg  gds </a></li>											
-					 </ul>
-			     </div>
-			
-			    <div id='right' style='float:left'>
-				 <ul>
-					    <li><a>Excvxcvzxcv</a></li>
-						<li><a>Sxcvxzvx xdfx adg</a></li>
-						<li><a>Csdgsdgf sdgsd sdg</a></li>
-						<li><a>Zdsga sdg dgd</a></li>
-						<li><a>Zdg  gds </a></li>											
-					 </ul>
-			    </div>
-			
-			    <div id='center_left' style='float:left'>
-				 <ul>
-					    <li><a>Excvxcvzxcv</a></li>
-						<li><a>Sxcvxzvx xdfx adg</a></li>
-						<li><a>Csdgsdgf sdgsd sdg</a></li>
-						<li><a>Zdsga sdg dgd</a></li>
-						<li><a>Zdg  gds </a></li>											
-					 </ul>
-			    </div>
-			
-			    <div id='center_right' style='float:left'>
-				     <ul>
-					     <li><a><img src='icon/footer_facebook.png'></a></li>
-						 <li><a><img src='icon/footer_twitter.png'></a></li>
-						 <li><a><img src='icon/footer_linkedin.png'></a></li>				 
-					 </ul>
-			    </div>
-			
-			</div>
-			</footer>
-			<div id='copyright'>
-			   Copyright 2014
-			</div>
+                 <div id="wrapper">
+		
                                     
-    </div>
-
-=======
-            <?php include 'footer.php';?>
->>>>>>> origin/master
-        </div>
->>>>>>> origin/master
+    </div>       <!-- /#wrapper -->
+            <?php include 'footer.php';?>   
+                
     </body>
 </html>
 
